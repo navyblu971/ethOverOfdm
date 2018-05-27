@@ -4,9 +4,10 @@
 #include <linux/kernel.h>
 #include <linux/netdevice.h>
 
+ struct net_device *ofdm_dev ;
 
+static void ofdm_setup(struct net_device * ) ; 
 
-int ofdm_init (struct net_device *) ; 
 int ofdm_open (struct net_device * dev)
 {
 	netif_start_queue(dev);
@@ -33,12 +34,14 @@ static struct net_device_ops ofdm_ops = {
      .ndo_open         = ofdm_open,
      .ndo_stop         = ofdm_close,
      .ndo_start_xmit   = ofdm_xmit,
-     .ndo_do_ioctl     = ofdm_ioctl,
-	.ndo_get_stats = ofdm_get_stats
+/*     .ndo_do_ioctl     = ofdm_ioctl
+	.ndo_get_stats = ofdm_get_stats*/
 };
 
 
-	int ofdm_init (void)
+	
+
+static int __init ofdm_init (void)
 	{
 		
 		/*
@@ -46,57 +49,44 @@ static struct net_device_ops ofdm_ops = {
 		dev->netdev_ops->ndo_stop = ofdm_close;
 		dev->hard_start_xmit = ofdm_xmit;
 				*/
-		dev=alloc_netdev(0,"ofdm%d", NET_NAME_UNKNOWNED, ofdm_setup);
-		if (register_netdev(dev)){
-			free_netdev(dev);
+		ofdm_dev=alloc_netdev(0,"ofdm%d", NET_NAME_UNKNOWN, ofdm_setup);
+		if (register_netdev(ofdm_dev)){
+			free_netdev(ofdm_dev);
 			return -1;
 		}
-		return 0 ; 
-	
+		return 0 ; 	
 
 /*
 		dev->netdev_ops=&ofdm_ops; 
 		printk ("ofdm device initialized\n");
 		return 0;*/
-	}
+}
 
-	struct net_device ofdm ; // = {init: ofdm_init_module};
 
-	int ofdm_init_module (void)
-	{
-		int result;
 
-		strcpy (ofdm.name, "ofdm");
-		if ((result = register_netdev (&ofdm))) {
-			printk ("ofdm: Error %d  initializing ethOtherOfdm",result);
-			return result;
-		}
-	return 0;
-	}
-	
  	void ofdm_cleanup (void)
 	{
-		printk ("<0> Cleaning Up the Module\n");
-		unregister_netdev (&ofdm);
-		free_netdev(&ofdm);			
+		printk ("<0> Cleaning Up ofdm_dev  Module\n");
+		unregister_netdev (ofdm_dev);
+		free_netdev(ofdm_dev);			
 	}
 
-	static void labnet_setup(struct net_device * dev)
+	static void ofdm_setup(struct net_device * dev)
 	{
 	int i ; 
 	//assign mac address
-	for (i=0, i < ETH_ALEN; i++)
+	for (i=0; i < ETH_ALEN; i++)
 	{
 		dev->dev_addr[i]=(char)i;
 	}
  	ether_setup(dev);
-	dev->netdev_ops = &ndo;
-	dev->flags | = IFF_NOARP;
-	stats = &dev->stats;
+	dev->netdev_ops = &ofdm_ops;
+	dev->flags |= IFF_NOARP;
+	//stats = &dev->stats;
 	}
 
 module_init(ofdm_init);
-module_exit(ofdm_exit);
+module_exit(ofdm_cleanup);
  
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("atexide fabrice");
