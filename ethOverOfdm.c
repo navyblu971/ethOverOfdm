@@ -26,6 +26,14 @@ int ofdm_close ( struct net_device * dev)
 
 
 
+unsigned short eth_type_trans(struct sk_buff *skb,
+          struct net_device *dev)
+ {
+       struct ethhdr *eth;
+       unsigned char *raw ; 
+	return  htons(ETH_P_802_2) ; 
+}
+
 
 static void ofdm_rx (struct sk_buff *skb,  struct net_device * dev)
 {
@@ -56,7 +64,8 @@ static int ofdm_xmit (struct sk_buff *skb,
 	char * data; 
 	len = skb->len; 
 	data = skb->data; 
-	ofdm->trans_start = jiffies; 
+//	dev->trans_start = jiffies; 
+	netif_trans_update(dev);
 	stats->tx_packets +=1; 
 	stats->tx_bytes +=skb->len; 
 
@@ -73,11 +82,16 @@ static int ofdm_xmit (struct sk_buff *skb,
 	}
 
 
-void ofdm_get_stats (struct net_device *dev)
+
+static struct net_device_stats *ofdm_get_stats(struct net_device *dev)
 {
 
+	struct octeon_ethernet *priv = netdev_priv(dev);
+
+	return  &priv->stats; 
 
 }
+
 
 static struct net_device_ops ofdm_ops = {
  /*    .ndo_init         = ofdm_init,*/
