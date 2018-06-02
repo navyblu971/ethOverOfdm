@@ -6,8 +6,8 @@
 
 struct net_device *ofdm_dev ;
 
-struct net_device_stats *stats;
 
+struct net_device_stats ofdm_stats;
 static void ofdm_setup(struct net_device * ) ; 
 
 int ofdm_open (struct net_device * dev)
@@ -37,8 +37,8 @@ unsigned short eth_type_trans(struct sk_buff *skb,
 
 static void ofdm_rx (struct sk_buff *skb,  struct net_device * dev)
 {
-	stats->rx_packets +=1;
-	stats->rx_bytes +=skb->len; 
+	ofdm_stats.rx_packets +=1;
+	ofdm_stats.rx_bytes +=skb->len; 
 	skb->protocol = eth_type_trans (skb , dev); 
 	netif_rx(skb); 
 
@@ -66,9 +66,10 @@ static int ofdm_xmit (struct sk_buff *skb,
 	data = skb->data; 
 //	dev->trans_start = jiffies; 
 	netif_trans_update(dev);
-	stats->tx_packets +=1; 
-	stats->tx_bytes +=skb->len; 
+	ofdm_stats.tx_packets +=1; 
+	ofdm_stats.tx_bytes +=skb->len; 
 
+	printk("data %x, %x, %x,  %x, %x, %x, %x", data[0], data[1],data[2],data[3],data[4],data[5],data[6]); 
 	radio_tx(data, len, ofdm_dev);
 	/* loopback ...*/
 	ofdm_rx(skb, ofdm_dev); 
@@ -86,9 +87,9 @@ static int ofdm_xmit (struct sk_buff *skb,
 static struct net_device_stats *ofdm_get_stats(struct net_device *dev)
 {
 
-	struct octeon_ethernet *priv = netdev_priv(dev);
+	//struct octeon_ethernet *priv = netdev_priv(dev);
 
-	return  &priv->stats; 
+	return  &ofdm_stats; 
 
 }
 
