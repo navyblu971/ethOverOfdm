@@ -10,6 +10,37 @@ struct net_device *ofdm_dev ;
 struct net_device_stats ofdm_stats;
 static void ofdm_setup(struct net_device * ) ; 
 
+
+/* character device parameters */
+int ofdm_major =   OFDM_MAJOR;
+int ofdm_minor =   0;
+int ofdm_nr_devs = OFDM_NR_DEVS;	/* number of bare scull devices */
+int ofdm_quantum = OFDM_QUANTUM;
+int ofdm_qset =    OFDM_QSET;
+
+module_param(ofdm_major, int, S_IRUGO);
+module_param(ofdm_minor, int, S_IRUGO);
+module_param(ofdm_nr_devs, int, S_IRUGO);
+module_param(ofdm_quantum, int, S_IRUGO);
+module_param(ofdm_qset, int, S_IRUGO);
+
+
+struct ofdm_dev *ofdm_devices;
+
+static int     file_ofdm_open(struct inode *, struct file *);
+static int     file_ofdm_release(struct inode *, struct file *);
+static ssize_t file_ofdm_read(struct file *, char *, size_t, loff_t *);
+static ssize_t file_ofdm_write(struct file *, const char *, size_t, loff_t *);
+
+static struct file_operations file_ofdm_ops =
+{
+   .open = file_ofdm_open,
+   .read = file_ofdm_read,
+   .write = file_ofdm_write,
+   .release = file_ofdm_release,
+};
+
+
 int ofdm_open (struct net_device * dev)
 {
 	netif_start_queue(dev);
@@ -122,7 +153,46 @@ static int __init ofdm_init (void)
 			free_netdev(ofdm_dev);
 			return -1;
 		}
-		return 0 ; 	
+		printk(KERN_ALERT "ofdm interface registered.."); 
+
+
+		 majorNumber = register_chrdev(0, DEVICE_NAME, &fops);
+ 		  if (majorNumber<0){
+      			printk(KERN_ALERT "ofdmfile driver failed to register a major number\n");
+      			return majorNumber;
+   			}
+   		printk(KERN_INFO "ofdm file driver: registered correctly with major number %d\n", majorNumber);
+ 
+		majorNumber = register_chrdev(0, DEVICE_NAME, &fops);
+   
+		if (majorNumber<0){
+      		printk(KERN_ALERT "ofdm file driver failed to register a major number\n");
+      		return majorNumber;
+   		}
+   		printk(KERN_INFO "ofdm file: registered correctly with major number %d\n", majorNumber);
+ 
+   		// Register the device class
+   		ebbcharClass = class_create(THIS_MODULE, CLASS_NAME);
+   		if (IS_ERR(ebbcharClass)){                // Check for error and clean up if there is
+      			unregister_chrdev(majorNumber, DEVICE_NAME);
+      			printk(KERN_ALERT "Failed to register device class\n");
+      			return PTR_ERR(ebbcharClass);          // Correct way to return an error on a pointer
+   		}
+  		 printk(KERN_INFO "ofdm file: device class registered correctly\n");
+ 
+   		// Register the device driver
+   		ebbcharDevice = device_create(ebbcharClass, NULL, MKDEV(majorNumber, 0), NULL, DEVICE_NAME);
+   		if (IS_ERR(ebbcharDevice)){               // Clean up if there is an error
+      			class_destroy(ebbcharClass);           // Repeated code but the alternative is goto statements
+      			unregister_chrdev(majorNumber, DEVICE_NAME);
+      			printk(KERN_ALERT "Failed to create the device\n");
+      			return PTR_ERR(ebbcharDevice);
+   		}
+   
+		printk(KERN_INFO "ofdm file: device class created correctly\n"); // Made it! device was initialized
+   		return 0 ; 
+
+		 	
 
 /*
 		dev->netdev_ops=&ofdm_ops; 
@@ -152,6 +222,41 @@ static int __init ofdm_init (void)
 	dev->flags |= IFF_NOARP;
 	//stats = &dev->stats;
 	}
+
+
+
+/* ofdm file operations */
+static ssize_t file_ofdm_read(struct file *filep, char *buffer, size_t len, loff_t *offset){
+   int error_count = 0;
+   // copy_to_user has the format ( * to, *from, size) and returns 0 on success
+   error_count = copy_to_user(buffer, message, size_of_message);
+ 
+   if (error_count==0){            // if true then have success
+      printk(KERN_INFO "EBBChar: Sent %d characters to the user\n", size_of_message);
+      return (size_of_message=0);  // clear the position to the start and return 0
+   }
+   else {
+      printk(KERN_INFO "EBBChar: Failed to send %d characters to the user\n", error_count);
+      return -EFAULT;              // Failed -- return a bad address message (i.e. -14)
+   }
+}
+
+static ssize_t file_ofdm_write(struct file *filep, const char *buffer, size_t len, loff_t *offset){
+   sprintf(message, "%s(%zu letters)", buffer, len);   // appending received string with its length
+   size_of_message = strlen(message);                 // store the length of the stored message
+   printk(KERN_INFO "ofdm file: Received %zu characters from the user\n", len);
+   return len;
+}
+ 
+
+static int file_ofdm_release(struct inode *inodep, struct file *filep){
+   printk(KERN_INFO "ofdm file: Device successfully closed\n");
+   return 0;
+}
+
+
+
+
 
 module_init(ofdm_init);
 module_exit(ofdm_cleanup);
