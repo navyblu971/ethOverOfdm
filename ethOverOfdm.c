@@ -1,31 +1,32 @@
-/* ofd.c – Our First Driver code */
+/* ethOverOfdm.c – Our First Driver code */
 #include <linux/module.h>
 #include <linux/version.h>
 #include <linux/kernel.h>
 #include <linux/netdevice.h>
+#include <linux/device.h>
+
+#define  DEVICE_NAME "ofdmchar"   
+#define  CLASS_NAME  "ofdm"
+
+static int ofdm_file_device; 
+//static class * ofdm_file_class ;
+
 
 struct net_device *ofdm_dev ;
+
 
 
 struct net_device_stats ofdm_stats;
 static void ofdm_setup(struct net_device * ) ; 
 
 
-/* character device parameters */
-int ofdm_major =   OFDM_MAJOR;
-int ofdm_minor =   0;
-int ofdm_nr_devs = OFDM_NR_DEVS;	/* number of bare scull devices */
-int ofdm_quantum = OFDM_QUANTUM;
-int ofdm_qset =    OFDM_QSET;
-
-module_param(ofdm_major, int, S_IRUGO);
-module_param(ofdm_minor, int, S_IRUGO);
-module_param(ofdm_nr_devs, int, S_IRUGO);
-module_param(ofdm_quantum, int, S_IRUGO);
-module_param(ofdm_qset, int, S_IRUGO);
-
-
-struct ofdm_dev *ofdm_devices;
+/* ofdm_file variables */
+static int OFDM_MAJOR ; 
+static struct class*  ofdmcharClass  = NULL; ///< The device-driver class struct pointer
+static struct device* ofdmcharDevice = NULL;
+static char message[255]  ; 
+int size_of_message ; 
+struct ofdm_dev * ofdm_devices;
 
 static int     file_ofdm_open(struct inode *, struct file *);
 static int     file_ofdm_release(struct inode *, struct file *);
@@ -156,14 +157,14 @@ static int __init ofdm_init (void)
 		printk(KERN_ALERT "ofdm interface registered.."); 
 
 
-		 majorNumber = register_chrdev(0, DEVICE_NAME, &fops);
+		int  majorNumber = register_chrdev(0, DEVICE_NAME, &file_ofdm_ops);
  		  if (majorNumber<0){
       			printk(KERN_ALERT "ofdmfile driver failed to register a major number\n");
       			return majorNumber;
    			}
    		printk(KERN_INFO "ofdm file driver: registered correctly with major number %d\n", majorNumber);
  
-		majorNumber = register_chrdev(0, DEVICE_NAME, &fops);
+		majorNumber = register_chrdev(0, DEVICE_NAME, &file_ofdm_ops);
    
 		if (majorNumber<0){
       		printk(KERN_ALERT "ofdm file driver failed to register a major number\n");
@@ -172,21 +173,21 @@ static int __init ofdm_init (void)
    		printk(KERN_INFO "ofdm file: registered correctly with major number %d\n", majorNumber);
  
    		// Register the device class
-   		ebbcharClass = class_create(THIS_MODULE, CLASS_NAME);
-   		if (IS_ERR(ebbcharClass)){                // Check for error and clean up if there is
+   		ofdmcharClass = class_create(THIS_MODULE, CLASS_NAME);
+   		if (IS_ERR(ofdmcharClass)){                // Check for error and clean up if there is
       			unregister_chrdev(majorNumber, DEVICE_NAME);
       			printk(KERN_ALERT "Failed to register device class\n");
-      			return PTR_ERR(ebbcharClass);          // Correct way to return an error on a pointer
+      			return PTR_ERR(ofdmcharClass);          // Correct way to return an error on a pointer
    		}
   		 printk(KERN_INFO "ofdm file: device class registered correctly\n");
  
    		// Register the device driver
-   		ebbcharDevice = device_create(ebbcharClass, NULL, MKDEV(majorNumber, 0), NULL, DEVICE_NAME);
-   		if (IS_ERR(ebbcharDevice)){               // Clean up if there is an error
-      			class_destroy(ebbcharClass);           // Repeated code but the alternative is goto statements
+   		ofdmcharDevice = device_create(ofdmcharClass, NULL, MKDEV(majorNumber, 0), NULL, DEVICE_NAME);
+   		if (IS_ERR(ofdmcharDevice)){               // Clean up if there is an error
+      			class_destroy(ofdmcharClass);           // Repeated code but the alternative is goto statements
       			unregister_chrdev(majorNumber, DEVICE_NAME);
       			printk(KERN_ALERT "Failed to create the device\n");
-      			return PTR_ERR(ebbcharDevice);
+      			return PTR_ERR(ofdmcharDevice);
    		}
    
 		printk(KERN_INFO "ofdm file: device class created correctly\n"); // Made it! device was initialized
@@ -232,11 +233,11 @@ static ssize_t file_ofdm_read(struct file *filep, char *buffer, size_t len, loff
    error_count = copy_to_user(buffer, message, size_of_message);
  
    if (error_count==0){            // if true then have success
-      printk(KERN_INFO "EBBChar: Sent %d characters to the user\n", size_of_message);
+      printk(KERN_INFO "ofdm_file: Sent %d characters to the user\n", size_of_message);
       return (size_of_message=0);  // clear the position to the start and return 0
    }
    else {
-      printk(KERN_INFO "EBBChar: Failed to send %d characters to the user\n", error_count);
+      printk(KERN_INFO "ofdm_file: Failed to send %d characters to the user\n", error_count);
       return -EFAULT;              // Failed -- return a bad address message (i.e. -14)
    }
 }
