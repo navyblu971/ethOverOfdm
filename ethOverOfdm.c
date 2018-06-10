@@ -9,6 +9,7 @@
 #define  CLASS_NAME  "ofdm"
 
 static int ofdm_file_device; 
+static int numberOpens ; 
 //static class * ofdm_file_class ;
 
 
@@ -257,6 +258,11 @@ static int file_ofdm_release(struct inode *inodep, struct file *filep){
 
 
 
+static int file_ofdm_open(struct inode *inodep, struct file *filep){
+   numberOpens++;
+   printk(KERN_INFO "ofdm file: Device has been opened %d time(s)\n", numberOpens);
+   return 0;
+}
 
 
 module_init(ofdm_init);
