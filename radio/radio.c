@@ -2,6 +2,8 @@
 #include <stdio.h>      /* Standard Library of Input and Output */
 #include <complex.h>
 #include <string.h>
+#include <fftw3.h>
+#include <gnuplot_i.h>
 
 #define K  64
 #define  CP  K/4
@@ -146,18 +148,50 @@ void  fromBinaryTo_qam (unsigned char *  data, complex float * _qam)
 		 unsigned char myBuffer[255] ;
 
 		 memset(myBuffer, 1, 255) ;
-		
+
 		 bufferTo_qam (myBuffer, K, dataCarriers) ;
 
 		 initPilotCarrier () ;
-
+		 //
 		 int t =0;
 		 while (t < K)
 		 {
 		 printf("Starting values: Z1 = %.2f + %.2fi \n", creal(dataCarriers[t]), cimag(dataCarriers[t]));
 		 t++;
-		}
+			}
 
+			int N=K ;
+
+			fftw_complex * out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N);
+	 		fftw_plan p = fftw_plan_dft_1d(K, dataCarriers, out, FFTW_FORWARD, FFTW_ESTIMATE);
+
+	 		fftw_execute(p); /* repeat as needed */
+
+
+		t =0;
+ 		 while (t < K)
+ 		 {
+ 		 printf("Starting values: FFT = %.2f + %.2fi \n", creal(*(out+t)), cimag(*(out+t)));
+ 		 t++;
+ 			}
+
+	 	fftw_destroy_plan(p);
+	 	//fftw_free(in);
+
+		fftw_free(out);
+
+		gnuplot_ctrl * h ;
+    h = gnuplot_init() ;
+		gnuplot_setstyle(h, "impulses") ;
+	 gnuplot_set_xlabel(h, "my X label") ;
+	 gnuplot_set_xlabel(h, "my Y label") ;
+	 char myfile[] = "file_in.dat" ;
+    int  i ;
+
+    gnuplot_cmd(handle, "plot '%s'", myfile);
+    for (i=0 ; i<10 ; i++) {
+        gnuplot_cmd (handle, "plot y=%d*x", i);
+    }
 
 
 
