@@ -179,13 +179,13 @@ void  fromBinaryTo_qam (unsigned char *  data, complex float * _qam)
 			int N=K ;
 
 			//IFFT
-			fftw_complex * out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N + CP);
-	 		fftw_plan p = fftw_plan_dft_1d(K, ofdm.dataCarriers, out+ CP, FFTW_BACKWARD, FFTW_ESTIMATE);
+			fftw_complex * out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N + CP*sizeof(fftw_complex));
+	 		fftw_plan p = fftw_plan_dft_1d(N, ofdm.dataCarriers, out+ CP*sizeof(fftw_complex), FFTW_BACKWARD, FFTW_ESTIMATE);
 
 	 		fftw_execute(p); /* repeat as needed */
 
-
-			memcpy(out, out+N -CP, CP) ; 
+			//ADD CP to out 
+			memcpy(out, out+N -CP, CP) ;
 
 		t =0;
  		 while (t < K)
