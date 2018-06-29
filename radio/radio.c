@@ -3,7 +3,10 @@
 #include <complex.h>
 #include <string.h>
 #include <fftw3.h>
+
+#ifdef GNUPLOT
 #include <gnuplot_i.h>
+#endif
 
 #define K  64
 #define  CP  K/4
@@ -12,11 +15,22 @@
 #define bool int
 
 
+struct
+{
+	complex float cyclicPrefix[CP] ;
+	complex float dataCarriers[K] ;
 
-static complex float dataCarriers[K] ;
+
+} ofdm ;
+
+
+
+
+
+
 static unsigned char pilotCarriers[P] = { 0, 8, 16, 24, 32, 40, 48, 56} ;
 
-void  fromBinaryTo_qam (unsigned char *  data, complex float * _qam) ;
+void  fromBinaryTo_qam (unsigned char *  , complex float * ) ;
 
 bool initPilotCarrier ()
 {
@@ -28,7 +42,7 @@ bool initPilotCarrier ()
 	while (i < P)
 	{
 
-		dataCarriers[pilotCarriers[i]]=pilotValue;
+		ofdm.dataCarriers[pilotCarriers[i]]=pilotValue;
 		i++ ;
 	}
 
@@ -149,24 +163,29 @@ void  fromBinaryTo_qam (unsigned char *  data, complex float * _qam)
 
 		 memset(myBuffer, 1, 255) ;
 
-		 bufferTo_qam (myBuffer, K, dataCarriers) ;
+
+		 //Mapping
+		 bufferTo_qam (myBuffer, K, ofdm.dataCarriers) ;
 
 		 initPilotCarrier () ;
 		 //
 		 int t =0;
 		 while (t < K)
 		 {
-		 printf("Starting values: Z1 = %.2f + %.2fi \n", creal(dataCarriers[t]), cimag(dataCarriers[t]));
+		 printf("Starting values: Z1 = %.2f + %.2fi \n", creal(ofdm.dataCarriers[t]), cimag(ofdm.dataCarriers[t]));
 		 t++;
 			}
 
 			int N=K ;
 
-			fftw_complex * out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N);
-	 		fftw_plan p = fftw_plan_dft_1d(K, dataCarriers, out, FFTW_FORWARD, FFTW_ESTIMATE);
+			//IFFT
+			fftw_complex * out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N + CP);
+	 		fftw_plan p = fftw_plan_dft_1d(K, ofdm.dataCarriers, out+ CP, FFTW_BACKWARD, FFTW_ESTIMATE);
 
 	 		fftw_execute(p); /* repeat as needed */
 
+
+			memcpy(out, out+N -CP, CP) ; 
 
 		t =0;
  		 while (t < K)
@@ -180,6 +199,11 @@ void  fromBinaryTo_qam (unsigned char *  data, complex float * _qam)
 
 		fftw_free(out);
 
+		//ADD CP
+
+
+
+#ifdef GNUPLOT
 		gnuplot_ctrl * h ;
     h = gnuplot_init() ;
 		gnuplot_setstyle(h, "impulses") ;
@@ -192,7 +216,7 @@ void  fromBinaryTo_qam (unsigned char *  data, complex float * _qam)
     for (i=0 ; i<10 ; i++) {
         gnuplot_cmd (handle, "plot y=%d*x", i);
     }
-
+#endif
 
 
 	 }
