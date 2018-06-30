@@ -24,7 +24,20 @@ struct
 } ofdm ;
 
 
+struct ofdm_parameter {
 
+	complex float pilotValue;
+	int dataLenght ;
+	int CpSize ;
+	int pilotSize ;
+	unsigned char pilotCarriers[P] ;
+} ofdmContext;
+
+
+ofdmContext.pilotValue = pilotValue ;
+ofdmContext.dataLenght = 255 ;
+ofdmContext.CpSize =ofdmContext.dataLenght /4 ;
+ofdmContext.pilotSize = 8;
 
 
 
@@ -32,7 +45,57 @@ static unsigned char pilotCarriers[P] = { 0, 8, 16, 24, 32, 40, 48, 56} ;
 
 void  fromBinaryTo_qam (unsigned char *  , complex float * ) ;
 
-bool initPilotCarrier ()
+
+void  ofdm_modulate (struct ofdm_parameter ofdmContext, unsigned char * message, int messageLenght , complex float *encoded )
+{
+
+
+
+
+	//Mapping
+	bufferTo_qam (message, ofdmContext.dataLenght, encoded) ;
+
+	//Add pilot carrier values
+	initPilotCarrier (encoded) ;
+	//
+	int t =0;
+	while (t < ofdmContext.dataLenght)
+	{
+	printf("Starting values: Z1 = %.2f + %.2fi \n", creal(encoded[t]), cimag(encoded[t]));
+	t++;
+	 }
+
+
+
+	 //IFFT
+	 fftw_complex * out = (fftw_complex*) fftw_malloc( (sizeof(fftw_complex) * ofdmContext.dataLenght) + (CP*sizeof(fftw_complex)));
+	 fftw_plan p = fftw_plan_dft_1d(N, encoded+ CP, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+
+	 fftw_execute(p); /* repeat as needed */
+
+	 //ADD CP to out
+	 memcpy(out, out+N-1 -CP, CP) ;
+
+	 t =0;
+	while (t < K)
+	{
+	printf("Starting values: FFT = %.2f + %.2fi \n", creal(*(out+t)), cimag(*(out+t)));
+	t++;
+	 }
+
+ fftw_destroy_plan(p);
+ //fftw_free(in);
+
+	encoded =out ;
+ //fftw_free(out);
+
+
+
+
+
+}
+
+bool initPilotCarrier (struct ofdm_parameter ofdmContext , complex float *encoded)
 {
 	bool ret = 0;
 
@@ -42,7 +105,7 @@ bool initPilotCarrier ()
 	while (i < P)
 	{
 
-		ofdm.dataCarriers[pilotCarriers[i]]=pilotValue;
+		encoded[ofdmContext.pilotCarriers[i]]=ofdmContext.pilotValue;
 		i++ ;
 	}
 
@@ -155,51 +218,19 @@ void  fromBinaryTo_qam (unsigned char *  data, complex float * _qam)
  	 }
 }
 
+
+
+
 	 int main ()
 	 {
 
 
 		 unsigned char myBuffer[255] ;
-
 		 memset(myBuffer, 1, 255) ;
+		 complex float *encoded ;
 
+		 ofdm_modulate (ofdmContext, myBuffer, 255 /* à prendre dans ofdmcontext ??*/ ,encoded ) ; 
 
-		 //Mapping
-		 bufferTo_qam (myBuffer, K, ofdm.dataCarriers) ;
-
-		 initPilotCarrier () ;
-		 //
-		 int t =0;
-		 while (t < K)
-		 {
-		 printf("Starting values: Z1 = %.2f + %.2fi \n", creal(ofdm.dataCarriers[t]), cimag(ofdm.dataCarriers[t]));
-		 t++;
-			}
-
-			int N=K ;
-
-			//IFFT
-			fftw_complex * out = (fftw_complex*) fftw_malloc(sizeof(fftw_complex) * N + CP*sizeof(fftw_complex));
-	 		fftw_plan p = fftw_plan_dft_1d(N, ofdm.dataCarriers, out+ CP*sizeof(fftw_complex), FFTW_BACKWARD, FFTW_ESTIMATE);
-
-	 		fftw_execute(p); /* repeat as needed */
-
-			//ADD CP to out 
-			memcpy(out, out+N -CP, CP) ;
-
-		t =0;
- 		 while (t < K)
- 		 {
- 		 printf("Starting values: FFT = %.2f + %.2fi \n", creal(*(out+t)), cimag(*(out+t)));
- 		 t++;
- 			}
-
-	 	fftw_destroy_plan(p);
-	 	//fftw_free(in);
-
-		fftw_free(out);
-
-		//ADD CP
 
 
 
