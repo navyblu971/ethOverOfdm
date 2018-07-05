@@ -8,37 +8,46 @@
 #include <gnuplot_i.h>
 #endif
 
+
+/*
 #define K  64
 #define  CP  K/4
 #define  P  8
 #define pilotValue  3+3*I
+*/
 #define bool int
+#define  P  8
 
 
 struct
 {
-	complex float cyclicPrefix[CP] ;
-	complex float dataCarriers[K] ;
+	complex float cyclicPrefix[64/4] ;
+	complex float dataCarriers[64] ;
 
 
 } ofdm ;
 
 
-struct ofdm_parameter {
+static struct ofdm_parameter {
 
 	complex float pilotValue;
 	int dataLenght ;
-	int CpSize ;
+	int CP;
 	int pilotSize ;
-	unsigned char pilotCarriers[P] ;
-} ofdmContext;
+	unsigned char pilotCarriers[8] ;
+} ofdmContext = { 3+3*I , 255, 255/4, 8, { 0, 8, 16, 24, 32, 40, 48, 56} };
 
 
-ofdmContext.pilotValue = pilotValue ;
+
+
+/*
+ofdmContext.pilotValue = 3+3*I ;
+//ofdmContext.pilotValue = 3+3*I;
 ofdmContext.dataLenght = 255 ;
 ofdmContext.CpSize =ofdmContext.dataLenght /4 ;
 ofdmContext.pilotSize = 8;
-
+ofdmContext.pilotCarriers = { 0, 8, 16, 24, 32, 40, 48, 56} ;
+*/
 
 
 static unsigned char pilotCarriers[P] = { 0, 8, 16, 24, 32, 40, 48, 56} ;
@@ -68,13 +77,13 @@ void  ofdm_modulate (struct ofdm_parameter ofdmContext, unsigned char * message,
 
 
 	 //IFFT
-	 fftw_complex * out = (fftw_complex*) fftw_malloc( (sizeof(fftw_complex) * ofdmContext.dataLenght) + (CP*sizeof(fftw_complex)));
-	 fftw_plan p = fftw_plan_dft_1d(N, encoded+ CP, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+	 fftw_complex * out = (fftw_complex*) fftw_malloc( (sizeof(fftw_complex) * ofdmContext.dataLenght) + (ofdmContext.CP*sizeof(fftw_complex)));
+	 fftw_plan p = fftw_plan_dft_1d(ofdmContext.dataLenght, encoded+ ofdmContext.CP, out, FFTW_BACKWARD, FFTW_ESTIMATE);
 
 	 fftw_execute(p); /* repeat as needed */
 
 	 //ADD CP to out
-	 memcpy(out, out+N-1 -CP, CP) ;
+	 memcpy(out, out+ofdmContext.dataLenght-1 -ofdmContext.CP, ofdmContext.CP) ;
 
 	 t =0;
 	while (t < K)
@@ -229,7 +238,7 @@ void  fromBinaryTo_qam (unsigned char *  data, complex float * _qam)
 		 memset(myBuffer, 1, 255) ;
 		 complex float *encoded ;
 
-		 ofdm_modulate (ofdmContext, myBuffer, 255 /* à prendre dans ofdmcontext ??*/ ,encoded ) ; 
+		 ofdm_modulate (ofdmContext, myBuffer, 255 /* à prendre dans ofdmcontext ??*/ ,encoded ) ;
 
 
 
