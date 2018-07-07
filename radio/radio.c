@@ -53,6 +53,8 @@ ofdmContext.pilotCarriers = { 0, 8, 16, 24, 32, 40, 48, 56} ;
 static unsigned char pilotCarriers[P] = { 0, 8, 16, 24, 32, 40, 48, 56} ;
 
 void  fromBinaryTo_qam (unsigned char *  , complex float * ) ;
+void bufferTo_qam (unsigned char *, int , complex float * ) ;
+
 
 
 void  ofdm_modulate (struct ofdm_parameter ofdmContext, unsigned char * message, int messageLenght , complex float *encoded )
@@ -86,7 +88,7 @@ void  ofdm_modulate (struct ofdm_parameter ofdmContext, unsigned char * message,
 	 memcpy(out, out+ofdmContext.dataLenght-1 -ofdmContext.CP, ofdmContext.CP) ;
 
 	 t =0;
-	while (t < K)
+	while (t < ofdmContext.dataLenght)
 	{
 	printf("Starting values: FFT = %.2f + %.2fi \n", creal(*(out+t)), cimag(*(out+t)));
 	t++;
@@ -234,11 +236,12 @@ void  fromBinaryTo_qam (unsigned char *  data, complex float * _qam)
 	 {
 
 
-		 unsigned char myBuffer[255] ;
-		 memset(myBuffer, 1, 255) ;
+
+		 unsigned char myBuffer[ofdmContext.dataLenght + ofdmContext.CP] ;
+		 memset(myBuffer, 1, ofdmContext.dataLenght + ofdmContext.CP) ;
 		 complex float *encoded ;
 
-		 ofdm_modulate (ofdmContext, myBuffer, 255 /* à prendre dans ofdmcontext ??*/ ,encoded ) ;
+		 ofdm_modulate (ofdmContext, myBuffer, ofdmContext.dataLenght  /* à prendre dans ofdmcontext ??*/ ,encoded ) ;
 
 
 
