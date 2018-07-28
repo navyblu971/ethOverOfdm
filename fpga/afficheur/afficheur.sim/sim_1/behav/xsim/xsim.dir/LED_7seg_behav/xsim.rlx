@@ -1,0 +1,12 @@
+
+{ 
+    crc :  4595439729260006881  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 282f79fe54b4421b9cc0ccb178cd70ae --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot LED_7seg_behav xil_defaultlib.LED_7seg xil_defaultlib.glbl" , 
+    buildDate : "Jun 14 2018" , 
+    buildTime : "20:07:38" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/LED_7seg_behav/xsimk\"   \"xsim.dir/LED_7seg_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/LED_7seg_behav/obj/xsim_1.lnx64.o\" \"/opt/Xilinx/Vivado/2018.2/lib/lnx64.o/librdi_simulator_kernel.so\"  \"/opt/Xilinx/Vivado/2018.2/lib/lnx64.o/librdi_simbridge_kernel.so\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

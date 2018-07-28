@@ -1,0 +1,319 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Jul 26 22:31:58 2018
+# Process ID: 27989
+# Current directory: /home/fabrice/Documents/afficheur/afficheur.runs/synth_1
+# Command line: vivado -log top_modul.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_modul.tcl
+# Log file: /home/fabrice/Documents/afficheur/afficheur.runs/synth_1/top_modul.vds
+# Journal file: /home/fabrice/Documents/afficheur/afficheur.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source top_modul.tcl -notrace
+Command: synth_design -top top_modul -part xc7a100tcsg324-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 27995 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1266.285 ; gain = 77.926 ; free physical = 902 ; free virtual = 5340
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_modul' [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f3.v:23]
+INFO: [Synth 8-6157] synthesizing module 'display_driver' [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f2.v:25]
+INFO: [Synth 8-226] default block is never used [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f2.v:62]
+INFO: [Synth 8-226] default block is never used [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f2.v:77]
+INFO: [Synth 8-6157] synthesizing module 'bcd' [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f1.v:27]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f1.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'bcd' (1#1) [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f1.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'display_driver' (2#1) [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f2.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'top_modul' (3#1) [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f3.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1310.910 ; gain = 122.551 ; free physical = 913 ; free virtual = 5352
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1310.910 ; gain = 122.551 ; free physical = 913 ; free virtual = 5351
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1310.910 ; gain = 122.551 ; free physical = 913 ; free virtual = 5351
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:269]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:269]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segA'. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:271]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:271]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segB'. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:272]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:272]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segC'. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:273]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:273]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segD'. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:274]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:274]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segDP'. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:275]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:275]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segE'. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:276]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:276]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segF'. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:277]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:277]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segG'. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:278]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc:278]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/fabrice/Documents/Nexys-4-DDR-Master.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1590.695 ; gain = 0.000 ; free physical = 654 ; free virtual = 5092
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:35 . Memory (MB): peak = 1590.695 ; gain = 402.336 ; free physical = 723 ; free virtual = 5162
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:35 . Memory (MB): peak = 1590.695 ; gain = 402.336 ; free physical = 723 ; free virtual = 5162
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:35 . Memory (MB): peak = 1590.695 ; gain = 402.336 ; free physical = 725 ; free virtual = 5164
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'T_reg' [/home/fabrice/Documents/afficheur/afficheur.srcs/sources_1/new/f1.v:39]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:35 . Memory (MB): peak = 1590.695 ; gain = 402.336 ; free physical = 715 ; free virtual = 5154
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module bcd 
+Detailed RTL Component Info : 
++---Muxes : 
+	  11 Input      1 Bit        Muxes := 1     
+Module display_driver 
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3332] Sequential element (d_d1/BCD1/T_reg[6]) is unused and will be removed from module top_modul.
+WARNING: [Synth 8-3332] Sequential element (d_d1/BCD1/T_reg[5]) is unused and will be removed from module top_modul.
+WARNING: [Synth 8-3332] Sequential element (d_d1/BCD1/T_reg[4]) is unused and will be removed from module top_modul.
+WARNING: [Synth 8-3332] Sequential element (d_d1/BCD1/T_reg[3]) is unused and will be removed from module top_modul.
+WARNING: [Synth 8-3332] Sequential element (d_d1/BCD1/T_reg[2]) is unused and will be removed from module top_modul.
+WARNING: [Synth 8-3332] Sequential element (d_d1/BCD1/T_reg[1]) is unused and will be removed from module top_modul.
+WARNING: [Synth 8-3332] Sequential element (d_d1/BCD1/T_reg[0]) is unused and will be removed from module top_modul.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:35 . Memory (MB): peak = 1590.695 ; gain = 402.336 ; free physical = 704 ; free virtual = 5144
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:46 . Memory (MB): peak = 1594.695 ; gain = 406.336 ; free physical = 580 ; free virtual = 5020
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:46 . Memory (MB): peak = 1594.695 ; gain = 406.336 ; free physical = 580 ; free virtual = 5020
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:46 . Memory (MB): peak = 1603.711 ; gain = 415.352 ; free physical = 579 ; free virtual = 5019
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:47 . Memory (MB): peak = 1603.711 ; gain = 415.352 ; free physical = 579 ; free virtual = 5019
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:47 . Memory (MB): peak = 1603.711 ; gain = 415.352 ; free physical = 579 ; free virtual = 5019
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:47 . Memory (MB): peak = 1603.711 ; gain = 415.352 ; free physical = 579 ; free virtual = 5019
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:47 . Memory (MB): peak = 1603.711 ; gain = 415.352 ; free physical = 579 ; free virtual = 5019
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:47 . Memory (MB): peak = 1603.711 ; gain = 415.352 ; free physical = 579 ; free virtual = 5019
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:47 . Memory (MB): peak = 1603.711 ; gain = 415.352 ; free physical = 579 ; free virtual = 5019
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     5|
+|3     |LUT1   |     1|
+|4     |LUT3   |    15|
+|5     |LUT4   |     2|
+|6     |LUT5   |     1|
+|7     |LUT6   |     1|
+|8     |FDRE   |    20|
+|9     |IBUF   |     2|
+|10    |OBUF   |    15|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+---------------+------+
+|      |Instance |Module         |Cells |
++------+---------+---------------+------+
+|1     |top      |               |    63|
+|2     |  d_d1   |display_driver |    45|
++------+---------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:47 . Memory (MB): peak = 1603.711 ; gain = 415.352 ; free physical = 579 ; free virtual = 5019
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:24 . Memory (MB): peak = 1603.711 ; gain = 135.566 ; free physical = 634 ; free virtual = 5074
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:47 . Memory (MB): peak = 1603.719 ; gain = 415.352 ; free physical = 645 ; free virtual = 5086
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 18 Warnings, 9 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:49 . Memory (MB): peak = 1610.711 ; gain = 422.426 ; free physical = 631 ; free virtual = 5072
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/fabrice/Documents/afficheur/afficheur.runs/synth_1/top_modul.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_modul_utilization_synth.rpt -pb top_modul_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1610.711 ; gain = 0.000 ; free physical = 631 ; free virtual = 5071
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 26 22:32:58 2018...
