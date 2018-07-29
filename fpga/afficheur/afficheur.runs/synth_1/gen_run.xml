@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1532680690">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1532795154">
   <File Type="VDS-TIMING-PB" Name="top_modul_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="top_modul_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="top_modul.dcp"/>
@@ -40,6 +40,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/bd/myIp/myIp.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top_modul"/>
@@ -48,21 +56,19 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../Nexys-4-DDR-Master.xdc">
+    <File Path="$PPRDIR/../../../Nexys-4-DDR-Master.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PPRDIR/../Nexys-4-DDR-Master.xdc"/>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../../Nexys-4-DDR-Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

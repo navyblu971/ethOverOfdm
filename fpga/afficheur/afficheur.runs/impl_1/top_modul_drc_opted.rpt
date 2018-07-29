@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Fri Jul 27 10:39:42 2018
+| Date         : Sat Jul 28 18:27:25 2018
 | Host         : fabrice-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command      : report_drc -file top_modul_drc_opted.rpt -pb top_modul_drc_opted.pb -rpx top_modul_drc_opted.rpx
 | Design       : top_modul
