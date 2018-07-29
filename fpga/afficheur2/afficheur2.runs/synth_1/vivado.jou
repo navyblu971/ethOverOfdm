@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun Jul 29 15:53:00 2018
-# Process ID: 9259
+# Start of session at: Sun Jul 29 20:07:22 2018
+# Process ID: 14356
 # Current directory: /home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.runs/synth_1
-# Command line: vivado -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
-# Log file: /home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.runs/synth_1/main.vds
+# Command line: vivado -log compteur.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source compteur.tcl
+# Log file: /home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.runs/synth_1/compteur.vds
 # Journal file: /home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
-source main.tcl -notrace
+source compteur.tcl -notrace

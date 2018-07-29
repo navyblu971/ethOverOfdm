@@ -34,14 +34,14 @@ module main(
     output AN
     );
    
-   assign CA = 1'b0 ;  
-   assign CB = 1'b1 ; 
-   assign CC = 1'b1 ; 
-   assign CD = 1'b0 ; 
-   assign CE = 1'b0 ; 
-   assign CF = 1'b0 ; 
-   assign CG = 1'b0 ; 
-   assign DP = 1'b0 ; 
-   assign AN = 1'b1 ; 
+   assign CA = 1'b1;  
+   assign CB = 1'b0 ; 
+   assign CC = 1'b0 ; 
+   assign CD = 1'b1 ; 
+   assign CE = 1'b1 ; 
+   assign CF = 1'b1 ; 
+   assign CG = 1'b1 ; 
+   assign DP = 1'b1 ; 
+   assign AN = 1'b0 ; 
     
 endmodule
