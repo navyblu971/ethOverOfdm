@@ -1,6 +1,17 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/modulationFM/modulationFM.ip_user_files/bd/design_1/sim/design_1.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.ip_user_files/bd/design_1/sim/design_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module design_1
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/modulationFM/modulationFM.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display
+WARNING: [VRFC 10-1315] redeclaration of ansi port value is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:43]
+WARNING: [VRFC 10-1315] redeclaration of ansi port seg is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:50]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module design_1_wrapper
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/modulationFM/modulationFM.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module main
+WARNING: [VRFC 10-1315] redeclaration of ansi port outdata is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:117]
+WARNING: [VRFC 10-1315] redeclaration of ansi port seg7 is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:118]
+WARNING: [VRFC 10-1315] redeclaration of ansi port buttonUpFrq is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:120]
+WARNING: [VRFC 10-1315] redeclaration of ansi port buttonDownFrq is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:121]
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk100M is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:126]
+WARNING: [VRFC 10-1315] redeclaration of ansi port data is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:127]
+INFO: [VRFC 10-2458] undeclared symbol outputdata, assumed default net type wire [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:149]

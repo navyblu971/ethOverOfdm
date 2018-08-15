@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun Aug  5 15:35:31 2018
-# Process ID: 6944
-# Current directory: /home/fabrice/Documents/modulationFM/modulationFM.runs/synth_2
-# Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
-# Log file: /home/fabrice/Documents/modulationFM/modulationFM.runs/synth_2/design_1_wrapper.vds
-# Journal file: /home/fabrice/Documents/modulationFM/modulationFM.runs/synth_2/vivado.jou
+# Start of session at: Wed Aug 15 18:36:44 2018
+# Process ID: 8979
+# Current directory: /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.runs/synth_2
+# Command line: vivado -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.runs/synth_2/main.vds
+# Journal file: /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.runs/synth_2/vivado.jou
 #-----------------------------------------------------------
-source design_1_wrapper.tcl -notrace
+source main.tcl -notrace
