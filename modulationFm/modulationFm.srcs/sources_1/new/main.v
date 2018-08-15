@@ -110,6 +110,9 @@ module main(
     input buttonDownFrq,
     output [31:0]outdata,
     
+    /*PWM*/
+    output PWM_out,
+    
     /*7 segments display */
     output [7:0] seg7,
     
@@ -153,6 +156,9 @@ reg [31:0]s_axis_config_tdata_0  = 16'h1234;
 reg s_axis_config_tvalid_0 = 1 ; 
 
 
+/*pwm variable */
+reg pwm_clk; 
+reg pwm_counter; 
 
 
 design_1_wrapper sin(clk100M,
@@ -207,11 +213,26 @@ always @(posedge clk100M)
         clkDataRate =1'b1; 
         counter =0; 
        end
+       
+    
+        
     else
        counter <= counter +1; 
        
      end
 
+
+always @(posedge clk100M)   
+    begin
+    if (pwm_counter == 30000)
+        begin
+        pwm_clk =1'b1; 
+        pwm_counter =0 ; 
+        end
+      else
+      pwm_counter <= pwm_counter +1  ;   
+     end
+     
 
     always @(posedge clkDataRate)
         begin
@@ -256,6 +277,15 @@ always @(posedge clk100M)
      assign sq_b = ((x > 200) & (y > 120) & (x < 360) & (y < 280)) ? 1 : 0;
      assign sq_c = ((x > 280) & (y > 200) & (x < 440) & (y < 360)) ? 1 : 0;
      assign sq_d = ((x > 360) & (y > 280) & (x < 520) & (y < 440)) ? 1 : 0;      
-        
+  
+  
+  
+  
+  /* PWM */
+  PWM_Controller PWM_inst_1 (
+      .clk (pwm_clk),
+      .PWM_CW (outputData),
+      .PWM_out (PWM_out)
+  );      
 endmodule 
     

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date                      : Wed Aug 15 18:38:56 2018
+| Date                      : Wed Aug 15 21:04:25 2018
 | Host                      : fabrice-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command                   : report_io -file main_io_placed.rpt
 | Design                    : main
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            59 |
+|            60 |
 +---------------+
 
 
@@ -199,7 +199,7 @@ Table of Contents
 | J18        |             | High Range | IO_L23N_T3_FWE_B_15          | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | K1         |             | High Range | IO_L23N_T3_35                | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | K2         |             | High Range | IO_L23P_T3_35                | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| K3         | rst         | High Range | IO_L2P_T0_34                 | INPUT       | LVCMOS18*   |      34 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
+| K3         | VGA_VS_O    | High Range | IO_L2P_T0_34                 | OUTPUT      | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | K4         |             | High Range | VCCO_34                      | VCCO        |             |      34 |            |      |                     |                      |    1.80 |            |           |          |      |                  |              |                   |              |
 | K5         | VGA_R[0]    | High Range | IO_L5P_T0_34                 | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | K6         |             | High Range | IO_0_34                      | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
@@ -217,7 +217,7 @@ Table of Contents
 | K18        |             | High Range | IO_L1N_T0_D01_DIN_14         | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L1         |             | High Range | IO_L1P_T0_34                 | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L2         |             |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| L3         | VGA_VS_O    | High Range | IO_L2N_T0_34                 | OUTPUT      | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
+| L3         | VGA_HS_O    | High Range | IO_L2N_T0_34                 | OUTPUT      | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | L4         | VGA_G[3]    | High Range | IO_L5N_T0_34                 | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | L5         | VGA_G[1]    | High Range | IO_L6N_T0_VREF_34            | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | L6         | VGA_G[2]    | High Range | IO_L6P_T0_34                 | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
@@ -233,7 +233,7 @@ Table of Contents
 | L16        |             | High Range | IO_L3N_T0_DQS_EMCCLK_14      | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L17        |             | High Range | VCCO_14                      | VCCO        |             |      14 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | L18        | seg7[6]     | High Range | IO_L4P_T0_D04_14             | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| M1         |             | High Range | IO_L1N_T0_34                 | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| M1         | rst         | High Range | IO_L1N_T0_34                 | INPUT       | LVCMOS18*   |      34 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | M2         | VGA_R[1]    | High Range | IO_L4N_T0_34                 | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | M3         | VGA_R[2]    | High Range | IO_L4P_T0_34                 | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | M4         | outdata[18] | High Range | IO_L16P_T2_34                | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
@@ -252,7 +252,7 @@ Table of Contents
 | M17        |             | High Range | IO_L10N_T1_D15_14            | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M18        |             | High Range | IO_L4N_T0_D05_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | N1         | VGA_R[3]    | High Range | IO_L3N_T0_DQS_34             | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
-| N2         | VGA_HS_O    | High Range | IO_L3P_T0_DQS_34             | OUTPUT      | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
+| N2         | PWM_out     | High Range | IO_L3P_T0_DQS_34             | OUTPUT      | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | N3         |             | High Range | VCCO_34                      | VCCO        |             |      34 |            |      |                     |                      |    1.80 |            |           |          |      |                  |              |                   |              |
 | N4         | outdata[17] | High Range | IO_L16N_T2_34                | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | N5         | outdata[24] | High Range | IO_L13P_T2_MRCC_34           | TRISTATE    | LVCMOS18*   |      34 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
