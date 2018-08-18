@@ -108,7 +108,7 @@ module main(
     input data,
     input buttonUpFrq,
     input buttonDownFrq,
-    output [31:0]outdata,
+    //output [31:0]outdata,
     
     /*PWM*/
     output PWM_out,
@@ -138,8 +138,8 @@ integer dev = 30 ;
 
 wire clk100M; 
 wire data ; 
-reg counter =0 ; 
-reg clkDataRate =0; 
+reg counter ; 
+reg clkDataRate; 
 
 wire [31:0] m_axis_data_tdata_0;
 wire m_axis_data_tvalid_0;
@@ -152,7 +152,7 @@ reg [31:0] fq2 ;
 
 
 /*input */
-reg [31:0]s_axis_config_tdata_0  = 16'h1234;
+reg [31:0]s_axis_config_tdata_0  ;  
 reg s_axis_config_tvalid_0 = 1 ; 
 
 
@@ -208,10 +208,12 @@ always @(posedge clk100M)
     s_axis_config_tdata_0,
     s_axis_config_tvalid_0);
     */
+    
+    s_axis_config_tdata_0 <= s_axis_config_tdata_0 + 32'h19999983; 
     if (counter ==10)
         begin
-        clkDataRate =1'b1; 
-        counter =0; 
+        clkDataRate <=1'b1; 
+        counter <=0; 
        end
        
     
@@ -224,6 +226,7 @@ always @(posedge clk100M)
 
 always @(posedge clk100M)   
     begin
+    pwm_counter <= pwm_counter +1  ; 
     if (pwm_counter == 30000)
         begin
         pwm_clk =1'b1; 
@@ -239,11 +242,11 @@ always @(posedge clk100M)
         clkDataRate <=1'b0 ; 
         
         
-        if (data ==1'b1)
+   //     if (data ==1'b1)
   //      outdata <= fq1; 
-         s_axis_config_tdata_0 =freq;
-        else
-        s_axis_config_tdata_0 =freq +1000;
+     //    s_axis_config_tdata_0 =freq;
+     //   else
+     //   s_axis_config_tdata_0 =freq +1000;
         end
         
         

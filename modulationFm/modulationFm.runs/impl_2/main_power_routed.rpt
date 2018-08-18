@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Wed Aug 15 21:05:41 2018
+| Date             : Sat Aug 18 18:36:14 2018
 | Host             : fabrice-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.209        |
+| Total On-Chip Power (W)  | 0.346        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.118        |
-| Device Static (W)        | 0.091        |
+| Dynamic (W)              | 0.248        |
+| Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 99.0         |
-| Junction Temperature (C) | 26.0         |
+| Max Ambient (C)          | 98.4         |
+| Junction Temperature (C) | 26.6         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.024 |       67 |       --- |             --- |
-|   LUT as Logic |     0.014 |       28 |     63400 |            0.04 |
+| Slice Logic    |     0.025 |       67 |       --- |             --- |
+|   LUT as Logic |     0.015 |       28 |     63400 |            0.04 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   CARRY4       |     0.002 |        1 |     15850 |           <0.01 |
 |   Register     |     0.002 |       24 |    126800 |            0.02 |
 |   Others       |     0.000 |        3 |       --- |             --- |
-| Signals        |     0.028 |       44 |       --- |             --- |
-| I/O            |     0.065 |       57 |       210 |           27.14 |
-| Static Power   |     0.091 |          |           |                 |
-| Total          |     0.209 |          |           |                 |
+| Signals        |     0.041 |       44 |       --- |             --- |
+| I/O            |     0.182 |       25 |       210 |           11.90 |
+| Static Power   |     0.098 |          |           |                 |
+| Total          |     0.346 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,11 +71,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.076 |       0.061 |      0.015 |
-| Vccaux    |       1.800 |     0.023 |       0.005 |      0.018 |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vccint    |       1.000 |     0.089 |       0.074 |      0.016 |
+| Vccaux    |       1.800 |     0.025 |       0.006 |      0.018 |
+| Vcco33    |       3.300 |     0.053 |       0.049 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.031 |       0.027 |      0.004 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -138,8 +138,8 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| main         |     0.118 |
-|   displayVga |     0.024 |
+| main         |     0.248 |
+|   displayVga |     0.026 |
 +--------------+-----------+
 
 
