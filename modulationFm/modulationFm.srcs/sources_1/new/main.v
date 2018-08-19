@@ -250,7 +250,7 @@ always @(posedge clk100M)
         end
         
         
-  display mydisplay ( clk100M,0,  s_axis_config_tdata_0 , seg7);  
+  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/ 0 , seg7);  
         
         
         
