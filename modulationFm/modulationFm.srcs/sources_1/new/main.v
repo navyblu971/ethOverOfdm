@@ -224,6 +224,30 @@ always @(posedge clk100M)
      end
 
 
+
+/*debouncer */
+reg slow_counter =0 ; 
+reg slow_clock =1'b0 ; 
+reg tmp1; 
+reg tmp2; 
+always @(posedge clk100M)
+    begin
+    slow_clock <= (slow_counter > 100000000)? 1'b1:1'b0 ;
+    slow_counter <=slow_counter +1 ; 
+    end
+     
+
+wire realUpButton ; 
+debounce mydb ( buttonUpFrq,slow_clock, realUpButton); 
+reg buttonCounter =0 ; 
+
+
+always @(posedge realUpButton)   
+begin
+    buttonCounter <= buttonCounter +1 ; 
+end
+    
+
 always @(posedge clk100M)   
     begin
     pwm_counter <= pwm_counter +1  ; 
@@ -250,7 +274,7 @@ always @(posedge clk100M)
         end
         
         
-  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/ 0 , seg7);  
+  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/  buttonCounter , seg7);  
         
         
         

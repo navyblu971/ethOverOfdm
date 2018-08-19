@@ -23,8 +23,8 @@
 module display(
     input /*R4*/clk100 , 
     input /* p17*/ rst,
-    input [0:3] value,
-    output   [0:7] seg
+    input [3:0] value,
+    output   [7:0] seg
       
     
     );
@@ -40,14 +40,14 @@ module display(
    wire  CG ; 
    
    */
-   wire  [0:3] value ; 
+   wire  [3:0] value ; 
    
-    reg [0:3] count, count2 ; 
+    reg [3:0] count, count2 ; 
     reg clk2 =0; 
     
-    reg [0:3] hexa; 
-    reg [0:6] dig;
-    reg [0:7] seg;
+    reg [3:0] hexa; 
+    reg [6:0] dig;
+    reg [7:0] seg;
     /*
     always @ (posedge clk100 or negedge rst )
         begin

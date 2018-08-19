@@ -32,7 +32,9 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/counter.v
+  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/debouncer.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/diff.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pwm.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v
