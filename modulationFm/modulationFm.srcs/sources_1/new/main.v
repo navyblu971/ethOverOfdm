@@ -115,6 +115,7 @@ module main(
     
     /*7 segments display */
     output [7:0] seg7,
+   // output [31:0]counter , 
     
     /*VGA*/
     output wire VGA_HS_O,       // horizontal sync output
@@ -138,7 +139,7 @@ integer dev = 30 ;
 
 wire clk100M; 
 wire data ; 
-reg counter ; 
+reg [31:0] counter ; 
 reg clkDataRate; 
 
 wire [31:0] m_axis_data_tdata_0;
@@ -158,9 +159,9 @@ reg s_axis_config_tvalid_0 = 1 ;
 
 /*pwm variable */
 reg pwm_clk; 
-reg pwm_counter; 
+reg [31:0]pwm_counter; 
 
-
+/*
 design_1_wrapper sin(clk100M,
     outputdata,
     m_axis_data_tvalid_0,
@@ -168,6 +169,8 @@ design_1_wrapper sin(clk100M,
     m_axis_phase_tvalid_0,
     s_axis_config_tdata_0,
     s_axis_config_tvalid_0);
+    
+    */
     
  /*   
 design_1_wrapper sin2(clk100M,
@@ -210,23 +213,24 @@ always @(posedge clk100M)
     */
     
     s_axis_config_tdata_0 <= s_axis_config_tdata_0 + 32'h19999983; 
-    if (counter ==10)
-        begin
-        clkDataRate <=1'b1; 
-        counter <=0; 
-       end
+    //if (counter ==10)
+    //    begin
+     //   clkDataRate <=1'b1; 
+        ///counter <=0; 
+    //   end
        
     
         
-    else
+    //else
        counter <= counter +1; 
+      
        
      end
 
 
 
 /*debouncer */
-reg slow_counter =0 ; 
+reg [31:0] slow_counter =0 ; 
 reg slow_clock =1'b0 ; 
 reg tmp1; 
 reg tmp2; 
@@ -253,8 +257,8 @@ always @(posedge clk100M)
     pwm_counter <= pwm_counter +1  ; 
     if (pwm_counter == 30000)
         begin
-        pwm_clk =1'b1; 
-        pwm_counter =0 ; 
+        pwm_clk <=1'b1; 
+        pwm_counter <=0 ; 
         end
       else
       pwm_counter <= pwm_counter +1  ;   
@@ -274,7 +278,10 @@ always @(posedge clk100M)
         end
         
         
-  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/  buttonCounter , seg7);  
+        
+        
+        
+  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/  counter , seg7);  
         
         
         

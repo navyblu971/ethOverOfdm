@@ -1,43 +1,19 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.ip_user_files/bd/design_1/ip/design_1_dds_compiler_0_0/design_1_dds_compiler_0_0_sim_netlist.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_dds_compiler_v6_0_16
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_accum
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_dds_compiler_v6_0_16_core
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_dds_compiler_v6_0_16_rdy
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_dds_compiler_v6_0_16_viv
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_pipe_add
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_pipe_add_9
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_sin_cos
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv_0
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized1
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized14
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized16
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized18
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized18_7
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized20
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized20_1
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized20_2
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized20_3
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized20_4
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized20_6
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized22
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized22_5
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized3
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized9
-INFO: [VRFC 10-311] analyzing module design_1_dds_compiler_0_0_xbip_pipe_v3_0_5_viv__parameterized9_8
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.ip_user_files/bd/design_1/sim/design_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module design_1
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module display
 WARNING: [VRFC 10-1315] redeclaration of ansi port value is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:43]
-WARNING: [VRFC 10-1315] redeclaration of ansi port seg is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:50]
-WARNING: [VRFC 10-159] /* in comment [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:92]
+WARNING: [VRFC 10-1315] redeclaration of ansi port clk100 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:44]
+WARNING: [VRFC 10-1315] redeclaration of ansi port seg is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:51]
+WARNING: [VRFC 10-159] /* in comment [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:93]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/counter.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module counter
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module design_1_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/debouncer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debounce
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/diff.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module my_dff
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pwm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PWM_Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga640x480
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module main
 WARNING: [VRFC 10-1315] redeclaration of ansi port seg7 is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:131]
@@ -45,11 +21,4 @@ WARNING: [VRFC 10-1315] redeclaration of ansi port buttonUpFrq is not allowed [/
 WARNING: [VRFC 10-1315] redeclaration of ansi port buttonDownFrq is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:134]
 WARNING: [VRFC 10-1315] redeclaration of ansi port clk100M is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:139]
 WARNING: [VRFC 10-1315] redeclaration of ansi port data is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:140]
-INFO: [VRFC 10-2458] undeclared symbol outputdata, assumed default net type wire [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:165]
-INFO: [VRFC 10-2458] undeclared symbol outputData, assumed default net type wire [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:290]
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pwm.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module PWM_Controller
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module vga640x480
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sim_1/new/test_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module test_1
+INFO: [VRFC 10-2458] undeclared symbol outputData, assumed default net type wire [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:316]

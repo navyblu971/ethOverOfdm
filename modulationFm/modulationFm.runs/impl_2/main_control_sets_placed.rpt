@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Sun Aug 19 16:34:58 2018
+| Date         : Mon Aug 20 17:59:57 2018
 | Host         : fabrice-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -61,8 +61,8 @@ Table of Contents
 |    Clock Signal    |         Enable Signal         |  Set/Reset Signal  | Slice Load Count | Bel Load Count |
 +--------------------+-------------------------------+--------------------+------------------+----------------+
 |  clk100M_IBUF_BUFG |                               |                    |                1 |              8 |
-|  clk100M_IBUF_BUFG | displayVga/v_count[9]_i_1_n_0 |                    |                4 |             20 |
 |  clk100M_IBUF_BUFG | pix_stb                       | displayVga/h_count |                3 |             20 |
+|  clk100M_IBUF_BUFG | displayVga/v_count[9]_i_1_n_0 |                    |                4 |             20 |
 +--------------------+-------------------------------+--------------------+------------------+----------------+
 
 

@@ -69,7 +69,6 @@ set rc [catch {
   set_property webtalk.parent_dir /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.cache/wt [current_project]
   catch { write_mem_info -force main.mmi }
   write_bitstream -force main.bit 
-  catch { write_sysdef -hwdef main.hwdef -bitfile main.bit -meminfo main.mmi -file main.sysdef }
   catch {write_debug_probes -quiet -force main}
   catch {file copy -force main.ltx debug_nets.ltx}
   close_msg_db -file write_bitstream.pb

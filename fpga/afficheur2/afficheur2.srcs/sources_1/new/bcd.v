@@ -28,7 +28,7 @@ module display(
       
     
     );
-   
+   //parameter divider 10 ; 
    /* 
    wire AN ; 
    wire CA; 
@@ -40,7 +40,8 @@ module display(
    wire  CG ; 
    
    */
-   wire  [3:0] value ; 
+   wire  [3:0] value ;
+   wire clk100;  
    
     reg [3:0] count, count2 ; 
     reg clk2 =0; 
@@ -95,8 +96,8 @@ module display(
      seg 2 CC 
       seg 3 CD 
       seg 4 CE 
-     seg 5 CD 
-     seg 6 CF 
+     seg 5 CF
+     seg 6 CG 
     */
      
       
@@ -104,12 +105,15 @@ module display(
      /*
      end
      */
+     
+     
+     /*
      always @ (posedge clk100)
           begin
               case (value) 
-                      4'h0 :  seg = 7'b0000001; 
-                      4'h1 : seg = 7'b1001111; 
-                      4'h3:  seg= 7'b0000110; 
+                      4'h0 :  seg = 7'b1000000; 
+                      4'h1 : seg =  7'b1111001; 
+                      4'h3:  seg=  7'b0000110; 
                       4'h2 : seg = 7'b0010010; 
                       4'h4 : seg = 7'b1001100; 
                       4'h5 : seg = 7'b0100100; 
@@ -120,6 +124,46 @@ module display(
                   endcase 
           seg[7] = 0 ; //AN
           end
+          
+          
+          */
    
+    reg clk100k ;    
+    reg [31:0] local_count =0 ; 
+    reg  [31:0] show_counter =0 ; 
+   
+   
+   /* diviseur de  clock */
+    always @ (posedge clk100)
+    begin
+    /*100000 et non 10 -------!*/
+    clk100k <= (local_count < 10) ?1'b0:1'b1; 
+    if (local_count == 10)
+    local_count <= 0 ; 
+    end    
+      
+    /* affichage */    
+    always @ (posedge clk100k)
+    begin
+    show_counter <= (show_counter < 8)? show_counter +1 :0  ; 
+    case (show_counter)
+        1 :seg =  7'b1000000;
+        2 :seg =  7'b1001100;
+        3 : seg = 7'b0100100; 
+        4 : seg = 7'b0100000;
+        5 : seg = 7'b0100100; 
+        6: seg = 7'b0100000; 
+        7: seg = 7'b0001111; 
+        8: seg = 7'b0000000; 
+          
+    endcase   
         
+    if (show_counter ==8)
+    show_counter <=0 ; 
+    
+    
+    end
+        
+        
+    
 endmodule
