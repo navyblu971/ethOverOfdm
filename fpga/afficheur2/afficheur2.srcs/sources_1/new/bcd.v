@@ -128,7 +128,7 @@ module display(
           
           */
    
-    reg clk100k ;    
+    reg clk1k ;    
     reg [31:0] local_count =0 ; 
     reg  [31:0] show_counter =0 ; 
    
@@ -137,13 +137,16 @@ module display(
     always @ (posedge clk100)
     begin
     /*100000 et non 10 -------!*/
-    clk100k <= (local_count < 10) ?1'b0:1'b1; 
-    if (local_count == 10)
-    local_count <= 0 ; 
+    local_count <= local_count +1;
+    clk1k <= (local_count < 100000) ?1'b0:1'b1; 
+    if (local_count == 100000)
+    begin
+        local_count <= 0 ; 
+    end
     end    
       
     /* affichage */    
-    always @ (posedge clk100k)
+    always @ (posedge clk1k)
     begin
     show_counter <= (show_counter < 8)? show_counter +1 :0  ; 
     case (show_counter)
