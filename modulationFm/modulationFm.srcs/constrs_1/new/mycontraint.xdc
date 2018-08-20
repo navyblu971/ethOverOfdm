@@ -57,3 +57,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports VGA_VS_O]
 set_property PACKAGE_PIN B12 [get_ports VGA_VS_O]
 set_property IOSTANDARD LVCMOS33 [get_ports data]
 set_property PACKAGE_PIN N17 [get_ports data]
+
+set_property PACKAGE_PIN H17 [get_ports led]
+set_property IOSTANDARD LVCMOS33 [get_ports led]

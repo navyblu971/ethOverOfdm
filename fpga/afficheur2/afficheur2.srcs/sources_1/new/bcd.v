@@ -24,7 +24,8 @@ module display(
     input /*R4*/clk100 , 
     input /* p17*/ rst,
     input [3:0] value,
-    output   [7:0] seg
+    output   [7:0] seg,
+    output led 
       
     
     );
@@ -42,6 +43,7 @@ module display(
    */
    wire  [3:0] value ;
    wire clk100;  
+   reg led ; 
    
     reg [3:0] count, count2 ; 
     reg clk2 =0; 
@@ -132,6 +134,29 @@ module display(
     reg [31:0] local_count =0 ; 
     reg  [31:0] show_counter =0 ; 
    
+   reg [31:0] sec_count ; 
+   reg clk1s;  
+   
+   /* diviseur de  clock */
+        always @ (posedge clk100)
+        begin
+        /*100000 et non 10 -------!*/
+        sec_count <= sec_count +1;
+        clk1s <= (sec_count < 100000000) ?1'b0:1'b1; 
+        if (sec_count == 100000000)
+        begin
+            sec_count <= 0 ; 
+        end
+        end    
+   
+   
+    always @ (posedge clk1s)
+    begin
+    led <= 1'b0 ;
+    led <= 1'b1 ; 
+    end
+     
+   
    
    /* diviseur de  clock */
     always @ (posedge clk100)
@@ -148,7 +173,7 @@ module display(
     /* affichage */    
     always @ (posedge clk1k)
     begin
-    show_counter <= (show_counter < 8)? show_counter +1 :0  ; 
+    show_counter <= (show_counter < 8)? show_counter +1 :1  ; 
     case (show_counter)
         1 :seg =  7'b1000000;
         2 :seg =  7'b1001100;

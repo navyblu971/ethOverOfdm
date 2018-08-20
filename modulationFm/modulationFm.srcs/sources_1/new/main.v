@@ -115,6 +115,7 @@ module main(
     
     /*7 segments display */
     output [7:0] seg7,
+    output led ,
    // output [31:0]counter , 
     
     /*VGA*/
@@ -280,8 +281,8 @@ always @(posedge clk100M)
         
         
         
-        
-  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/  counter , seg7);  
+  wire led ;       
+  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/  counter , seg7, led);  
         
         
         
