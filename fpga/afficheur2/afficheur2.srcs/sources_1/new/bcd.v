@@ -175,7 +175,7 @@ module display(
     /* affichage */    
     always @ (posedge clk1k)
     begin
-    show_counter <= (show_counter < 8)? show_counter +1 :1  ; 
+    show_counter <= (show_counter < 8)? show_counter +1'b1 :1'b0  ; 
     case (show_counter)
         1 :seg =  7'b1000001;
         2 :seg =  7'b1001101;
@@ -187,8 +187,8 @@ module display(
         8: seg = 7'b0000001; 
           
     endcase   
-     tab <=8'b00000000; 
-     tab[show_counter]<=1;  
+     tab <=8'b11111111; 
+     tab[show_counter]<=0;  
      seg[7]=1;  //pas de virgule..
     if (show_counter ==8)
     show_counter <=0 ; 
