@@ -177,14 +177,14 @@ module display(
     begin
     show_counter <= (show_counter < 8)? show_counter +1'b1 :1'b0  ; 
     case (show_counter)
-        1 :seg =  7'b1000001;
-        2 :seg =  7'b1001101;
-        3 : seg = 7'b0100101; 
-        4 : seg = 7'b0100001;
-        5 : seg = 7'b0100101; 
-        6: seg = 7'b0100001; 
-        7: seg = 7'b0001111; 
-        8: seg = 7'b0000001; 
+        1 :seg =  7'b1111001;
+        2 :seg =  7'b0100100;
+        3 : seg = 7'b0110000; 
+        4 : seg = 7'b0111001;
+        5 : seg = 7'b0010010; 
+        6: seg = 7'b0000010; 
+        7: seg = 7'b1111000; 
+        8: seg = 7'b0000000; 
           
     endcase   
      tab <=8'b11111111; 
