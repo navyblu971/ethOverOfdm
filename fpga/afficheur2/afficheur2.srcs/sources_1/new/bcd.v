@@ -42,7 +42,7 @@ module display(
    
    */
    wire  [3:0] value ;
-   wire clk100;  
+   
    reg led ; 
    
     reg [3:0] count, count2 ; 
@@ -152,8 +152,8 @@ module display(
    
     always @ (posedge clk1s)
     begin
-    led <= 1'b0 ;
-    led <= 1'b1 ; 
+    led <= ~led; 
+   
     end
      
    

@@ -23,6 +23,7 @@ Compiling module unisims_ver.LUT3
 Compiling module unisims_ver.x_lut2_mux4
 Compiling module unisims_ver.LUT2
 Compiling module xil_defaultlib.vga640x480
+Compiling module xil_defaultlib.display
 Compiling module xil_defaultlib.main
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot main_func_synth

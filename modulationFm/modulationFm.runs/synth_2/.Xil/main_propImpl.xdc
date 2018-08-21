@@ -55,3 +55,5 @@ set_property src_info {type:XDC file:1 line:57 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN B12 [get_ports VGA_VS_O]
 set_property src_info {type:XDC file:1 line:59 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN N17 [get_ports data]
+set_property src_info {type:XDC file:1 line:61 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN H17 [get_ports led]

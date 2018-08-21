@@ -138,7 +138,7 @@ wire buttonDownFrq;
 integer freq = 16'h1234 ; 
 integer dev = 30 ; 
 
-wire clk100M; 
+
 wire data ; 
 reg [31:0] counter ; 
 reg clkDataRate; 
