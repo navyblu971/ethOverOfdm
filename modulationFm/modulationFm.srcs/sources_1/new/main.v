@@ -115,6 +115,7 @@ module main(
     
     /*7 segments display */
     output [7:0] seg7,
+    output [7:0] tab,
     output led ,
    // output [31:0]counter , 
     
@@ -130,8 +131,8 @@ module main(
 
 /*ouput */
 reg [31:0] outdata;  
-wire [7:0] seg7 ; //affichage 7 segements + AN
-
+wire [7:0] seg7 ; //affichage 7 segements + virgule
+wire [7:0] tab ; // AN
 wire  buttonUpFrq; 
 wire buttonDownFrq; 
 
@@ -282,7 +283,7 @@ always @(posedge clk100M)
         
         
   wire led ;       
-  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/  counter , seg7, led);  
+  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/  counter , seg7,tab, led);  
         
         
         

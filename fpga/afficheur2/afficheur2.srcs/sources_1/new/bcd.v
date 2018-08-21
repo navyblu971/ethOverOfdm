@@ -25,6 +25,7 @@ module display(
     input /* p17*/ rst,
     input [3:0] value,
     output   [7:0] seg,
+    output  [7:0] tab,
     output led 
       
     
@@ -51,6 +52,7 @@ module display(
     reg [3:0] hexa; 
     reg [6:0] dig;
     reg [7:0] seg;
+   reg [7:0] tab;
     /*
     always @ (posedge clk100 or negedge rst )
         begin
@@ -175,17 +177,19 @@ module display(
     begin
     show_counter <= (show_counter < 8)? show_counter +1 :1  ; 
     case (show_counter)
-        1 :seg =  7'b1000000;
-        2 :seg =  7'b1001100;
-        3 : seg = 7'b0100100; 
-        4 : seg = 7'b0100000;
-        5 : seg = 7'b0100100; 
-        6: seg = 7'b0100000; 
+        1 :seg =  7'b1000001;
+        2 :seg =  7'b1001101;
+        3 : seg = 7'b0100101; 
+        4 : seg = 7'b0100001;
+        5 : seg = 7'b0100101; 
+        6: seg = 7'b0100001; 
         7: seg = 7'b0001111; 
-        8: seg = 7'b0000000; 
+        8: seg = 7'b0000001; 
           
     endcase   
-        
+     tab <=8'b00000000; 
+     tab[show_counter]<=1;  
+     seg[7]=1;  //pas de virgule..
     if (show_counter ==8)
     show_counter <=0 ; 
     
