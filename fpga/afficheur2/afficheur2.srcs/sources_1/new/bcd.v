@@ -23,8 +23,17 @@
 module display(
     input /*R4*/clk100 , 
     input /* p17*/ rst,
-    input [3:0] value,
-    output   [7:0] seg,
+   /* input [3:0] data1,
+    input [3:0] data2,
+    input [3:0] data3,
+    input [3:0] data4,
+    input [3:0] data5, 
+    input [3:0] data6,
+    input [3:0] data7,
+    input [3:0] data8,*/
+    input [8*3:0] string,
+    
+    output  [7:0] seg,
     output  [7:0] tab,
     output led 
       
@@ -44,14 +53,36 @@ module display(
    */
    wire  [3:0] value ;
    
+   
+   wire [3:0] data1 ; 
+   wire  [3:0] data2;
+   wire [3:0] data3 ;
+   wire [3:0] data4 ;
+   wire [3:0] data5 ;
+   wire [3:0] data6 ;
+   wire [3:0] data7 ;
+   wire [3:0] data8 ; 
+   
+   assign {data1, data2, data3, data4, data5, data6, data7, data8} = string;
+  
+  /*
+   wire [3:0] data1 = string ;
+   wire  [3:0] data2;
+   wire [3:0] data3 ;
+   wire [3:0] data4 ;
+   wire [3:0] data5 ;
+   wire [3:0] data6 ;
+   wire [3:0] data7 ;
+   wire [3:0] data8 ;*/
+   
    reg led ; 
    
     reg [3:0] count, count2 ; 
     reg clk2 =0; 
     
-    reg [3:0] hexa; 
-    reg [6:0] dig;
-    reg [7:0] seg;
+   reg [3:0] hexa; 
+   reg [6:0] dig;
+   reg [7:0] seg;
    reg [7:0] tab;
     /*
     always @ (posedge clk100 or negedge rst )
@@ -139,6 +170,19 @@ module display(
    reg [31:0] sec_count ; 
    reg clk1s;  
    
+   wire [7:0] b1, b2, b3, b4,b5,b6,b7,b8 ;  
+   
+   show (clk100 , data1, b1);
+  
+  
+   show (clk100 , data2, b2);
+   show (clk100 , data3, b3);
+   show (clk100 , data4, b4);
+   show (clk100 , data5, b5);
+   show (clk100 , data6, b6);
+   show (clk100 , data7, b7);
+   show (clk100 , data8, b8);
+   
    /* diviseur de  clock */
         always @ (posedge clk100)
         begin
@@ -172,7 +216,8 @@ module display(
     end
     end    
       
-    /* affichage */    
+    /* affichage  ok*/  
+    /*  
     always @ (posedge clk1k)
     begin
     show_counter <= (show_counter < 8)? show_counter +1'b1 :1'b0  ; 
@@ -195,7 +240,31 @@ module display(
     
     
     end
-        
+       */ 
+       
+       
+       always @ (posedge clk1k)
+           begin
+           show_counter <= (show_counter < 8)? show_counter +1'b1 :1'b0  ; 
+           case (show_counter)
+               1 :seg =  b1;
+               2 :seg =  b2;
+               3 : seg = b3; 
+               4 : seg = b4;
+               5 : seg = b5; 
+               6: seg = b6; 
+               7: seg = b7; 
+               8: seg = b8; 
+                 
+           endcase   
+            tab <=8'b11111111; 
+            tab[show_counter]<=0;  
+            seg[7]=1;  //pas de virgule..
+           if (show_counter ==8)
+           show_counter <=0 ; 
+           
+           
+           end
         
     
 endmodule

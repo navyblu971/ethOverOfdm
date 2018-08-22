@@ -34,6 +34,7 @@ read_verilog -library xil_defaultlib {
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/debouncer.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/diff.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pwm.v
+  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v
 }

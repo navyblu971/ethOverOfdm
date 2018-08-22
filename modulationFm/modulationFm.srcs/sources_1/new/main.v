@@ -280,10 +280,39 @@ always @(posedge clk100M)
         end
         
         
+      
+      
+      
+ /* affichage 7 segment */  
         
-        
-  wire led ;       
-  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/  counter , seg7,tab, led);  
+  wire led ;  
+  reg [8*3:0] string = "01234567"; 
+  
+ // reg [3:0] data1 =1'h1 ; //  7'b1111001; 
+ // reg [3:0] data2 =1'h2 ;// 7'b0000110; 
+ // reg [3:0]data3 =1'h3 ;//7'b0010010; 
+ // reg [3:0]data4  =1'h4; //7'b1001100; 
+ // reg [3:0] data5 =1'h5 ;//7'b0100100; 
+ // reg [3:0] data6 =1'h6;//7'b0100000; 
+//  reg [3:0] data7 =1'h7;//7'b0001111; 
+//  reg [3:0] data8 =1'h8;// 7'b0000000; 
+ 
+  
+  /*
+  1 =  7'b1111001; 
+  2 =  7'b0000110; 
+  3 = 7'b0010010; 
+  4 = 7'b1001100; 
+  5 = 7'b0100100; 
+  6 = 7'b0100000; 
+  7 = 7'b0001111; 
+  8 = 7'b0000000; 
+  9 = 7'b0000100; 
+  */
+  //show sh1 (clk100M, 1'd9, data1) ; 
+  //show sh2 (clk100M, 1'd0, data2) ; 
+       
+  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/   string, seg7,tab, led);  
         
         
         
