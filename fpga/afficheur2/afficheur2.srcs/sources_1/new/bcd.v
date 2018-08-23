@@ -64,18 +64,19 @@ module display(
    wire [6:0] data7 ; 
    
    
- assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
+ //assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
+ reg [7:0] tmp [6:0] ;  
+ //tmp <= string ; 
  
- /*
-  assign data0 = string[3:0]; 
-   assign data1 = string[7:4];
-    assign data2 = string[11:8];
-     assign data3 = string[15:12];
-      assign data4 = string[19:16];
-       assign data5 = string[23:20];
-        assign data6 = string[27:24];
-         assign data7 = string[31:28];
-   */
+  assign data0 = string[6:0]; 
+   assign data1 = string[14:7];
+    assign data2 = string[22:15];
+     assign data3 = string[30:23];
+      assign data4 = string[38:31];
+       assign data5 = string[46:39];
+      //  assign data6 = string[54:47];
+       //  assign data7 = string[62:55];
+   
   
   //assign {data0, data1, data2, data3, data4, data5, data6, data7} = {4'h0,4'h1,4'h2,4'h3,4'h4,4'h5,4'h6,4'h7} ;
     
