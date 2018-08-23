@@ -54,16 +54,16 @@ module display(
    wire  [3:0] value ;
    
    
-   wire [3:0] data1 ; 
-   wire  [3:0] data2;
+   wire [3:0] data0 ; 
+   wire  [3:0] data1;
+   wire [3:0] data2 ;
    wire [3:0] data3 ;
    wire [3:0] data4 ;
    wire [3:0] data5 ;
    wire [3:0] data6 ;
-   wire [3:0] data7 ;
-   wire [3:0] data8 ; 
+   wire [3:0] data7 ; 
    
-   assign {data1, data2, data3, data4, data5, data6, data7, data8} = string;
+   assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
   
   /*
    wire [3:0] data1 = string ;
@@ -170,18 +170,21 @@ module display(
    reg [31:0] sec_count ; 
    reg clk1s;  
    
-   wire [7:0] b1, b2, b3, b4,b5,b6,b7,b8 ;  
+   ///wire [7:0] b1, b2, b3, b4,b5,b6,b7,b8 ;  
    
    show (clk100 , data1, b1);
+   
+   wire  [7:0] b[0:3] ; 
   
   
-   show (clk100 , data2, b2);
-   show (clk100 , data3, b3);
-   show (clk100 , data4, b4);
-   show (clk100 , data5, b5);
-   show (clk100 , data6, b6);
-   show (clk100 , data7, b7);
-   show (clk100 , data8, b8);
+   show (clk100 , data0, b[0]);  
+   show (clk100 , data1, b[1]);
+   show (clk100 , data2,b[2]);
+   show (clk100 , data3, b[3]);
+   show (clk100 , data4, b[4]);
+   show (clk100 , data5, b[5]);
+   show (clk100 , data6, b[6]);
+   show (clk100 , data7, b[7]);
    
    /* diviseur de  clock */
         always @ (posedge clk100)
@@ -246,16 +249,15 @@ module display(
        always @ (posedge clk1k)
            begin
            show_counter <= (show_counter < 8)? show_counter +1'b1 :1'b0  ; 
-           case (show_counter)
-               1 :seg =  b1;
-               2 :seg =  b2;
-               3 : seg = b3; 
-               4 : seg = b4;
-               5 : seg = b5; 
-               6: seg = b6; 
-               7: seg = b7; 
-               8: seg = b8; 
-                 
+           case (b[show_counter])
+                 1 :seg =  7'b1111001;
+                 2 :seg =  7'b0100100;
+                 3 : seg = 7'b0110000; 
+                 4 : seg = 7'b0011001;
+                 5 : seg = 7'b0010010; 
+                 6: seg = 7'b0000010; 
+                 7: seg = 7'b1111000; 
+                 8: seg = 7'b0000000; 
            endcase   
             tab <=8'b11111111; 
             tab[show_counter]<=0;  
