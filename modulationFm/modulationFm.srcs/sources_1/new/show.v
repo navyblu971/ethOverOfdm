@@ -22,7 +22,7 @@
 
 module show(
     input clk,
-    input [7:0] dataIn,
+    input [4:0] dataIn,
     output [6:0] seg
     );
     
@@ -48,6 +48,7 @@ module show(
                     4'h101: seg = 7'b0000100; 
                     4'h102: seg = 7'b0000000; 
                     4'h103: seg = 7'b0110000; 
+                    default: seg = 7'b1111111; 
                     
       endcase
       end 

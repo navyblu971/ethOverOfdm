@@ -180,9 +180,9 @@ module display(
           
           */
    
-    reg clk1k ;    
-    reg [31:0] local_count =0 ; 
-    reg  [31:0] show_counter =0 ; 
+   reg clk1k ;    
+   reg [31:0] local_count =0 ; 
+   reg  [31:0] show_counter =0 ; 
    
    reg [31:0] sec_count ; 
    reg clk1s;  
