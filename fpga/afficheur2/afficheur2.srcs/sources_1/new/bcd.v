@@ -31,7 +31,7 @@ module display(
     input [3:0] data6,
     input [3:0] data7,
     input [3:0] data8,*/
-    input [8*3:0] string,
+    input [8*6:0] string,
     
     output  [7:0] seg,
     output  [7:0] tab,
@@ -63,7 +63,8 @@ module display(
    wire [3:0] data6 ;
    wire [3:0] data7 ; 
    
-   assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
+   
+  assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
   
   /*
    wire [3:0] data1 = string ;
