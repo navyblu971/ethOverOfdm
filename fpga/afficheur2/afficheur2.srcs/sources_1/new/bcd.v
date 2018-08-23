@@ -68,18 +68,18 @@ module display(
  reg [7:0] tmp [7:0] ;  
  //tmp <= string ; 
  
- /*
-  assign data0 = string[6:0]; 
-   assign data1 = string[14:7];
-    assign data2 = string[22:15];
-     assign data3 = string[30:23];
-      assign data4 = string[38:31];
-       assign data5 = string[46:39];
-       */
-      //  assign data6 = string[54:47];
-       //  assign data7 = string[62:55];
+ 
+  assign data0 = string[7:0]; 
+   assign data1 = string[15:8];
+    assign data2 = string[23:16];
+     assign data3 = string[31:24];
+      assign data4 = string[38:32];
+       assign data5 = string[47:40];
+       
+      // assign data6 = string[55:48];
+      //  assign data7 = string[63:56];
    
-   
+   /*
     assign data0 = 8'h0 ; 
          assign data1 = 8'h1;
           assign data2 = 8'h2 ; 
@@ -89,7 +89,7 @@ module display(
              
               assign data6 = 8'h6;
               assign data7 = 8'h7 ; 
-         
+       */  
   
   //assign {data0, data1, data2, data3, data4, data5, data6, data7} = {8'h0,8'h1,8'h2,8'h3,8'h4,8'h5,8'h6,8'h7} ;
   
