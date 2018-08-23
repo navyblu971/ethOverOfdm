@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Thu Aug 23 22:35:02 2018
+| Date             : Thu Aug 23 22:53:13 2018
 | Host             : fabrice-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 26.574 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 32.122 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 25.777                           |
+| Dynamic (W)              | 31.326                           |
 | Device Static (W)        | 0.797                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.368 |      214 |       --- |             --- |
-|   LUT as Logic |     0.276 |       62 |     63400 |            0.10 |
-|   Register     |     0.046 |      110 |    126800 |            0.09 |
+| Slice Logic    |     0.404 |      215 |       --- |             --- |
+|   LUT as Logic |     0.310 |       63 |     63400 |            0.10 |
+|   Register     |     0.048 |      110 |    126800 |            0.09 |
 |   CARRY4       |     0.041 |       17 |     15850 |            0.11 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        5 |       --- |             --- |
-| Signals        |     0.505 |      165 |       --- |             --- |
-| I/O            |    24.904 |       34 |       210 |           16.19 |
+| Signals        |     0.572 |      164 |       --- |             --- |
+| I/O            |    30.350 |       34 |       210 |           16.19 |
 | Static Power   |     0.797 |          |           |                 |
-| Total          |    26.574 |          |           |                 |
+| Total          |    32.122 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     1.443 |       0.881 |      0.563 |
-| Vccaux    |       1.800 |     1.005 |       0.912 |      0.093 |
-| Vcco33    |       3.300 |     7.051 |       7.047 |      0.004 |
+| Vccint    |       1.000 |     1.546 |       0.984 |      0.563 |
+| Vccaux    |       1.800 |     1.205 |       1.112 |      0.093 |
+| Vcco33    |       3.300 |     8.592 |       8.588 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -138,9 +138,9 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| main         |    25.777 |
-|   displayVga |     0.026 |
-|   mydisplay  |     0.803 |
+| main         |    31.326 |
+|   displayVga |     0.029 |
+|   mydisplay  |     0.901 |
 +--------------+-----------+
 
 
