@@ -35,16 +35,20 @@ module show(
  always @ (posedge clk )
     begin 
     case (dataIn) 
-                    4'h0 :  seg = 7'b0000001; 
-                    4'h1 : seg = 7'b1111001;
-                    4'h3:  seg= 7'b0110000;  
-                    4'h2 : seg = 7'b0100100;
-                    4'h4 : seg = 7'b0011001;
-                    4'h5 : seg = 7'b0010010; 
-                    4'h6 : seg = 7'b0000010; 
-                    4'h7 : seg =  7'b1111000;
-                    4'h8 : seg = 7'b0000000; 
-                    4'h9 : seg = 7'b0000100; 
+                    4'h30 :  seg = 7'b0000001; 
+                    4'h31: seg = 7'b1111001;
+                    4'h32:  seg= 7'b0110000;  
+                    4'h33 : seg = 7'b0100100;
+                    4'h34: seg = 7'b0011001;
+                    4'h35: seg = 7'b0010010; 
+                    4'h36: seg = 7'b0000010; 
+                    4'h37: seg =  7'b1111000;
+                    4'h38: seg = 7'b0000000; 
+                    4'h39: seg = 7'b0000100; 
+                    4'h101: seg = 7'b0000100; 
+                    4'h102: seg = 7'b0000000; 
+                    4'h103: seg = 7'b0110000; 
+                    
       endcase
       end 
 endmodule
