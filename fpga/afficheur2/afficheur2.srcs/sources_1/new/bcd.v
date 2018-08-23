@@ -79,8 +79,20 @@ module display(
       //  assign data6 = string[54:47];
        //  assign data7 = string[62:55];
    
+   
+    assign data0 = 8'h0 ; 
+         assign data1 = 8'h1;
+          assign data2 = 8'h2 ; 
+           assign data3 = 8'h3 ; 
+            assign data4 = 8'h4 ; 
+             assign data5 = 8'h5 ; 
+             
+              assign data6 = 8'h6;
+              assign data7 = 8'h7 ; 
+         
   
-  assign {data0, data1, data2, data3, data4, data5, data6, data7} = {8'h0,8'h1,8'h2,8'h3,8'h4,8'h5,8'h6,8'h7} ;
+  //assign {data0, data1, data2, data3, data4, data5, data6, data7} = {8'h0,8'h1,8'h2,8'h3,8'h4,8'h5,8'h6,8'h7} ;
+  
     
   /*
    wire [3:0] data1 = string ;
