@@ -64,7 +64,7 @@ module display(
    wire [7:0] data7 ; 
    
    
- assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
+// assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
  reg [7:0] tmp [7:0] ;  
  //tmp <= string ; 
  
@@ -80,7 +80,7 @@ module display(
        //  assign data7 = string[62:55];
    
   
-  //assign {data0, data1, data2, data3, data4, data5, data6, data7} = {4'h0,4'h1,4'h2,4'h3,4'h4,4'h5,4'h6,4'h7} ;
+  assign {data0, data1, data2, data3, data4, data5, data6, data7} = {4'h0,4'h1,4'h2,4'h3,4'h4,4'h5,4'h6,4'h7} ;
     
   /*
    wire [3:0] data1 = string ;
@@ -194,8 +194,8 @@ module display(
    wire  [7:0] b[6:0] ; 
   
   
-   show (clk100 , /*data0*/"0", b[0]);  
-   show (clk100 ,/*data1*/ "1", b[1]);
+   show (clk100 , data0, b[0]);  
+   show (clk100 ,data1, b[1]);
    show (clk100 , data2,b[2]);
    show (clk100 , data3, b[3]);
    show (clk100 , data4, b[4]);
