@@ -194,8 +194,8 @@ module display(
    wire  [7:0] b[6:0] ; 
   
   
-   show (clk100 , data0, b[0]);  
-   show (clk100 ,data1, b[1]);
+   show (clk100 , /*data0*/"0", b[0]);  
+   show (clk100 ,/*data1*/ "1", b[1]);
    show (clk100 , data2,b[2]);
    show (clk100 , data3, b[3]);
    show (clk100 , data4, b[4]);
