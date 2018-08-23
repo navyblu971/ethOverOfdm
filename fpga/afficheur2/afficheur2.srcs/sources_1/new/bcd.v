@@ -64,8 +64,11 @@ module display(
    wire [3:0] data7 ; 
    
    
-  assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
+  //assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
   
+  
+  assign {data0, data1, data2, data3, data4, data5, data6, data7} = {4'h0,4'h2,4'h3,4'h4,4'h5,4'h6,4'h7,4'h7} ;
+    
   /*
    wire [3:0] data1 = string ;
    wire  [3:0] data2;
