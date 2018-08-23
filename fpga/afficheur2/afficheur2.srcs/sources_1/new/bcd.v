@@ -172,7 +172,7 @@ module display(
    
    ///wire [7:0] b1, b2, b3, b4,b5,b6,b7,b8 ;  
    
-   show (clk100 , data1, b1);
+   //show (clk100 , data1, b1);
    
    wire  [7:0] b[0:3] ; 
   
@@ -249,19 +249,10 @@ module display(
        always @ (posedge clk1k)
            begin
            show_counter <= (show_counter < 8)? show_counter +1'b1 :1'b0  ; 
-           case (b[show_counter])
-                 1 :seg =  7'b1111001;
-                 2 :seg =  7'b0100100;
-                 3 : seg = 7'b0110000; 
-                 4 : seg = 7'b0011001;
-                 5 : seg = 7'b0010010; 
-                 6: seg = 7'b0000010; 
-                 7: seg = 7'b1111000; 
-                 8: seg = 7'b0000000; 
-           endcase   
-            tab <=8'b11111111; 
-            tab[show_counter]<=0;  
-            seg[7]=1;  //pas de virgule..
+           seg=b[show_counter]; 
+           tab <=8'b11111111; 
+           tab[show_counter]<=0;  
+           seg[7]=1;  //pas de virgule..
            if (show_counter ==8)
            show_counter <=0 ; 
            
