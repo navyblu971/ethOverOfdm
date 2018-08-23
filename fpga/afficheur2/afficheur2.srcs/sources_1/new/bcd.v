@@ -181,14 +181,14 @@ module display(
    wire  [7:0] b[6:0] ; 
   
   
-   show (clk100 , data0, b[0]);  
-   show (clk100 , data1, b[1]);
-   show (clk100 , data2,b[2]);
-   show (clk100 , data3, b[3]);
-   show (clk100 , data4, b[4]);
-   show (clk100 , data5, b[5]);
-   show (clk100 , data6, b[6]);
-   show (clk100 , data7, b[7]);
+   show (clk100 , 4'h0/*data0*/, b[0]);  
+   show (clk100 , 4'h1/*data1*/, b[1]);
+   show (clk100 , 4'h2/*data2*/,b[2]);
+   show (clk100 , 4'h3/*data3*/, b[3]);
+   show (clk100 , 4'h4/*data4*/, b[4]);
+   show (clk100 , 4'h5/*data5*/, b[5]);
+   show (clk100 , 4'h6/*data6*/, b[6]);
+   show (clk100 , 4'h7/*data7*/, b[7]);
    
    /* diviseur de  clock */
         always @ (posedge clk100)
