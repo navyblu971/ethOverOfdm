@@ -174,7 +174,7 @@ module display(
    
    //show (clk100 , data1, b1);
    
-   wire  [7:0] b[0:3] ; 
+   wire  [7:0] b[6:0] ; 
   
   
    show (clk100 , data0, b[0]);  

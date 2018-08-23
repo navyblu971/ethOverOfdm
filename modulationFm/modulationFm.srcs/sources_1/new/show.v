@@ -23,11 +23,11 @@
 module show(
     input clk,
     input [3:0] dataIn,
-    output [7:0] seg
+    output [6:0] seg
     );
     
    
- reg  [7:0] seg; 
+ reg  [6:0] seg; 
    
  always @ (posedge clk )
     begin 
