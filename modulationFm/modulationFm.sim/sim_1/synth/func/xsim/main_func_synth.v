@@ -1,8 +1,8 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-// Date        : Wed Aug 22 16:27:18 2018
-// Host        : fabrice-VirtualBox running 64-bit Ubuntu 18.04 LTS
+// Date        : Fri Aug 24 11:48:30 2018
+// Host        : fabrice-VirtualBox running 64-bit Ubuntu 18.04.1 LTS
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.sim/sim_1/synth/func/xsim/main_func_synth.v
 // Design      : main
@@ -13,16 +13,16 @@
 `timescale 1 ps / 1 ps
 
 module display
-   (led_OBUF,
+   (seg7_OBUF,
+    led_OBUF,
     Q,
-    \tab[7] ,
     clk100M_IBUF_BUFG);
+  output [0:0]seg7_OBUF;
   output led_OBUF;
-  output [4:0]Q;
-  output [7:0]\tab[7] ;
+  output [7:0]Q;
   input clk100M_IBUF_BUFG;
 
-  wire [4:0]Q;
+  wire [7:0]Q;
   wire clk100M_IBUF_BUFG;
   wire clk1k;
   wire clk1k_i_1_n_0;
@@ -75,7 +75,6 @@ module display
   wire \local_count[31]_i_6_n_0 ;
   wire \local_count[31]_i_7_n_0 ;
   wire \local_count[31]_i_8_n_0 ;
-  wire [6:6]p_0_out;
   wire [31:0]sec_count;
   wire sec_count0_carry__0_n_0;
   wire sec_count0_carry__0_n_1;
@@ -146,10 +145,8 @@ module display
   wire \sec_count[0]_i_7_n_0 ;
   wire \sec_count[31]_i_1_n_0 ;
   wire [0:0]sec_count_0;
-  wire [3:2]seg;
-  wire \seg[0]_i_1_n_0 ;
-  wire \seg[1]_i_1_n_0 ;
-  wire \seg[5]_i_2_n_0 ;
+  wire [0:0]seg7_OBUF;
+  wire \seg[6]_i_1_n_0 ;
   wire [3:0]show_counter;
   wire \show_counter[0]_i_1_n_0 ;
   wire \show_counter[1]_i_1_n_0 ;
@@ -163,7 +160,6 @@ module display
   wire \tab[4]_i_1_n_0 ;
   wire \tab[5]_i_1_n_0 ;
   wire \tab[6]_i_1_n_0 ;
-  wire [7:0]\tab[7] ;
   wire \tab[7]_i_1_n_0 ;
   wire [3:2]NLW_local_count0_carry__6_CO_UNCONNECTED;
   wire [3:3]NLW_local_count0_carry__6_O_UNCONNECTED;
@@ -1026,102 +1022,28 @@ module display
         .D(sec_count0_carry__1_n_7),
         .Q(sec_count[9]),
         .R(\sec_count[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
-  LUT3 #(
-    .INIT(8'h13)) 
-    \seg[0]_i_1 
-       (.I0(show_counter[1]),
-        .I1(show_counter[2]),
-        .I2(show_counter[0]),
-        .O(\seg[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT4 #(
-    .INIT(16'hAAAC)) 
-    \seg[1]_i_1 
-       (.I0(show_counter[0]),
-        .I1(show_counter[3]),
-        .I2(show_counter[1]),
-        .I3(show_counter[2]),
-        .O(\seg[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT4 #(
-    .INIT(16'hCCFA)) 
-    \seg[2]_i_1 
-       (.I0(show_counter[3]),
-        .I1(show_counter[0]),
-        .I2(show_counter[2]),
-        .I3(show_counter[1]),
-        .O(seg[2]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
-  LUT3 #(
-    .INIT(8'h02)) 
-    \seg[3]_i_1 
-       (.I0(show_counter[3]),
-        .I1(show_counter[1]),
-        .I2(show_counter[2]),
-        .O(seg[3]));
-  LUT4 #(
-    .INIT(16'h5556)) 
-    \seg[5]_i_1 
-       (.I0(show_counter[3]),
-        .I1(show_counter[2]),
-        .I2(show_counter[1]),
-        .I3(show_counter[0]),
-        .O(p_0_out));
   LUT2 #(
-    .INIT(4'h2)) 
-    \seg[5]_i_2 
+    .INIT(4'h7)) 
+    \seg[6]_i_1 
        (.I0(show_counter[2]),
-        .I1(show_counter[0]),
-        .O(\seg[5]_i_2_n_0 ));
+        .I1(show_counter[1]),
+        .O(\seg[6]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
-    \seg_reg[0] 
+    \seg_reg[6] 
        (.C(clk1k),
-        .CE(p_0_out),
-        .D(\seg[0]_i_1_n_0 ),
-        .Q(Q[0]),
+        .CE(1'b1),
+        .D(\seg[6]_i_1_n_0 ),
+        .Q(seg7_OBUF),
         .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \seg_reg[1] 
-       (.C(clk1k),
-        .CE(p_0_out),
-        .D(\seg[1]_i_1_n_0 ),
-        .Q(Q[1]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \seg_reg[2] 
-       (.C(clk1k),
-        .CE(p_0_out),
-        .D(seg[2]),
-        .Q(Q[2]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \seg_reg[3] 
-       (.C(clk1k),
-        .CE(p_0_out),
-        .D(seg[3]),
-        .Q(Q[3]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \seg_reg[5] 
-       (.C(clk1k),
-        .CE(p_0_out),
-        .D(\seg[5]_i_2_n_0 ),
-        .Q(Q[4]),
-        .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \show_counter[0]_i_1 
        (.I0(show_counter[3]),
         .I1(show_counter[0]),
         .O(\show_counter[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'h06)) 
     \show_counter[1]_i_1 
@@ -1129,7 +1051,7 @@ module display
         .I1(show_counter[0]),
         .I2(show_counter[3]),
         .O(\show_counter[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
     .INIT(16'h006A)) 
     \show_counter[2]_i_1 
@@ -1146,7 +1068,7 @@ module display
         .I2(show_counter[0]),
         .I3(show_counter[2]),
         .O(\show_counter[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     \show_counter[3]_i_2 
@@ -1187,7 +1109,7 @@ module display
         .D(\show_counter[3]_i_2_n_0 ),
         .Q(show_counter[3]),
         .R(\show_counter[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \tab[0]_i_1 
@@ -1196,7 +1118,7 @@ module display
         .I2(show_counter[0]),
         .I3(show_counter[1]),
         .O(\tab[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
     .INIT(16'hFFEF)) 
     \tab[1]_i_1 
@@ -1205,7 +1127,7 @@ module display
         .I2(show_counter[0]),
         .I3(show_counter[1]),
         .O(\tab[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT4 #(
     .INIT(16'hFFEF)) 
     \tab[2]_i_1 
@@ -1223,7 +1145,7 @@ module display
         .I2(show_counter[0]),
         .I3(show_counter[1]),
         .O(\tab[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'hFFFD)) 
     \tab[4]_i_1 
@@ -1241,7 +1163,7 @@ module display
         .I2(show_counter[0]),
         .I3(show_counter[1]),
         .O(\tab[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'hFFDF)) 
     \tab[6]_i_1 
@@ -1265,7 +1187,7 @@ module display
        (.C(clk1k),
         .CE(1'b1),
         .D(\tab[0]_i_1_n_0 ),
-        .Q(\tab[7] [0]),
+        .Q(Q[0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -1273,7 +1195,7 @@ module display
        (.C(clk1k),
         .CE(1'b1),
         .D(\tab[1]_i_1_n_0 ),
-        .Q(\tab[7] [1]),
+        .Q(Q[1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -1281,7 +1203,7 @@ module display
        (.C(clk1k),
         .CE(1'b1),
         .D(\tab[2]_i_1_n_0 ),
-        .Q(\tab[7] [2]),
+        .Q(Q[2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -1289,7 +1211,7 @@ module display
        (.C(clk1k),
         .CE(1'b1),
         .D(\tab[3]_i_1_n_0 ),
-        .Q(\tab[7] [3]),
+        .Q(Q[3]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -1297,7 +1219,7 @@ module display
        (.C(clk1k),
         .CE(1'b1),
         .D(\tab[4]_i_1_n_0 ),
-        .Q(\tab[7] [4]),
+        .Q(Q[4]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -1305,7 +1227,7 @@ module display
        (.C(clk1k),
         .CE(1'b1),
         .D(\tab[5]_i_1_n_0 ),
-        .Q(\tab[7] [5]),
+        .Q(Q[5]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -1313,7 +1235,7 @@ module display
        (.C(clk1k),
         .CE(1'b1),
         .D(\tab[6]_i_1_n_0 ),
-        .Q(\tab[7] [6]),
+        .Q(Q[6]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
@@ -1321,7 +1243,7 @@ module display
        (.C(clk1k),
         .CE(1'b1),
         .D(\tab[7]_i_1_n_0 ),
-        .Q(\tab[7] [7]),
+        .Q(Q[7]),
         .R(1'b0));
 endmodule
 
@@ -1378,7 +1300,7 @@ module main
   wire rst;
   wire rst_IBUF;
   wire [7:0]seg7;
-  wire [5:0]seg7_OBUF;
+  wire [1:1]seg7_OBUF;
   wire [7:0]tab;
   wire [7:0]tab_OBUF;
   wire [2:2]\NLW_cnt_reg[15]_i_1_CO_UNCONNECTED ;
@@ -1493,10 +1415,10 @@ module main
        (.I(led_OBUF),
         .O(led));
   display mydisplay
-       (.Q({seg7_OBUF[5],seg7_OBUF[3:0]}),
+       (.Q(tab_OBUF),
         .clk100M_IBUF_BUFG(clk100M_IBUF_BUFG),
         .led_OBUF(led_OBUF),
-        .\tab[7] (tab_OBUF));
+        .seg7_OBUF(seg7_OBUF));
   FDRE #(
     .INIT(1'b0)) 
     pix_stb_reg
@@ -1509,25 +1431,25 @@ module main
        (.I(rst),
         .O(rst_IBUF));
   OBUF \seg7_OBUF[0]_inst 
-       (.I(seg7_OBUF[0]),
+       (.I(1'b1),
         .O(seg7[0]));
   OBUF \seg7_OBUF[1]_inst 
-       (.I(seg7_OBUF[1]),
+       (.I(seg7_OBUF),
         .O(seg7[1]));
   OBUF \seg7_OBUF[2]_inst 
-       (.I(seg7_OBUF[2]),
+       (.I(seg7_OBUF),
         .O(seg7[2]));
   OBUF \seg7_OBUF[3]_inst 
-       (.I(seg7_OBUF[3]),
+       (.I(seg7_OBUF),
         .O(seg7[3]));
   OBUF \seg7_OBUF[4]_inst 
-       (.I(1'b0),
+       (.I(seg7_OBUF),
         .O(seg7[4]));
   OBUF \seg7_OBUF[5]_inst 
-       (.I(seg7_OBUF[5]),
+       (.I(seg7_OBUF),
         .O(seg7[5]));
   OBUF \seg7_OBUF[6]_inst 
-       (.I(1'b0),
+       (.I(seg7_OBUF),
         .O(seg7[6]));
   OBUF \seg7_OBUF[7]_inst 
        (.I(1'b1),

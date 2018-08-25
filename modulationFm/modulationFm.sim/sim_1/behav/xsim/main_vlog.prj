@@ -5,6 +5,7 @@ verilog xil_defaultlib  \
 "../../../../modulationFm.srcs/sources_1/new/debouncer.v" \
 "../../../../modulationFm.srcs/sources_1/new/diff.v" \
 "../../../../modulationFm.srcs/sources_1/new/pwm.v" \
+"../../../../modulationFm.srcs/sources_1/new/show.v" \
 "../../../../modulationFm.srcs/sources_1/new/vga.v" \
 "../../../../modulationFm.srcs/sources_1/new/main.v" \
 

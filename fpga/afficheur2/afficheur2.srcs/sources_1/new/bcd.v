@@ -23,15 +23,15 @@
 module display(
     input /*R4*/clk100 , 
     input /* p17*/ rst,
-   /* input [3:0] data1,
-    input [3:0] data2,
-    input [3:0] data3,
-    input [3:0] data4,
-    input [3:0] data5, 
-    input [3:0] data6,
-    input [3:0] data7,
-    input [3:0] data8,*/
-    input [8*7:0] string,
+    input [7:0] data1,
+    input [7:0] data2,
+    input [7:0] data3,
+    input [7:0] data4,
+    input [7:0] data5, 
+    input [7:0] data6,
+    input [7:0] data7,
+    input [7:0] data8,
+   /* input [8*7:0] string,*/
     
     output  [7:0] seg,
     output  [7:0] tab,
@@ -68,7 +68,7 @@ module display(
  reg [7:0] tmp [7:0] ;  
  //tmp <= string ; 
  
- 
+ /*
   assign data0 = string[7:0]; 
    assign data1 = string[15:8];
     assign data2 = string[23:16];
@@ -78,6 +78,7 @@ module display(
        
       // assign data6 = string[55:48];
       //  assign data7 = string[63:56];
+      */
    
    /*
     assign data0 = 8'h0 ; 

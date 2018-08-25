@@ -1,0 +1,14 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 TLS
+#  -string -flagsOSRD
+preplace port uart_rtl_0 -pg 1 -y -640 -defaultsOSRD
+preplace inst axi_uart16550_0 -pg 1 -lvl 1 -y -510 -defaultsOSRD
+preplace inst axi_usb2_device_0 -pg 1 -lvl 2 -y -290 -defaultsOSRD
+preplace netloc axi_uart16550_0_UART 1 1 2 -10J -640 NJ
+levelinfo -pg 1 -280 -140 120 260 -top -720 -bot 180
+",
+}
+{
+   da_board_cnt: "1",
+}

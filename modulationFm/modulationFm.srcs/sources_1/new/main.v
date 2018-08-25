@@ -286,7 +286,16 @@ always @(posedge clk100M)
  /* affichage 7 segment */  
         
   wire led ;  
-  reg [8*7:0] string = "01234567"; 
+  reg [8*7:1] string = "01234567"; 
+  reg [7:0] SEG0="0";
+  reg [7:0] SEG1="1";
+  reg [7:0] SEG2="2";
+  reg [7:0] SEG3 ="3";
+  reg [7:0] SEG4="4";
+  reg [7:0] SEG5="5";
+  reg [7:0] SEG6="6";
+  reg [7:0] SEG7="7";
+  
   
  // reg [3:0] data1 =1'h1 ; //  7'b1111001; 
  // reg [3:0] data2 =1'h2 ;// 7'b0000110; 
@@ -312,7 +321,7 @@ always @(posedge clk100M)
   //show sh1 (clk100M, 1'd9, data1) ; 
   //show sh2 (clk100M, 1'd0, data2) ; 
        
-  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/   string, seg7,tab, led);  
+  display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/   SEG0,SEG1,SEG2,SEG3,SEG4,SEG5,SEG6,SEG7, seg7,tab, led);  
         
         
         

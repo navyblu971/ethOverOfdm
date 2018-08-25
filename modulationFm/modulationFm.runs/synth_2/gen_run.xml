@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-3" LaunchTime="1535060015">
+<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-3" LaunchTime="1535126883">
   <File Type="VDS-TIMING-PB" Name="main_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="main_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="main.dcp"/>
@@ -98,6 +98,14 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/bin2dec.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_usb_uart/design_usb_uart.bd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>

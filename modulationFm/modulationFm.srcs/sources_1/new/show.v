@@ -22,7 +22,7 @@
 
 module show(
     input clk,
-    input [4:0] dataIn,
+    input [7:0] dataIn,
     output [6:0] seg
     );
     
