@@ -35,7 +35,7 @@ module show(
  always @ (posedge clk )
     begin 
     case (dataIn) 
-                    8'h7E:  seg = 7'b1000000; 
+                    8'h30:  seg = 7'b1000000; 
                     8'h31: seg = 7'b1111001;
                     8'h32:  seg= 7'b0110000;  
                     8'h33 : seg = 7'b0100100;
