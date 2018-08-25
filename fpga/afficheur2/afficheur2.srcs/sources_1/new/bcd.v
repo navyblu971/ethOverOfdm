@@ -260,7 +260,7 @@ module display(
     end    
       
     /* affichage  ok*/  
-    /*
+    
     always @ (posedge clk1k)
     begin
     show_counter <= (show_counter < 8)? show_counter +1'b1 :1'b0  ; 
@@ -283,9 +283,9 @@ module display(
     
     
     end
-   */    
+      
        
-       
+       /*
        always @ (posedge clk1k)
            begin
            show_counter <= (show_counter < 8)? show_counter +1'b1 :1'b0  ; 
@@ -298,6 +298,6 @@ module display(
            
            
            end
-        
+        */
     
 endmodule
