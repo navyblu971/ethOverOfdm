@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sat Aug 25 17:26:42 2018
-# Process ID: 8590
+# Start of session at: Sat Aug 25 18:23:34 2018
+# Process ID: 10709
 # Current directory: /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.runs/synth_2
 # Command line: vivado -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
 # Log file: /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.runs/synth_2/main.vds
@@ -15,7 +15,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8595 
+INFO: Helper process launched with PID 10723 
 WARNING: [Synth 8-2611] redeclaration of ansi port data0 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:58]
 WARNING: [Synth 8-2611] redeclaration of ansi port data1 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:59]
 WARNING: [Synth 8-2611] redeclaration of ansi port data2 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:60]
@@ -37,9 +37,9 @@ WARNING: [Synth 8-2611] redeclaration of ansi port tab is not allowed [/home/fab
 WARNING: [Synth 8-2611] redeclaration of ansi port buttonUpFrq is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:136]
 WARNING: [Synth 8-2611] redeclaration of ansi port buttonDownFrq is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:137]
 WARNING: [Synth 8-2611] redeclaration of ansi port data is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:143]
-WARNING: [Synth 8-2611] redeclaration of ansi port led is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:297]
+WARNING: [Synth 8-2611] redeclaration of ansi port led is not allowed [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:302]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1277.656 ; gain = 89.301 ; free physical = 3857 ; free virtual = 7344
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1277.656 ; gain = 89.301 ; free physical = 3406 ; free virtual = 7029
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'main' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:105]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/debouncer.v:23]
@@ -70,18 +70,18 @@ INFO: [Synth 8-6157] synthesizing module 'vga640x480' [/home/fabrice/Documents/e
 	Parameter LINE bound to: 800 - type: integer 
 	Parameter SCREEN bound to: 524 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'vga640x480' (5#1) [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:23]
-WARNING: [Synth 8-350] instance 'displayVga' of module 'vga640x480' requires 11 connections, but only 7 given [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:347]
+WARNING: [Synth 8-350] instance 'displayVga' of module 'vga640x480' requires 11 connections, but only 7 given [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:354]
 INFO: [Synth 8-6157] synthesizing module 'PWM_Controller' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pwm.v:24]
 INFO: [Synth 8-6157] synthesizing module 'counter' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/counter.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'counter' (6#1) [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/counter.v:24]
 INFO: [Synth 8-6155] done synthesizing module 'PWM_Controller' (7#1) [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pwm.v:24]
-WARNING: [Synth 8-689] width (1) of port connection 'PWM_CW' does not match port width (32) of module 'PWM_Controller' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:370]
+WARNING: [Synth 8-689] width (1) of port connection 'PWM_CW' does not match port width (32) of module 'PWM_Controller' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:377]
 WARNING: [Synth 8-6014] Unused sequential element s_axis_config_tdata_0_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:217]
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:227]
 WARNING: [Synth 8-3848] Net VGA_R in module/entity main does not have driver. [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:125]
 WARNING: [Synth 8-3848] Net VGA_G in module/entity main does not have driver. [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:126]
 WARNING: [Synth 8-3848] Net VGA_B in module/entity main does not have driver. [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:127]
-WARNING: [Synth 8-3848] Net outputData in module/entity main does not have driver. [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:370]
+WARNING: [Synth 8-3848] Net outputData in module/entity main does not have driver. [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:377]
 INFO: [Synth 8-6155] done synthesizing module 'main' (8#1) [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:105]
 WARNING: [Synth 8-3331] design display has unconnected port rst
 WARNING: [Synth 8-3331] design debounce has unconnected port clk
@@ -100,7 +100,7 @@ WARNING: [Synth 8-3331] design main has unconnected port VGA_B[0]
 WARNING: [Synth 8-3331] design main has unconnected port data
 WARNING: [Synth 8-3331] design main has unconnected port buttonDownFrq
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.781 ; gain = 118.426 ; free physical = 3875 ; free virtual = 7362
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.781 ; gain = 118.426 ; free physical = 3424 ; free virtual = 7047
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -111,15 +111,15 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 WARNING: [Synth 8-3295] tying undriven pin d1:DFF_CLOCK to constant 0 [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/debouncer.v:27]
 WARNING: [Synth 8-3295] tying undriven pin d2:DFF_CLOCK to constant 0 [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/debouncer.v:28]
-WARNING: [Synth 8-3295] tying undriven pin PWM_inst_1:PWM_CW[0] to constant 0 [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:368]
+WARNING: [Synth 8-3295] tying undriven pin PWM_inst_1:PWM_CW[0] to constant 0 [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:375]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.781 ; gain = 118.426 ; free physical = 3874 ; free virtual = 7361
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.781 ; gain = 118.426 ; free physical = 3423 ; free virtual = 7046
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.781 ; gain = 118.426 ; free physical = 3874 ; free virtual = 7361
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1306.781 ; gain = 118.426 ; free physical = 3423 ; free virtual = 7046
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-3
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -137,22 +137,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1623.582 ; gain = 0.000 ; free physical = 3616 ; free virtual = 7103
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1623.582 ; gain = 0.000 ; free physical = 3165 ; free virtual = 6789
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:35 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3687 ; free virtual = 7174
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:37 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3236 ; free virtual = 6859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:35 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3687 ; free virtual = 7174
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:37 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3236 ; free virtual = 6859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:35 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3689 ; free virtual = 7176
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:37 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3238 ; free virtual = 6861
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "seg" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "sec_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -161,7 +161,7 @@ INFO: [Synth 8-5545] ROM "show_counter" won't be mapped to RAM because address s
 INFO: [Synth 8-5545] ROM "pwm_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "pwm_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3678 ; free virtual = 7165
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:38 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3227 ; free virtual = 6851
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -307,61 +307,61 @@ INFO: [Synth 8-3886] merging instance 'SEG7_reg[3]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG7_reg[6]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG7_reg[7]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG3_reg[6]' (FD) to 'SEG6_reg[7]'
-INFO: [Synth 8-3886] merging instance 'SEG3_reg[0]' (FD) to 'SEG6_reg[5]'
+INFO: [Synth 8-3886] merging instance 'SEG3_reg[1]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG7_reg[0]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG7_reg[1]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG7_reg[2]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG7_reg[4]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG7_reg[5]' (FD) to 'SEG6_reg[5]'
-INFO: [Synth 8-3886] merging instance 'SEG3_reg[1]' (FD) to 'SEG6_reg[5]'
+INFO: [Synth 8-3886] merging instance 'SEG3_reg[0]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG3_reg[2]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG3_reg[3]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG3_reg[4]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG3_reg[5]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG2_reg[7]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG2_reg[6]' (FD) to 'SEG6_reg[7]'
-INFO: [Synth 8-3886] merging instance 'SEG2_reg[0]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG2_reg[1]' (FD) to 'SEG6_reg[5]'
+INFO: [Synth 8-3886] merging instance 'SEG2_reg[0]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG2_reg[2]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG2_reg[3]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG2_reg[4]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG2_reg[5]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG1_reg[7]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG1_reg[6]' (FD) to 'SEG6_reg[7]'
-INFO: [Synth 8-3886] merging instance 'SEG1_reg[0]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG1_reg[1]' (FD) to 'SEG6_reg[7]'
+INFO: [Synth 8-3886] merging instance 'SEG1_reg[0]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG1_reg[2]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG1_reg[3]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG1_reg[4]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG1_reg[5]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG0_reg[7]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG0_reg[6]' (FD) to 'SEG6_reg[7]'
-INFO: [Synth 8-3886] merging instance 'SEG0_reg[0]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG0_reg[1]' (FD) to 'SEG6_reg[7]'
+INFO: [Synth 8-3886] merging instance 'SEG0_reg[0]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG0_reg[2]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG0_reg[3]' (FD) to 'SEG6_reg[7]'
-INFO: [Synth 8-3886] merging instance 'SEG0_reg[4]' (FD) to 'SEG6_reg[5]'
-INFO: [Synth 8-3886] merging instance 'SEG0_reg[5]' (FD) to 'SEG6_reg[5]'
+INFO: [Synth 8-3886] merging instance 'SEG0_reg[4]' (FD) to 'SEG6_reg[7]'
+INFO: [Synth 8-3886] merging instance 'SEG0_reg[5]' (FD) to 'SEG6_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG6_reg[7]' (FD) to 'SEG6_reg[6]'
 INFO: [Synth 8-3886] merging instance 'SEG6_reg[6]' (FD) to 'SEG6_reg[3]'
-INFO: [Synth 8-3886] merging instance 'SEG6_reg[0]' (FD) to 'SEG6_reg[3]'
 INFO: [Synth 8-3886] merging instance 'SEG6_reg[1]' (FD) to 'SEG6_reg[5]'
+INFO: [Synth 8-3886] merging instance 'SEG6_reg[0]' (FD) to 'SEG6_reg[3]'
 INFO: [Synth 8-3886] merging instance 'SEG6_reg[2]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG6_reg[3]' (FD) to 'SEG4_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG6_reg[4]' (FD) to 'SEG6_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG6_reg[5]' (FD) to 'SEG4_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG5_reg[7]' (FD) to 'SEG4_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG5_reg[6]' (FD) to 'SEG4_reg[7]'
-INFO: [Synth 8-3886] merging instance 'SEG5_reg[0]' (FD) to 'SEG4_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG5_reg[1]' (FD) to 'SEG4_reg[7]'
+INFO: [Synth 8-3886] merging instance 'SEG5_reg[0]' (FD) to 'SEG4_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG5_reg[2]' (FD) to 'SEG4_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG5_reg[3]' (FD) to 'SEG4_reg[7]'
 INFO: [Synth 8-3886] merging instance 'SEG5_reg[4]' (FD) to 'SEG4_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG5_reg[5]' (FD) to 'SEG4_reg[5]'
 INFO: [Synth 8-3886] merging instance 'SEG4_reg[7]' (FD) to 'SEG4_reg[6]'
 INFO: [Synth 8-3886] merging instance 'SEG4_reg[6]' (FD) to 'SEG4_reg[3]'
-INFO: [Synth 8-3886] merging instance 'SEG4_reg[0]' (FD) to 'SEG4_reg[3]'
 INFO: [Synth 8-3886] merging instance 'SEG4_reg[1]' (FD) to 'SEG4_reg[3]'
+INFO: [Synth 8-3886] merging instance 'SEG4_reg[0]' (FD) to 'SEG4_reg[3]'
 INFO: [Synth 8-3886] merging instance 'SEG4_reg[2]' (FD) to 'SEG4_reg[5]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\SEG4_reg[3] )
 INFO: [Synth 8-3886] merging instance 'SEG4_reg[4]' (FD) to 'SEG4_reg[5]'
@@ -397,19 +397,19 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mydispla
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (pwm_clk_reg)
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\mydisplay/seg_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\PWM_inst_1/PWM_out_reg )
-INFO: [Synth 8-3886] merging instance 'mydisplay/s4/seg_reg[0]' (FD) to 'mydisplay/s1/seg_reg[6]'
-INFO: [Synth 8-3886] merging instance 'SEG4_reg[3]' (FD) to 'mydisplay/s1/seg_reg[6]'
-INFO: [Synth 8-3886] merging instance 'mydisplay/s3/seg_reg[0]' (FD) to 'mydisplay/s1/seg_reg[6]'
-INFO: [Synth 8-3886] merging instance 'mydisplay/s2/seg_reg[0]' (FD) to 'mydisplay/s1/seg_reg[0]'
-INFO: [Synth 8-3886] merging instance 'SEG4_reg[5]' (FD) to 'mydisplay/s1/seg_reg[0]'
-INFO: [Synth 8-3886] merging instance 'mydisplay/s1/seg_reg[0]' (FD) to 'mydisplay/s3/seg_reg[5]'
-INFO: [Synth 8-3886] merging instance 'mydisplay/s7/seg_reg[0]' (FD) to 'mydisplay/s1/seg_reg[6]'
-INFO: [Synth 8-3886] merging instance 'mydisplay/s6/seg_reg[0]' (FD) to 'mydisplay/s1/seg_reg[6]'
-INFO: [Synth 8-3886] merging instance 'mydisplay/s5/seg_reg[0]' (FD) to 'mydisplay/s3/seg_reg[5]'
-INFO: [Synth 8-3886] merging instance 'mydisplay/s4/seg_reg[1]' (FD) to 'mydisplay/s1/seg_reg[6]'
-INFO: [Synth 8-3886] merging instance 'mydisplay/s3/seg_reg[1]' (FD) to 'mydisplay/s1/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mydisplay/s4/seg_reg[0]' (FD) to 'mydisplay/s3/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'SEG4_reg[3]' (FD) to 'mydisplay/s3/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mydisplay/s3/seg_reg[0]' (FD) to 'mydisplay/s3/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mydisplay/s2/seg_reg[0]' (FD) to 'mydisplay/s1/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'SEG4_reg[5]' (FD) to 'mydisplay/s1/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mydisplay/s1/seg_reg[0]' (FD) to 'mydisplay/s1/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mydisplay/s7/seg_reg[0]' (FD) to 'mydisplay/s3/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mydisplay/s6/seg_reg[0]' (FD) to 'mydisplay/s3/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mydisplay/s5/seg_reg[0]' (FD) to 'mydisplay/s1/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mydisplay/s4/seg_reg[1]' (FD) to 'mydisplay/s3/seg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'mydisplay/s3/seg_reg[1]' (FD) to 'mydisplay/s3/seg_reg[6]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\mydisplay/s2/seg_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\mydisplay/s1/seg_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mydisplay/s5/seg_reg[6] )
 WARNING: [Synth 8-3332] Sequential element (mydb/d1/Q_reg) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (mydb/d2/Q_reg) is unused and will be removed from module main.
@@ -462,10 +462,10 @@ WARNING: [Synth 8-3332] Sequential element (pwm_counter_reg[1]) is unused and wi
 WARNING: [Synth 8-3332] Sequential element (pwm_counter_reg[0]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (pwm_clk_reg) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (PWM_inst_1/PWM_out_reg) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (mydisplay/s2/seg_reg[6]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (mydisplay/s1/seg_reg[6]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (mydisplay/s5/seg_reg[6]) is unused and will be removed from module main.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:38 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3666 ; free virtual = 7155
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:40 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3215 ; free virtual = 6840
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -477,13 +477,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:50 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3543 ; free virtual = 7032
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:53 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3079 ; free virtual = 6705
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:50 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3543 ; free virtual = 7032
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:53 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3079 ; free virtual = 6704
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -495,7 +495,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:50 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3541 ; free virtual = 7030
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:53 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3077 ; free virtual = 6702
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -519,7 +519,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:51 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3541 ; free virtual = 7030
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:54 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3077 ; free virtual = 6702
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -532,7 +532,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:51 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3541 ; free virtual = 7030
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:54 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3077 ; free virtual = 6702
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -544,25 +544,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:51 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3541 ; free virtual = 7030
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:54 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3077 ; free virtual = 6702
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:51 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3541 ; free virtual = 7030
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:54 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3077 ; free virtual = 6702
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:51 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3541 ; free virtual = 7030
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:54 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3077 ; free virtual = 6702
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:51 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3541 ; free virtual = 7030
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:54 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3077 ; free virtual = 6702
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -580,13 +580,13 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |    17|
-|3     |LUT1   |     3|
-|4     |LUT2   |     6|
-|5     |LUT3   |    14|
+|3     |LUT1   |     4|
+|4     |LUT2   |     7|
+|5     |LUT3   |    11|
 |6     |LUT4   |    26|
 |7     |LUT5   |    13|
 |8     |LUT6   |    20|
-|9     |FDRE   |   110|
+|9     |FDRE   |   109|
 |10    |IBUF   |     2|
 |11    |OBUF   |    20|
 |12    |OBUFT  |    12|
@@ -596,16 +596,16 @@ Report Instance Areas:
 +------+-------------+-----------+------+
 |      |Instance     |Module     |Cells |
 +------+-------------+-----------+------+
-|1     |top          |           |   244|
+|1     |top          |           |   242|
 |2     |  displayVga |vga640x480 |    57|
-|3     |  mydisplay  |display    |   146|
+|3     |  mydisplay  |display    |   144|
 +------+-------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:51 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3541 ; free virtual = 7030
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:54 . Memory (MB): peak = 1623.582 ; gain = 435.227 ; free physical = 3077 ; free virtual = 6702
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 69 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1623.582 ; gain = 118.426 ; free physical = 3594 ; free virtual = 7083
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:51 . Memory (MB): peak = 1623.590 ; gain = 435.227 ; free physical = 3606 ; free virtual = 7095
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:27 . Memory (MB): peak = 1623.582 ; gain = 118.426 ; free physical = 3131 ; free virtual = 6757
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:54 . Memory (MB): peak = 1623.590 ; gain = 435.227 ; free physical = 3142 ; free virtual = 6768
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -617,9 +617,9 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 156 Infos, 128 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:53 . Memory (MB): peak = 1623.590 ; gain = 435.309 ; free physical = 3593 ; free virtual = 7082
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:55 . Memory (MB): peak = 1623.590 ; gain = 435.309 ; free physical = 3130 ; free virtual = 6755
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.runs/synth_2/main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1623.590 ; gain = 0.000 ; free physical = 3593 ; free virtual = 7082
-INFO: [Common 17-206] Exiting Vivado at Sat Aug 25 17:27:46 2018...
+report_utilization: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1623.590 ; gain = 0.000 ; free physical = 3130 ; free virtual = 6756
+INFO: [Common 17-206] Exiting Vivado at Sat Aug 25 18:24:47 2018...

@@ -213,7 +213,7 @@ always @(posedge clk100M)
     s_axis_config_tdata_0,
     s_axis_config_tvalid_0);
     */
-    
+    {SEG0 , SEG1,SEG2 , SEG3,SEG4 , SEG5,SEG6 , SEG7} = string ; 
     s_axis_config_tdata_0 <= s_axis_config_tdata_0 + 32'h19999983; 
     //if (counter ==10)
     //    begin
@@ -256,6 +256,7 @@ end
 
 always @(posedge clk100M)   
     begin
+    /*
     SEG0=8'h30;
     SEG1=8'h31;
     SEG2=8'h32;
@@ -264,6 +265,10 @@ always @(posedge clk100M)
     SEG5=8'h35;
     SEG6=8'h36;
     SEG7=8'h37;
+    */
+    
+    
+    
     
     pwm_counter <= pwm_counter +1  ; 
     if (pwm_counter == 30000)
@@ -295,15 +300,17 @@ always @(posedge clk100M)
  /* affichage 7 segment */  
         
   wire led ;  
-  reg [8*7:1] string = "01234567"; 
+  reg [8*7:0] string = "01234567"; 
   reg [7:0] SEG0;
-  reg [7:0] SEG1;
-  reg [7:0] SEG2;
-  reg [7:0] SEG3 ;
-  reg [7:0] SEG4;
+  reg[7:0] SEG1;
+  reg  [7:0] SEG2;
+  reg[7:0] SEG3 ;
+ reg [7:0] SEG4;
   reg [7:0] SEG5;
   reg [7:0] SEG6;
-  reg [7:0] SEG7;
+  reg  [7:0] SEG7;
+  
+  
   
   
  // reg [3:0] data1 =1'h1 ; //  7'b1111001; 
