@@ -23,6 +23,7 @@
 module display(
     input /*R4*/clk100 , 
     input /* p17*/ rst,
+     input [7:0] data0,
     input [7:0] data1,
     input [7:0] data2,
     input [7:0] data3,
@@ -30,7 +31,7 @@ module display(
     input [7:0] data5, 
     input [7:0] data6,
     input [7:0] data7,
-    input [7:0] data8,
+   
    /* input [8*7:0] string,*/
     
     output  [7:0] seg,
@@ -55,13 +56,13 @@ module display(
    
    
    wire [7:0] data0 ; 
-   wire  [7:0] data1;
+   wire [7:0] data1;
    wire [7:0] data2 ;
-   wire [7:0] data3 ;
-   wire [7:0] data4 ;
-   wire [7:0] data5 ;
-   wire [7:0] data6 ;
-   wire [7:0] data7 ; 
+   wire  [7:0] data3 ;
+   wire  [7:0] data4 ;
+   wire  [7:0] data5 ;
+   wire  [7:0] data6 ;
+   wire  [7:0] data7 ; 
    
    
 // assign {data0, data1, data2, data3, data4, data5, data6, data7} = string;
@@ -107,8 +108,8 @@ module display(
    
    reg led ; 
    
-    reg [3:0] count, count2 ; 
-    reg clk2 =0; 
+   reg [3:0] count, count2 ; 
+   reg clk2 =0; 
     
    reg [3:0] hexa; 
    reg [6:0] dig;
@@ -211,10 +212,10 @@ module display(
    show s2(clk100 ,4'h31, b[1]);
    show s3(clk100 , 4'h32,b[2]);
    show s4(clk100 , 4'h33, b[3]);
-   show s5(clk100 , data4, b[4]);
-   show s6(clk100 , data5, b[5]);
-   show s7(clk100 , data6, b[6]);
-   show s8(clk100 , data7, b[7]); 
+   show s5(clk100 , 8'h33, b[4]);
+   show s6(clk100 ,  8'h33, b[5]);
+   show s7(clk100 ,  8'h33, b[6]);
+   show s8(clk100 ,  8'h33, b[7]); 
    
    
    /*
