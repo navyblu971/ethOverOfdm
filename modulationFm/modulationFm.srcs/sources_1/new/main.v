@@ -287,14 +287,14 @@ always @(posedge clk100M)
         
   wire led ;  
   reg [8*7:1] string = "01234567"; 
-  reg [7:0] SEG0="0";
-  reg [7:0] SEG1="1";
-  reg [7:0] SEG2="2";
-  reg [7:0] SEG3 ="3";
-  reg [7:0] SEG4="4";
-  reg [7:0] SEG5="5";
-  reg [7:0] SEG6="6";
-  reg [7:0] SEG7="7";
+  reg [7:0] SEG0=8'h30;
+  reg [7:0] SEG1=8'h31;
+  reg [7:0] SEG2=8'h32;
+  reg [7:0] SEG3 =8'h33;
+  reg [7:0] SEG4=8'h34;
+  reg [7:0] SEG5=8'h35;
+  reg [7:0] SEG6=8'h36;
+  reg [7:0] SEG7=8'h37;
   
   
  // reg [3:0] data1 =1'h1 ; //  7'b1111001; 
