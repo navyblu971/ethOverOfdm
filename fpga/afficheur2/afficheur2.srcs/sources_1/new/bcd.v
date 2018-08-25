@@ -208,14 +208,14 @@ module display(
    wire  [7:0] b[6:0] ; 
   
   
-   show s1(clk100 ,8'h30 , b[0]);  
-   show s2(clk100 ,8'h31, b[1]);
-   show s3(clk100 , 8'h32,b[2]);
-   show s4(clk100 , 8'h33, b[3]);
-   show s5(clk100 , 8'h33, b[4]);
-   show s6(clk100 ,  8'h33, b[5]);
-   show s7(clk100 ,  8'h33, b[6]);
-   show s8(clk100 ,  8'h33, b[7]); 
+   show s1(clk100 ,data0 , b[0]);  
+   show s2(clk100 ,data1, b[1]);
+   show s3(clk100 ,data2,b[2]);
+   show s4(clk100 , data3, b[3]);
+   show s5(clk100 , data4, b[4]);
+   show s6(clk100 ,  data5, b[5]);
+   show s7(clk100 ,  data6, b[6]);
+   show s8(clk100 ,  data7, b[7]); 
    
    
    /*
