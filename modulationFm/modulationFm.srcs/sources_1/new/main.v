@@ -300,7 +300,7 @@ always @(posedge clk100M)
  /* affichage 7 segment */  
         
   wire led ;  
-  reg [8*7:0] string = "01234567"; 
+  reg [8*7:0] string = "00abcde"; 
   reg [7:0] SEG0;
   reg[7:0] SEG1;
   reg  [7:0] SEG2;
