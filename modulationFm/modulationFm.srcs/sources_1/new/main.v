@@ -256,6 +256,15 @@ end
 
 always @(posedge clk100M)   
     begin
+    SEG0=8'h30;
+    SEG1=8'h31;
+    SEG2=8'h32;
+    SEG3 =8'h33;
+    SEG4=8'h34;
+    SEG5=8'h35;
+    SEG6=8'h36;
+    SEG7=8'h37;
+    
     pwm_counter <= pwm_counter +1  ; 
     if (pwm_counter == 30000)
         begin

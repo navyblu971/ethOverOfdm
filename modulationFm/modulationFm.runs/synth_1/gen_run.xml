@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1534260727">
-  <File Type="PA-TCL" Name="main.tcl"/>
   <File Type="RDS-DCP" Name="main.dcp"/>
+  <File Type="PA-TCL" Name="main.tcl"/>
   <File Type="REPORTS-TCL" Name="main_reports.tcl"/>
   <File Type="RDS-RDS" Name="main.vds"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
