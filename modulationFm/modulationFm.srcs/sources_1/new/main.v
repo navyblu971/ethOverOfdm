@@ -366,7 +366,7 @@ always @(posedge clk100M)
   //ps://github.com/MParygin/v.vga.font8x16/blob/master/pc_vga_8x16.v
  // VGA font
   wire pixel;
-  wire [7:0] code = 8'h41;
+ // wire [7:0] code = 8'h41;
   pc_vga_8x16 vga (
       .clk(clk100M),
        .col(x[2:0]),
@@ -375,5 +375,13 @@ always @(posedge clk100M)
        .pixel(pixel)
   );
      
+     
+     
+   wire [7:0] code ; 
+  //RAM
+  /*
+  
+   */
+  RamChip ram (x, code, 1,1 ,0 ); 
 endmodule 
     

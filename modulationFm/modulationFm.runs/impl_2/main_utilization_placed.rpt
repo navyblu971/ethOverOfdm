@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Sun Aug 26 12:24:23 2018
+| Date         : Sun Aug 26 18:59:00 2018
 | Host         : fabrice-VirtualBox running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_utilization -file main_utilization_placed.rpt -pb main_utilization_placed.pb
 | Design       : main
@@ -67,9 +67,9 @@ Table of Contents
 +-------------------------------------------+------+-------+-----------+-------+
 |                 Site Type                 | Used | Fixed | Available | Util% |
 +-------------------------------------------+------+-------+-----------+-------+
-| Slice                                     |   57 |     0 |     15850 |  0.36 |
+| Slice                                     |   60 |     0 |     15850 |  0.38 |
 |   SLICEL                                  |   36 |     0 |           |       |
-|   SLICEM                                  |   21 |     0 |           |       |
+|   SLICEM                                  |   24 |     0 |           |       |
 | LUT as Logic                              |  111 |     0 |     63400 |  0.18 |
 |   using O5 output only                    |    0 |       |           |       |
 |   using O6 output only                    |   92 |       |           |       |
@@ -77,10 +77,10 @@ Table of Contents
 | LUT as Memory                             |    0 |     0 |     19000 |  0.00 |
 |   LUT as Distributed RAM                  |    0 |     0 |           |       |
 |   LUT as Shift Register                   |    0 |     0 |           |       |
-| LUT Flip Flop Pairs                       |   36 |     0 |     63400 |  0.06 |
+| LUT Flip Flop Pairs                       |   37 |     0 |     63400 |  0.06 |
 |   fully used LUT-FF pairs                 |    9 |       |           |       |
-|   LUT-FF pairs with one unused LUT output |   24 |       |           |       |
-|   LUT-FF pairs with one unused Flip Flop  |   27 |       |           |       |
+|   LUT-FF pairs with one unused LUT output |   25 |       |           |       |
+|   LUT-FF pairs with one unused Flip Flop  |   28 |       |           |       |
 | Unique Control Sets                       |    8 |       |           |       |
 +-------------------------------------------+------+-------+-----------+-------+
 * Note: Review the Control Sets Report for more information regarding control sets.
@@ -175,13 +175,13 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |  102 |        Flop & Latch |
-| LUT6     |   58 |                 LUT |
+| LUT6     |   57 |                 LUT |
 | LUT5     |   28 |                 LUT |
 | OBUF     |   23 |                  IO |
+| LUT3     |   17 |                 LUT |
 | CARRY4   |   17 |          CarryLogic |
-| LUT3     |   16 |                 LUT |
-| LUT4     |   12 |                 LUT |
-| LUT2     |   12 |                 LUT |
+| LUT4     |   13 |                 LUT |
+| LUT2     |   11 |                 LUT |
 | OBUFT    |    9 |                  IO |
 | FDSE     |    8 |        Flop & Latch |
 | MUXF7    |    7 |               MuxFx |

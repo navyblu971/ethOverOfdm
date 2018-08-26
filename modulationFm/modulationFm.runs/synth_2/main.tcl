@@ -37,6 +37,7 @@ read_verilog -library xil_defaultlib {
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pcVga2.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pc_vga_80.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pwm.v
+  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/ram.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v
