@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Sat Aug 25 20:19:14 2018
+| Date         : Sun Aug 26 12:24:55 2018
 | Host         : fabrice-VirtualBox running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_methodology -file main_methodology_drc_routed.rpt -pb main_methodology_drc_routed.pb -rpx main_methodology_drc_routed.rpx
 | Design       : main
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 117
+             Violations found: 121
 +-----------+----------+-----------------------------+------------+
 | Rule      | Severity | Description                 | Violations |
 +-----------+----------+-----------------------------+------------+
-| TIMING-17 | Warning  | Non-clocked sequential cell | 117        |
+| TIMING-17 | Warning  | Non-clocked sequential cell | 121        |
 +-----------+----------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -615,6 +615,26 @@ Related violations: <none>
 TIMING-17#117 Warning
 Non-clocked sequential cell  
 The clock pin pix_stb_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#118 Warning
+Non-clocked sequential cell  
+The clock pin vga/U1/BRAM_PC_VGA_0/CLKARDCLK is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#119 Warning
+Non-clocked sequential cell  
+The clock pin vga/U1/vga/U1/BRAM_PC_VGA_0_cooolgate_en_gate_10_cooolDelFlop/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#120 Warning
+Non-clocked sequential cell  
+The clock pin vga/U1/vga/U1/BRAM_PC_VGA_0_cooolgate_en_gate_8_cooolDelFlop/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#121 Warning
+Non-clocked sequential cell  
+The clock pin vga/U1/vga/U1/BRAM_PC_VGA_0_cooolgate_en_gate_9_cooolDelFlop/C is not reached by a timing clock
 Related violations: <none>
 
 

@@ -313,29 +313,7 @@ always @(posedge clk100M)
   
   
   
- // reg [3:0] data1 =1'h1 ; //  7'b1111001; 
- // reg [3:0] data2 =1'h2 ;// 7'b0000110; 
- // reg [3:0]data3 =1'h3 ;//7'b0010010; 
- // reg [3:0]data4  =1'h4; //7'b1001100; 
- // reg [3:0] data5 =1'h5 ;//7'b0100100; 
- // reg [3:0] data6 =1'h6;//7'b0100000; 
-//  reg [3:0] data7 =1'h7;//7'b0001111; 
-//  reg [3:0] data8 =1'h8;// 7'b0000000; 
  
-  
-  /*
-  1 =  7'b1111001; 
-  2 =  7'b0000110; 
-  3 = 7'b0010010; 
-  4 = 7'b1001100; 
-  5 = 7'b0100100; 
-  6 = 7'b0100000; 
-  7 = 7'b0001111; 
-  8 = 7'b0000000; 
-  9 = 7'b0000100; 
-  */
-  //show sh1 (clk100M, 1'd9, data1) ; 
-  //show sh2 (clk100M, 1'd0, data2) ; 
        
   display mydisplay ( clk100M,0, /* s_axis_config_tdata_0*/   SEG0,SEG1,SEG2,SEG3,SEG4,SEG5,SEG6,SEG7, seg7,tab, led);  
         
@@ -363,7 +341,8 @@ always @(posedge clk100M)
  
      // Four overlapping squares
      wire sq_a, sq_b, sq_c, sq_d;
-     assign sq_a = ((x > 120) & (y >  40) & (x < 280) & (y < 200)) ? 1 : 0;
+     //assign sq_a = ((x > 120) & (y >  40) & (x < 280) & (y < 200)) ? 1 : 0;
+     assign sq_a = pixel ; 
      assign sq_b = ((x > 200) & (y > 120) & (x < 360) & (y < 280)) ? 1 : 0;
      assign sq_c = ((x > 280) & (y > 200) & (x < 440) & (y < 360)) ? 1 : 0;
      assign sq_d = ((x > 360) & (y > 280) & (x < 520) & (y < 440)) ? 1 : 0;   
@@ -380,6 +359,21 @@ always @(posedge clk100M)
       .clk (pwm_clk),
       .PWM_CW (outputData),
       .PWM_out (PWM_out)
-  );      
+  );   
+  
+  
+  /*texte */
+  //ps://github.com/MParygin/v.vga.font8x16/blob/master/pc_vga_8x16.v
+ // VGA font
+  wire pixel;
+  wire [7:0] code = 8'h41;
+  pc_vga_8x16 vga (
+      .clk(clk100M),
+       .col(x[2:0]),
+       .row(y[3:0]),
+       .ascii(code),
+       .pixel(pixel)
+  );
+     
 endmodule 
     
