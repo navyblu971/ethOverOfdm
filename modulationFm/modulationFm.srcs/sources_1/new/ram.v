@@ -31,12 +31,12 @@
 
 module RamChip (Address, Data, CS, WE, OE);
 
-parameter AddressSize = 64;
+parameter AddressSize = 8;
 parameter WordSize = 8;
 integer i ; 
 
 initial begin
- for (i=0;i<64; i=i+1)
+ for (i=0;i<(1<<AddressSize)-1; i=i+1)
             Mem[i] <= 8'h30 + i ;
 end
 

@@ -382,6 +382,12 @@ always @(posedge clk100M)
   /*
   
    */
-  RamChip ram (x, code, 1,1 ,0 ); 
+  //RamChip ram (x<64 ?x:0, code, 1,1 ,0 ); 
+  /*
+  cs <=0; 
+  we <=0; 
+  oe <=1 ; */
+  
+  RamChip ram (x<64 ?x:0, code, 0,0 ,1 ); 
 endmodule 
     

@@ -3,42 +3,31 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="main_func_synth.wdb" id="1">
+      <db_ref path="test_1_func_synth.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="main" />
+            <top_module name="test_1" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="20000000999998399fs"></ZoomStartTime>
-      <ZoomEndTime time="20000001000000321fs"></ZoomEndTime>
-      <Cursor1Time time="20000001000000000fs"></Cursor1Time>
+      <ZoomStartTime time="400000000999997274fs"></ZoomStartTime>
+      <ZoomEndTime time="400000001000000546fs"></ZoomEndTime>
+      <Cursor1Time time="400000001000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="66"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="5" />
-   <wvobject type="logic" fp_name="/main/clk100M">
-      <obj_property name="ElementShortName">clk100M</obj_property>
-      <obj_property name="ObjectShortName">clk100M</obj_property>
+   <WVObjectSize size="2" />
+   <wvobject type="array" fp_name="/test_1/x">
+      <obj_property name="ElementShortName">x[7:0]</obj_property>
+      <obj_property name="ObjectShortName">x[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/main/led">
-      <obj_property name="ElementShortName">led</obj_property>
-      <obj_property name="ObjectShortName">led</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/main/seg7">
-      <obj_property name="ElementShortName">seg7[7:0]</obj_property>
-      <obj_property name="ObjectShortName">seg7[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/main/mydisplay/clk1s">
-      <obj_property name="ElementShortName">clk1s</obj_property>
-      <obj_property name="ObjectShortName">clk1s</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/main/mydisplay/seg7_OBUF">
-      <obj_property name="ElementShortName">seg7_OBUF[0:0]</obj_property>
-      <obj_property name="ObjectShortName">seg7_OBUF[0:0]</obj_property>
+   <wvobject type="array" fp_name="/test_1/seg">
+      <obj_property name="ElementShortName">seg[6:0]</obj_property>
+      <obj_property name="ObjectShortName">seg[6:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
