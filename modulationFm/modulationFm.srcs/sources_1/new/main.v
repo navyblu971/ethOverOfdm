@@ -213,7 +213,7 @@ always @(posedge clk100M)
     s_axis_config_tdata_0,
     s_axis_config_tvalid_0);
     */
-    {SEG0 , SEG1,SEG2 , SEG3,SEG4 , SEG5,SEG6 , SEG7} = string ; 
+    //{SEG0 , SEG1,SEG2 , SEG3,SEG4 , SEG5,SEG6 , SEG7} = string ; 
     s_axis_config_tdata_0 <= s_axis_config_tdata_0 + 32'h19999983; 
     //if (counter ==10)
     //    begin
@@ -423,7 +423,7 @@ always @(posedge clk100M)
     //assign SEG3 = XPOS; 
     //assign SEG4 = YPOS; 
  always @(posedge clkChar )
-        if (UPDATE_VGA)
+       // if (UPDATE_VGA)
         begin
         /* ecrit en memoire ..*/
         cs <=0 ;
@@ -441,21 +441,16 @@ always @(posedge clk100M)
        if (buttonUpFrq)
        begin
         XPOS<=0  ; 
-        SEG7 <= XPOS ; 
+        SEG0 <= XPOS ; 
         end
        else
-       SEG7 =YPOS ; 
+       SEG0<=YPOS ; 
        
         
         ADDR <=  XPOS*8*12 + YPOS*8*12*640 ; 
         CURRENTPIXEL <=  CURRENTPIXEL+1 ;
         end
-        else
-            begin
-            CURRENTPIXEL <=0 ; 
-            end
-        
-        
+       
         
                 
              
