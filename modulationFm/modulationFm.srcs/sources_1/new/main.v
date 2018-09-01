@@ -432,8 +432,8 @@ always @(posedge clk100M)
         oe <=1; 
         
         //XPOS ET YPOS parcourt le caractere pixel par pixel
-        XPOS <= (XPOS == 4) ? 0 : XPOS+1 ; 
-        YPOS <= (XPOS ==4) ? YPOS+1 : YPOS ; 
+        XPOS = (XPOS == 8) ? 0 : XPOS+1 ; 
+        YPOS = (XPOS ==8) ? YPOS+1 : YPOS ; 
         
        
         if (YPOS ==16)
@@ -450,7 +450,7 @@ always @(posedge clk100M)
        */
        SEG1=YPOS[7:0];
        
-       SEG2 = "9"; 
+       SEG2 =XPOS[7:0];
        
         
         ADDR <=  XPOS*8*12 + YPOS*8*12*640 ; 
@@ -491,8 +491,8 @@ always @(posedge clk100M)
              begin
              /*100000 et non 10 -------!*/
              local_count <= local_count +1;
-             clkChar <= (local_count < 100000) ?1'b0:1'b1; 
-             if (local_count == 100000)
+             clkChar <= (local_count < 100000000) ?1'b0:1'b1; 
+             if (local_count == 100000000)
              begin
                  local_count <= 0 ; 
              end
