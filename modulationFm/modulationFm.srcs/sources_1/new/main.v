@@ -441,10 +441,13 @@ always @(posedge clk100M)
        if (buttonUpFrq)
        begin
         XPOS<=0  ; 
-        SEG0 <= XPOS ; 
+        SEG0 <=XPOS[7:0] ; 
         end
        else
-       SEG0<=YPOS ; 
+       SEG0<=YPOS[7:0] ; 
+       
+       SEG1<=YPOS[7:0];
+       SEG2 <= "9"; 
        
         
         ADDR <=  XPOS*8*12 + YPOS*8*12*640 ; 
@@ -479,7 +482,7 @@ always @(posedge clk100M)
         end     
         
           reg clkChar; 
-          reg  [31:0] cnt2=0; 
+          reg  [63:0] cnt2=0; 
          always @(posedge clk100M)
          begin
             cnt2 = (cnt2 == 100000000) ? 0 : cnt2 <= cnt2 +1 ; 
