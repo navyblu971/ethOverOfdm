@@ -422,7 +422,7 @@ always @(posedge clk100M)
     
     //assign SEG3 = XPOS; 
     //assign SEG4 = YPOS; 
- always @(posedge clkChar )
+ always @(posedge clk100M)
        // if (UPDATE_VGA)
         begin
         /* ecrit en memoire ..*/
