@@ -391,7 +391,7 @@ always @(posedge clk100M)
  // reg PIXEL ;
  // wire  PIXEL = pixel ; 
  
- // RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, PIXEL,cs,we ,oe ); 
+  RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, pixel,cs,we ,oe ); 
   
   
   //RamChip ram (y*64+x, code, 0,0 ,1 ); 
@@ -423,7 +423,7 @@ always @(posedge clk100M)
     
     //assign SEG3 = XPOS; 
     //assign SEG4 = YPOS; 
- always @(posedge clkChar)
+ always @(posedge clk100M)
        // if (UPDATE_VGA)
         begin
         /* ecrit en memoire ..*/
@@ -436,7 +436,7 @@ always @(posedge clk100M)
         YPOS = (XPOS ==8) ? YPOS+1 : YPOS ; 
         
        
-        if (YPOS ==16)
+        if (YPOS ==12)
         begin
         YPOS=0 ; 
         
