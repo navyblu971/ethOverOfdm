@@ -431,8 +431,8 @@ always @(posedge clk100M)
         oe <=1; 
         
         //XPOS ET YPOS parcourt le caractere pixel par pixel
-        XPOS <= (XPOS == 8) ? 0 : XPOS+1 ; 
-        YPOS <= (XPOS ==8) ? YPOS+1 : YPOS ; 
+        XPOS <= (XPOS == 4) ? 0 : XPOS+1 ; 
+        YPOS <= (XPOS ==4) ? YPOS+1 : YPOS ; 
         
        
         if (YPOS ==16)
@@ -441,13 +441,13 @@ always @(posedge clk100M)
        if (buttonUpFrq)
        begin
         XPOS<=0  ; 
-        SEG0 <=XPOS[7:0] ; 
+        SEG0 =XPOS[7:0] ; 
         end
        else
        SEG0<=YPOS[7:0] ; 
        
-       SEG1<=YPOS[7:0];
-       SEG2 <= "9"; 
+       SEG1=YPOS[7:0];
+       SEG2 = "9"; 
        
         
         ADDR <=  XPOS*8*12 + YPOS*8*12*640 ; 
