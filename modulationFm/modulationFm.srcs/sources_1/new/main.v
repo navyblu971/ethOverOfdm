@@ -418,6 +418,9 @@ always @(posedge clk100M)
     reg [15:0] YPOS =0; 
     reg UPDATE_VGA =1 ; 
     reg  [15:0] CURRENTPIXEL=0 ; 
+    
+    //assign SEG3 = XPOS; 
+    //assign SEG4 = YPOS; 
  always @(posedge clkChar )
         if (UPDATE_VGA)
         begin
@@ -429,6 +432,7 @@ always @(posedge clk100M)
         //XPOS ET YPOS parcourt le caractere pixel par pixel
         XPOS <= (XPOS == 8) ? 0 : XPOS+1 ; 
         YPOS <= (XPOS ==8) ? YPOS+1 : YPOS ; 
+        
        
         if (YPOS ==16)
         YPOS=0 ; 
@@ -476,7 +480,11 @@ always @(posedge clk100M)
          begin
             cnt2 = (cnt2 == 100) ? 0 : cnt2 <= cnt2 +1 ; 
             if (cnt2 ==100)
+            begin
             clkChar = ~clkChar ;  
+            SEG2 ="2" ;
+            string = "8888888";
+            end 
          end 
          
             
