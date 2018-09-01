@@ -46,6 +46,7 @@ input CS, WE, OE;
 
 reg [WordSize-1:0] Mem [0:(1<<AddressSize)-1];
 
+
 assign Data = (!CS && !OE) ? Mem[Address] : {WordSize{1'bz}};
 
 always @(CS or WE)

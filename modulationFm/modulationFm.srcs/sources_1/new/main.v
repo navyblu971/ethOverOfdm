@@ -342,7 +342,7 @@ always @(posedge clk100M)
      // Four overlapping squares
      wire sq_a, sq_b, sq_c, sq_d;
      //assign sq_a = ((x > 120) & (y >  40) & (x < 280) & (y < 200)) ? 1 : 0;
-     assign sq_a = pixel ; 
+     assign sq_a = PIXEL ; 
      assign sq_b = ((x > 200) & (y > 120) & (x < 360) & (y < 280)) ? 1 : 0;
      assign sq_c = ((x > 280) & (y > 200) & (x < 440) & (y < 360)) ? 1 : 0;
      assign sq_d = ((x > 360) & (y > 280) & (x < 520) & (y < 440)) ? 1 : 0;   
@@ -367,27 +367,119 @@ always @(posedge clk100M)
  // VGA font
   wire pixel;
  // wire [7:0] code = 8'h41;
-  pc_vga_8x16 vga (
+  pc_vga_8x16 dysplayChar (
       .clk(clk100M),
-       .col(x[2:0]),
-       .row(y[3:0]),
+       .col(XPOS[2:0]),
+       .row(YPOS[3:0]),
        .ascii(code),
        .pixel(pixel)
   );
      
      
      
-   wire [7:0] code ; 
+  reg [7:0] code=8'h41 ; 
   //RAM
   /*
-  
+  AddressSize = 8;
+  parameter WordSize = 8;
    */
-  //RamChip ram (x<64 ?x:0, code, 1,1 ,0 ); 
-  /*
-  cs <=0; 
-  we <=0; 
-  oe <=1 ; */
+  /* read pixel ram*/
+  reg cs =0; 
+  reg we =0; 
+  reg oe =1;
+  reg [31:0] ADDR ; 
+  reg PIXEL ; 
+ // RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, PIXEL,cs,we ,oe ); 
   
-  RamChip ram (x<64 ?x:0, code, 0,0 ,1 ); 
+  
+  //RamChip ram (y*64+x, code, 0,0 ,1 ); 
+  reg  [15:0] videoCount ; 
+  // maj ram video
+  always @(posedge clk100M)
+        videoCount <= (videoCount < 12*8) ?videoCount + 1 : 0 ; 
+        
+ 
+ reg  [15:0] charCount ; 
+ reg CURRENTPIXEL ; //current pixel when updating vga ram, go from 0 to 15
+ 
+ 
+ always @(posedge clk100M)
+                charCount <= (charCount < 64) ?charCount + 1 : 0 ; 
+              //   videoCount <= (videoCount < 12*8) ?videoCount + 1 : 0 ; 
+                
+        
+    
+    
+    
+    
+    
+    /* update vga ram */    
+    reg [15:0] XPOS =0; 
+    reg [15:0] YPOS =0; 
+    reg UPDATE_VGA =1 ; 
+    reg  [15:0] CURRENTPIXEL=0 ; 
+ always @(posedge clkChar )
+        if (UPDATE_VGA)
+        begin
+        /* ecrit en memoire ..*/
+        cs <=0 ;
+        we <=1;
+        oe <=1; 
+        
+        //XPOS ET YPOS parcourt le caractere pixel par pixel
+        XPOS <= (XPOS == 8) ? 0 : XPOS+1 ; 
+        YPOS <= (XPOS ==8) ? YPOS+1 : YPOS ; 
+       
+        if (YPOS ==16)
+        YPOS=0 ; 
+        
+        
+        ADDR <=  XPOS*8*12 + YPOS*8*12*640 ; 
+        CURRENTPIXEL <=  CURRENTPIXEL+1 ;
+        end
+        else
+            begin
+            CURRENTPIXEL <=0 ; 
+            end
+        
+        
+        
+                
+             
+             
+          
+     
+ always @(posedge buttonUpFrq) 
+        /* add pixel to memory pixel */
+        begin
+        code <= 8'h45 ; 
+       
+       /*
+        address <=currentPixelAdress ;
+        data<=currentPixel; 
+        seg <= 8'h45 ;
+        
+        */
+        
+        /*
+        code = 8'h45; 
+        PIXEL = pixel ;
+        ADDR = CURSOR ;  
+        cs <=0 ;
+        we <=1;
+        oe <=1; */
+        end     
+        
+          reg clkChar; 
+          reg  [31:0] cnt2=0; 
+         always @(posedge clk100M)
+         begin
+            cnt2 = (cnt2 == 100) ? 0 : cnt2 <= cnt2 +1 ; 
+            if (cnt2 ==100)
+            clkChar = ~clkChar ;  
+         end 
+         
+            
+  
 endmodule 
     
