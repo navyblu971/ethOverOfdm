@@ -388,7 +388,8 @@ always @(posedge clk100M)
   reg we =0; 
   reg oe =1;
   reg [31:0] ADDR ; 
-  reg PIXEL ; 
+  reg PIXEL; 
+ 
  // RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, PIXEL,cs,we ,oe ); 
   
   
@@ -437,6 +438,14 @@ always @(posedge clk100M)
         if (YPOS ==16)
         YPOS=0 ; 
         
+       if (buttonUpFrq)
+       begin
+        XPOS<=0  ; 
+        SEG7 <= XPOS ; 
+        end
+       else
+       SEG7 =YPOS ; 
+       
         
         ADDR <=  XPOS*8*12 + YPOS*8*12*640 ; 
         CURRENTPIXEL <=  CURRENTPIXEL+1 ;
@@ -478,13 +487,13 @@ always @(posedge clk100M)
           reg  [31:0] cnt2=0; 
          always @(posedge clk100M)
          begin
-            cnt2 = (cnt2 == 100) ? 0 : cnt2 <= cnt2 +1 ; 
-            if (cnt2 ==100)
+            cnt2 = (cnt2 == 100000000) ? 0 : cnt2 <= cnt2 +1 ; 
+            if (cnt2 ==100000000)
             begin
             clkChar = ~clkChar ;  
-            SEG2 ="5" ;
-            SEG1 ="7"; 
-            SEG0 ="8"; 
+            //SEG2 ="5" ;
+            //SEG1 ="7"; 
+            //SEG0 ="8"; 
             //string = "8888888";
             end 
          end 
