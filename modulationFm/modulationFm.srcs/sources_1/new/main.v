@@ -300,7 +300,7 @@ always @(posedge clk100M)
  /* affichage 7 segment */  
         
   wire led ;  
-  reg [8*7:0] string = "00abcde"; 
+  reg [8*7:0] string ; //= "00abcde"; 
   reg [7:0] SEG0;
   reg[7:0] SEG1;
   reg  [7:0] SEG2;
@@ -482,8 +482,10 @@ always @(posedge clk100M)
             if (cnt2 ==100)
             begin
             clkChar = ~clkChar ;  
-            SEG2 ="2" ;
-            string = "8888888";
+            SEG2 ="5" ;
+            SEG1 ="7"; 
+            SEG0 ="8"; 
+            //string = "8888888";
             end 
          end 
          
