@@ -244,7 +244,7 @@ always @(posedge clk100M)
      
 
 wire realUpButton ; 
-debounce mydb ( buttonUpFrq,slow_clock, realUpButton); 
+//debounce mydb ( buttonUpFrq,slow_clock, realUpButton); 
 reg buttonCounter =0 ; 
 
 
@@ -342,7 +342,7 @@ always @(posedge clk100M)
      // Four overlapping squares
      wire sq_a, sq_b, sq_c, sq_d;
      //assign sq_a = ((x > 120) & (y >  40) & (x < 280) & (y < 200)) ? 1 : 0;
-     assign sq_a = PIXEL ; 
+     assign sq_a = pixel ; 
      assign sq_b = ((x > 200) & (y > 120) & (x < 360) & (y < 280)) ? 1 : 0;
      assign sq_c = ((x > 280) & (y > 200) & (x < 440) & (y < 360)) ? 1 : 0;
      assign sq_d = ((x > 360) & (y > 280) & (x < 520) & (y < 440)) ? 1 : 0;   
@@ -377,7 +377,7 @@ always @(posedge clk100M)
      
      
      
-  reg [7:0] code=8'h41 ; 
+ 
   //RAM
   /*
   AddressSize = 8;
@@ -388,7 +388,8 @@ always @(posedge clk100M)
   reg we =0; 
   reg oe =1;
   reg [31:0] ADDR ; 
-  reg PIXEL; 
+ // reg PIXEL ;
+ // wire  PIXEL = pixel ; 
  
  // RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, PIXEL,cs,we ,oe ); 
   
@@ -438,6 +439,7 @@ always @(posedge clk100M)
         if (YPOS ==16)
         YPOS=0 ; 
         
+        /*
        if (buttonUpFrq)
        begin
         XPOS<=0  ; 
@@ -445,8 +447,9 @@ always @(posedge clk100M)
         end
        else
        SEG0<=YPOS[7:0] ; 
-       
+       */
        SEG1=YPOS[7:0];
+       
        SEG2 = "9"; 
        
         
@@ -460,10 +463,10 @@ always @(posedge clk100M)
              
           
      
- always @(posedge buttonUpFrq) 
+ //always @(posedge buttonUpFrq) 
         /* add pixel to memory pixel */
-        begin
-        code <= 8'h45 ; 
+   //     begin
+       
        
        /*
         address <=currentPixelAdress ;
@@ -479,7 +482,7 @@ always @(posedge clk100M)
         cs <=0 ;
         we <=1;
         oe <=1; */
-        end     
+      //  end     
         
           reg clkChar; 
           reg [31:0] local_count =0 ; 
