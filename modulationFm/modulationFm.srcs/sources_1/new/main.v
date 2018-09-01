@@ -422,7 +422,7 @@ always @(posedge clk100M)
     
     //assign SEG3 = XPOS; 
     //assign SEG4 = YPOS; 
- always @(posedge clk100M)
+ always @(posedge clkChar)
        // if (UPDATE_VGA)
         begin
         /* ecrit en memoire ..*/
@@ -482,19 +482,18 @@ always @(posedge clk100M)
         end     
         
           reg clkChar; 
-          reg  [63:0] cnt2=0; 
-         always @(posedge clk100M)
-         begin
-            cnt2 = (cnt2 == 100000000) ? 0 : cnt2 <= cnt2 +1 ; 
-            if (cnt2 ==100000000)
-            begin
-            clkChar = ~clkChar ;  
-            //SEG2 ="5" ;
-            //SEG1 ="7"; 
-            //SEG0 ="8"; 
-            //string = "8888888";
-            end 
-         end 
+          reg [31:0] local_count =0 ; 
+          reg [31:0] sec_count ; 
+         always @ (posedge clk100M)
+             begin
+             /*100000 et non 10 -------!*/
+             local_count <= local_count +1;
+             clkChar <= (local_count < 100000) ?1'b0:1'b1; 
+             if (local_count == 100000)
+             begin
+                 local_count <= 0 ; 
+             end
+             end 
          
             
   
