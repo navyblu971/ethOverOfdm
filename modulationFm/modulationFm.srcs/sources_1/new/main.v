@@ -374,6 +374,8 @@ always @(posedge clk100M)
   
  //assign code = (x <7 && y< 12) ? 8'h31 : 8'h32 ; 
  
+ 
+ //print h40 in 20,30
  reg [15:0] XPOS =30; 
  reg [15:0] YPOS =20; 
  
