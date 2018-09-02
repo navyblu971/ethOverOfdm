@@ -374,7 +374,7 @@ always @(posedge clk100M)
   
  //assign code = (x <7 && y< 12) ? 8'h31 : 8'h32 ; 
  
- assign code = (x < 350 && x > 343 && y < 162 && y > 150)  ? 8'h31 : 8'h32 ; 
+ assign code = (x < 108 && x > 99 && y > 159 && y < 173)  ? 8'h40 : 8'h0 ; 
   
   pc_vga_8x16 dysplayChar (
       .clk(clk100M),
