@@ -300,7 +300,7 @@ always @(posedge clk100M)
  /* affichage 7 segment */  
         
   wire led ;  
-  reg [25*7:0] string = "atexide fabrice"; 
+  reg [80*7:0] string = "lebron james est dans la place depuis un moment mais ca va aller oui oui et alors non"; 
   reg [7:0] SEG0;
   reg[7:0] SEG1;
   reg  [7:0] SEG2;
@@ -342,7 +342,7 @@ always @(posedge clk100M)
      // Four overlapping squares
      wire sq_a, sq_b, sq_c, sq_d;
      //assign sq_a = ((x > 120) & (y >  40) & (x < 280) & (y < 200)) ? 1 : 0;
-     assign sq_a = pixel ; 
+     assign sq_a = show && pixel ; 
      
     
      
@@ -376,13 +376,13 @@ always @(posedge clk100M)
  
  
  //print h40 in 20,30
- reg [15:0] XPOS =30; 
- reg [15:0] YPOS =20; 
+ reg [15:0] XPOS =0; 
+ reg [15:0] YPOS =30; 
  
   
 //assign  {SEG1 ,SEG0  }  = 8'h30 + XPOS ; 
- 
- //assign code = (x>XPOS*8 &&  x<(XPOS +1)*8  && y>(YPOS)*12 && y<(YPOS+1)*12)  ? 8'h40 : 8'h0 ; 
+ wire show ; //show line or note
+ assign show = (/*x>XPOS*8 &&  x<(XPOS +80)*8  && */y>(YPOS)*12 && y<(YPOS+1)*12)  ? 1'b1 : 1'b0 ; 
   
   pc_vga_8x16 dysplayChar (
       .clk(clk100M),
@@ -425,10 +425,10 @@ always @(posedge clk100M)
  
  always @(posedge clkChar2)
     begin
-                charCount <= (charCount < 80) ?charCount + 1 : 0 ; 
+              //  charCount <= (charCount < 80) ?charCount + 1 : 0 ; 
               //   videoCount <= (videoCount < 12*8) ?videoCount + 1 : 0 ; 
               XPOS = (XPOS > 79) ?0 :XPOS+1;  
-              code = string[XPOS +30] ; 
+              code = string[XPOS] ; 
               
                 
         
@@ -544,7 +544,7 @@ always @(posedge clk100M)
                          /*100000 et non 10 -------!*/
                          local_count2 <= local_count2 +1;
                          clkChar2 <= (local_count2 < 8*12) ?1'b0:1'b1; 
-                         if (local_count2 == 8*12)
+                         if (local_count2 == 8*12-1)
                          begin
                              local_count2 <= 0 ; 
                          end
