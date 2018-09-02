@@ -342,7 +342,7 @@ always @(posedge clk100M)
      // Four overlapping squares
      wire sq_a, sq_b, sq_c, sq_d;
      //assign sq_a = ((x > 120) & (y >  40) & (x < 280) & (y < 200)) ? 1 : 0;
-     assign sq_a = show && pixel ; 
+     assign sq_a =/* show &&*/ pixel ; 
      
     
      
