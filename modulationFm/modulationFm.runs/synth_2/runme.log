@@ -14,7 +14,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11856 
+INFO: Helper process launched with PID 12326 
 WARNING: [Synth 8-2611] redeclaration of ansi port data0 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:58]
 WARNING: [Synth 8-2611] redeclaration of ansi port data1 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:59]
 WARNING: [Synth 8-2611] redeclaration of ansi port data2 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:60]
@@ -68,7 +68,7 @@ WARNING: [Synth 8-976] CURRENTPIXEL has already been declared [/home/fabrice/Doc
 WARNING: [Synth 8-2654] second declaration of CURRENTPIXEL ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:447]
 INFO: [Synth 8-994] CURRENTPIXEL is declared here [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:423]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1277.656 ; gain = 89.301 ; free physical = 2876 ; free virtual = 6763
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1277.660 ; gain = 89.301 ; free physical = 2980 ; free virtual = 6870
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'main' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:105]
 INFO: [Synth 8-6157] synthesizing module 'display' [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:23]
@@ -254,8 +254,6 @@ WARNING: [Synth 8-6014] Unused sequential element we_reg was removed.  [/home/fa
 WARNING: [Synth 8-6014] Unused sequential element oe_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:457]
 WARNING: [Synth 8-6014] Unused sequential element local_count_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:533]
 WARNING: [Synth 8-6014] Unused sequential element clkChar_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:534]
-WARNING: [Synth 8-6014] Unused sequential element local_count2_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:549]
-WARNING: [Synth 8-6014] Unused sequential element clkChar2_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:550]
 WARNING: [Synth 8-3848] Net outputData in module/entity main does not have driver. [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:364]
 WARNING: [Synth 8-3848] Net SEG0 in module/entity main does not have driver. [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:304]
 WARNING: [Synth 8-3848] Net SEG1 in module/entity main does not have driver. [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:305]
@@ -280,7 +278,7 @@ WARNING: [Synth 8-3331] design main has unconnected port data
 WARNING: [Synth 8-3331] design main has unconnected port buttonUpFrq
 WARNING: [Synth 8-3331] design main has unconnected port buttonDownFrq
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 1306.781 ; gain = 118.426 ; free physical = 2892 ; free virtual = 6780
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 1307.785 ; gain = 119.426 ; free physical = 2996 ; free virtual = 6887
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -358,10 +356,10 @@ WARNING: [Synth 8-3295] tying undriven pin PWM_inst_1:PWM_CW[0] to constant 0 [/
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1306.781 ; gain = 118.426 ; free physical = 2892 ; free virtual = 6779
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1307.785 ; gain = 119.426 ; free physical = 2995 ; free virtual = 6886
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1306.781 ; gain = 118.426 ; free physical = 2892 ; free virtual = 6779
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1307.785 ; gain = 119.426 ; free physical = 2995 ; free virtual = 6886
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -382,22 +380,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   RAMB16_S1 => RAMB18E1: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1611.582 ; gain = 0.000 ; free physical = 2648 ; free virtual = 6535
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1612.586 ; gain = 0.000 ; free physical = 2740 ; free virtual = 6631
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1611.582 ; gain = 423.227 ; free physical = 2716 ; free virtual = 6604
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1612.586 ; gain = 424.227 ; free physical = 2810 ; free virtual = 6701
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1611.582 ; gain = 423.227 ; free physical = 2716 ; free virtual = 6604
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1612.586 ; gain = 424.227 ; free physical = 2810 ; free virtual = 6701
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1611.582 ; gain = 423.227 ; free physical = 2718 ; free virtual = 6606
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1612.586 ; gain = 424.227 ; free physical = 2811 ; free virtual = 6703
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element seg_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v:38]
 INFO: [Synth 8-5545] ROM "sec_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -405,8 +403,9 @@ INFO: [Synth 8-5545] ROM "local_count" won't be mapped to RAM because address si
 INFO: [Synth 8-5545] ROM "show_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "pwm_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "pwm_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "local_count2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:01:15 . Memory (MB): peak = 1611.582 ; gain = 423.227 ; free physical = 2707 ; free virtual = 6595
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:01:15 . Memory (MB): peak = 1612.586 ; gain = 424.227 ; free physical = 2800 ; free virtual = 6692
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -419,22 +418,24 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 4     
 	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
 	   2 Input     10 Bit       Adders := 3     
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 4     
-	               16 Bit    Registers := 1     
+	               32 Bit    Registers := 5     
+	               16 Bit    Registers := 2     
 	               10 Bit    Registers := 2     
 	                8 Bit    Registers := 3     
 	                7 Bit    Registers := 8     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 8     
 +---ROMs : 
 	                              ROMs := 8     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 5     
 	   2 Input      9 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 2     
@@ -449,14 +450,16 @@ Hierarchical RTL Component report
 Module main 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 2     
 	   2 Input     17 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 1     
-	               16 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 Module show 
 Detailed RTL Component Info : 
@@ -522,6 +525,7 @@ INFO: [Synth 8-5545] ROM "mydisplay/show_counter" won't be mapped to RAM because
 INFO: [Synth 8-5545] ROM "mydisplay/sec_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "pwm_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "pwm_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "local_count2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-6014] Unused sequential element mydisplay/s1/seg_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v:38]
 WARNING: [Synth 8-6014] Unused sequential element mydisplay/s2/seg_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v:38]
 WARNING: [Synth 8-6014] Unused sequential element mydisplay/s3/seg_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v:38]
@@ -622,7 +626,7 @@ WARNING: [Synth 8-3332] Sequential element (pwm_counter_reg[0]) is unused and wi
 WARNING: [Synth 8-3332] Sequential element (pwm_clk_reg) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (PWM_inst_1/PWM_out_reg) is unused and will be removed from module main.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:01:20 . Memory (MB): peak = 1611.582 ; gain = 423.227 ; free physical = 2694 ; free virtual = 6584
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:01:23 . Memory (MB): peak = 1612.586 ; gain = 424.227 ; free physical = 2785 ; free virtual = 6678
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -662,13 +666,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:01:46 . Memory (MB): peak = 1611.582 ; gain = 423.227 ; free physical = 2572 ; free virtual = 6462
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1612.586 ; gain = 424.227 ; free physical = 2653 ; free virtual = 6547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:01:47 . Memory (MB): peak = 1611.582 ; gain = 423.227 ; free physical = 2572 ; free virtual = 6462
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1612.586 ; gain = 424.227 ; free physical = 2653 ; free virtual = 6547
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -687,7 +691,7 @@ INFO: [Synth 8-4480] The timing for the instance mydisplay/s3/seg_reg (implement
 INFO: [Synth 8-4480] The timing for the instance mydisplay/s3/seg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance mydisplay/s1/seg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:01:47 . Memory (MB): peak = 1619.590 ; gain = 431.234 ; free physical = 2570 ; free virtual = 6460
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1620.594 ; gain = 432.234 ; free physical = 2651 ; free virtual = 6545
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -707,11 +711,12 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop code_reg[0] is being inverted and renamed to code_reg[0]_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1619.590 ; gain = 431.234 ; free physical = 2569 ; free virtual = 6459
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:01:51 . Memory (MB): peak = 1620.594 ; gain = 432.234 ; free physical = 2651 ; free virtual = 6545
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -724,7 +729,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1619.590 ; gain = 431.234 ; free physical = 2569 ; free virtual = 6459
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:01:51 . Memory (MB): peak = 1620.594 ; gain = 432.234 ; free physical = 2651 ; free virtual = 6545
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -736,25 +741,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1619.590 ; gain = 431.234 ; free physical = 2569 ; free virtual = 6459
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:01:51 . Memory (MB): peak = 1620.594 ; gain = 432.234 ; free physical = 2651 ; free virtual = 6545
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1619.590 ; gain = 431.234 ; free physical = 2569 ; free virtual = 6459
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:01:51 . Memory (MB): peak = 1620.594 ; gain = 432.234 ; free physical = 2651 ; free virtual = 6545
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1619.590 ; gain = 431.234 ; free physical = 2569 ; free virtual = 6459
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:01:51 . Memory (MB): peak = 1620.594 ; gain = 432.234 ; free physical = 2651 ; free virtual = 6545
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1619.590 ; gain = 431.234 ; free physical = 2569 ; free virtual = 6459
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:01:51 . Memory (MB): peak = 1620.594 ; gain = 432.234 ; free physical = 2651 ; free virtual = 6545
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -771,45 +776,46 @@ Report Cell Usage:
 |      |Cell      |Count |
 +------+----------+------+
 |1     |BUFG      |     1|
-|2     |CARRY4    |    17|
-|3     |LUT1      |     4|
-|4     |LUT2      |    12|
-|5     |LUT3      |    15|
-|6     |LUT4      |    12|
-|7     |LUT5      |    21|
-|8     |LUT6      |    65|
-|9     |MUXF7     |     7|
-|10    |RAMB16_S1 |     1|
-|11    |RAMB18E1  |     4|
-|12    |FDRE      |   102|
-|13    |FDSE      |     8|
-|14    |IBUF      |     2|
-|15    |OBUF      |    23|
-|16    |OBUFT     |     9|
+|2     |CARRY4    |    29|
+|3     |LUT1      |     6|
+|4     |LUT2      |    13|
+|5     |LUT3      |    18|
+|6     |LUT4      |    18|
+|7     |LUT5      |    27|
+|8     |LUT6      |    80|
+|9     |MUXF7     |    15|
+|10    |MUXF8     |     4|
+|11    |RAMB16_S1 |     1|
+|12    |RAMB18E1  |     4|
+|13    |FDRE      |   152|
+|14    |FDSE      |     8|
+|15    |IBUF      |     2|
+|16    |OBUF      |    23|
+|17    |OBUFT     |     9|
 +------+----------+------+
 
 Report Instance Areas: 
 +------+--------------+------------------+------+
 |      |Instance      |Module            |Cells |
 +------+--------------+------------------+------+
-|1     |top           |                  |   303|
-|2     |  displayVga  |vga640x480        |    98|
+|1     |top           |                  |   410|
+|2     |  displayVga  |vga640x480        |    95|
 |3     |  dysplayChar |pc_vga_8x16       |     1|
 |4     |    U1        |pc_vga_8x16_00_7F |     1|
-|5     |  mydisplay   |display           |   163|
+|5     |  mydisplay   |display           |   164|
 |6     |    s1        |show              |     1|
 |7     |    s3        |show_0            |    15|
 |8     |    s5        |show_1            |     1|
 |9     |    s7        |show_2            |     8|
 +------+--------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1619.590 ; gain = 431.234 ; free physical = 2569 ; free virtual = 6459
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:01:51 . Memory (MB): peak = 1620.594 ; gain = 432.234 ; free physical = 2651 ; free virtual = 6545
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 70 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:55 . Memory (MB): peak = 1619.590 ; gain = 126.434 ; free physical = 2622 ; free virtual = 6512
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:01:49 . Memory (MB): peak = 1619.598 ; gain = 431.234 ; free physical = 2633 ; free virtual = 6523
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:57 . Memory (MB): peak = 1620.594 ; gain = 127.434 ; free physical = 2704 ; free virtual = 6598
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:01:52 . Memory (MB): peak = 1620.602 ; gain = 432.234 ; free physical = 2716 ; free virtual = 6609
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 31 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 55 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -818,11 +824,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAMB16_S1 => RAMB18E1: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-92 Infos, 231 Warnings, 0 Critical Warnings and 0 Errors encountered.
+95 Infos, 229 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:01:52 . Memory (MB): peak = 1619.598 ; gain = 431.316 ; free physical = 2617 ; free virtual = 6507
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:01:54 . Memory (MB): peak = 1620.602 ; gain = 432.316 ; free physical = 2700 ; free virtual = 6594
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.runs/synth_2/main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.32 . Memory (MB): peak = 1619.598 ; gain = 0.000 ; free physical = 2618 ; free virtual = 6508
-INFO: [Common 17-206] Exiting Vivado at Sun Sep  2 21:14:36 2018...
+report_utilization: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.32 . Memory (MB): peak = 1620.602 ; gain = 0.000 ; free physical = 2701 ; free virtual = 6595
+INFO: [Common 17-206] Exiting Vivado at Sun Sep  2 21:33:36 2018...

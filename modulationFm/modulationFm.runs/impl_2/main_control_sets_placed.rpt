@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Sun Sep  2 21:17:00 2018
+| Date         : Sun Sep  2 21:36:02 2018
 | Host         : fabrice-VirtualBox running 64-bit Ubuntu 18.04.1 LTS
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     8 |
-| Unused register locations in slices containing registers |    22 |
+| Number of unique control sets                            |    11 |
+| Unused register locations in slices containing registers |    32 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,9 +34,9 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      2 |            1 |
+|      2 |            2 |
 |     14 |            1 |
-|    16+ |            6 |
+|    16+ |            8 |
 +--------+--------------+
 
 
@@ -48,8 +48,8 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              44 |           13 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             150 |           19 |
-| Yes          | No                    | No                     |              20 |            7 |
+| No           | Yes                   | No                     |             244 |           33 |
+| Yes          | No                    | No                     |              20 |            5 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              20 |            5 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -61,13 +61,16 @@ Table of Contents
 +--------------------+-------------------------------+-----------------------------------+------------------+----------------+
 |    Clock Signal    |         Enable Signal         |          Set/Reset Signal         | Slice Load Count | Bel Load Count |
 +--------------------+-------------------------------+-----------------------------------+------------------+----------------+
+|  clkChar2          |                               |                                   |                1 |              2 |
 |  mydisplay/clk1s   |                               |                                   |                1 |              2 |
 |  mydisplay/clk1k   |                               |                                   |                4 |             14 |
+|  clk100M_IBUF_BUFG | displayVga/v_count[9]_i_1_n_0 |                                   |                5 |             20 |
 |  clk100M_IBUF_BUFG | pix_stb                       | displayVga/h_count                |                5 |             20 |
-|  clk100M_IBUF_BUFG | displayVga/v_count[9]_i_1_n_0 |                                   |                7 |             20 |
-|  mydisplay/clk1k   |                               | mydisplay/show_counter[3]         |                2 |             24 |
-|  clk100M_IBUF_BUFG |                               |                                   |                8 |             28 |
+|  mydisplay/clk1k   |                               | mydisplay/show_counter[3]         |                3 |             24 |
+|  clk100M_IBUF_BUFG |                               |                                   |                7 |             26 |
+|  clkChar2          |                               | XPOS[15]_i_1_n_0                  |                5 |             32 |
 |  clk100M_IBUF_BUFG |                               | mydisplay/sec_count[31]_i_1_n_0   |                8 |             62 |
+|  clk100M_IBUF_BUFG |                               | local_count2[31]_i_1_n_0          |                8 |             62 |
 |  clk100M_IBUF_BUFG |                               | mydisplay/local_count[31]_i_1_n_0 |                9 |             64 |
 +--------------------+-------------------------------+-----------------------------------+------------------+----------------+
 
