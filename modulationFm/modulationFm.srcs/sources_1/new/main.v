@@ -366,7 +366,7 @@ always @(posedge clk100M)
   //ps://github.com/MParygin/v.vga.font8x16/blob/master/pc_vga_8x16.v
  // VGA font
   wire pixel;
-  reg  [7:0] code = 8'h41;
+  reg  [7:0] code ; //= 8'h41;
   pc_vga_8x16 dysplayChar (
       .clk(clk100M),
        .col(XPOS[2:0]),
@@ -432,15 +432,23 @@ always @(posedge clk100M)
         oe <=1; 
         
         //XPOS ET YPOS parcourt le caractere pixel par pixel
-        XPOS = (XPOS == 8) ? 0 : XPOS+1 ; 
-        YPOS = (XPOS ==8) ? YPOS+1 : YPOS ; 
+        
+        /*
+        XPOS = (XPOS == 7) ? 0 : XPOS+1 ; 
+        YPOS = (XPOS ==7) ? YPOS+1 : YPOS ; 
         
        
-        if (YPOS ==12)
+        if (YPOS ==11)
         begin
         YPOS=0 ; 
+        */
+        if (XPOS <7 && YPOS < 12)
+            code = 8'h30 ; 
+            
+        //code = (XPOS <7 && YPOS < 12) ? 8'h31 : 8'32 ; 
         
-        end
+        
+        
         /*
        if (buttonUpFrq)
        begin
@@ -454,13 +462,13 @@ always @(posedge clk100M)
        
        SEG2 =8'h30 + XPOS[7:0];
        
-        
+        /*
         ADDR <=  XPOS*8*12 + YPOS*8*12*640 ; 
         CURRENTPIXEL <=  CURRENTPIXEL+1 ;
         
         if (CURRENTPIXEL ==8*12)
         code <= code +1 ; 
-        
+        */
         end
        
         
