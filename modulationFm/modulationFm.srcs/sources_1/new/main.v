@@ -343,6 +343,10 @@ always @(posedge clk100M)
      wire sq_a, sq_b, sq_c, sq_d;
      //assign sq_a = ((x > 120) & (y >  40) & (x < 280) & (y < 200)) ? 1 : 0;
      assign sq_a = pixel ; 
+     
+    
+     
+     
      assign sq_b = ((x > 200) & (y > 120) & (x < 360) & (y < 280)) ? 1 : 0;
      assign sq_c = ((x > 280) & (y > 200) & (x < 440) & (y < 360)) ? 1 : 0;
      assign sq_d = ((x > 360) & (y > 280) & (x < 520) & (y < 440)) ? 1 : 0;   
@@ -366,7 +370,12 @@ always @(posedge clk100M)
   //ps://github.com/MParygin/v.vga.font8x16/blob/master/pc_vga_8x16.v
  // VGA font
   wire pixel;
-  reg  [7:0] code ; //= 8'h41;
+  wire  [7:0] code ; //= 8'h41;
+  
+ //assign code = (x <7 && y< 12) ? 8'h31 : 8'h32 ; 
+ 
+ assign code = (x < 350 && x > 343 && y < 162 && y > 150)  ? 8'h31 : 8'h32 ; 
+  
   pc_vga_8x16 dysplayChar (
       .clk(clk100M),
        .col(XPOS[2:0]),
@@ -442,8 +451,8 @@ always @(posedge clk100M)
         begin
         YPOS=0 ; 
         */
-        if (XPOS <7 && YPOS < 12)
-            code = 8'h30 ; 
+        //if (XPOS <7 && YPOS < 12)
+          //  code = 8'h30 ; 
             
         //code = (XPOS <7 && YPOS < 12) ? 8'h31 : 8'32 ; 
         
