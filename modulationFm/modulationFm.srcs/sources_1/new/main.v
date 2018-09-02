@@ -378,8 +378,8 @@ always @(posedge clk100M)
   
   pc_vga_8x16 dysplayChar (
       .clk(clk100M),
-       .col(XPOS[2:0]),
-       .row(YPOS[3:0]),
+       .col(x[2:0]),
+       .row(y[3:0]),
        .ascii(code),
        .pixel(pixel)
   );
