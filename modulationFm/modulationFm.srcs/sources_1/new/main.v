@@ -374,7 +374,10 @@ always @(posedge clk100M)
   
  //assign code = (x <7 && y< 12) ? 8'h31 : 8'h32 ; 
  
- assign code = (x>XPOS*8 &&  x<(XPOS +1)*8  && y>(YPOS-1)*12 && y<(YPOS)*12)  ? 8'h40 : 8'h0 ; 
+ reg [15:0] XPOS =30; 
+ reg [15:0] YPOS =20; 
+ 
+ assign code = (x>XPOS*8 &&  x<(XPOS +1)*8  && y>(YPOS)*12 && y<(YPOS+1)*12)  ? 8'h40 : 8'h0 ; 
   
   pc_vga_8x16 dysplayChar (
       .clk(clk100M),
@@ -425,8 +428,7 @@ always @(posedge clk100M)
     
     
     /* update vga ram */    
-    reg [15:0] XPOS =200; 
-    reg [15:0] YPOS =200; 
+  
     reg UPDATE_VGA =1 ; 
     reg  [15:0] CURRENTPIXEL=0 ; 
     
