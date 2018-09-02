@@ -388,11 +388,11 @@ always @(posedge clk100M)
       .clk(clk100M),
        .col(x[2:0]),
        .row(y[3:0]),
-       .ascii(code),
+       .ascii(8'h41),
        .pixel(pixel)
   );
      
- ;  
+  
      
  
   //RAM
@@ -427,8 +427,12 @@ always @(posedge clk100M)
     begin
               //  charCount <= (charCount < 80) ?charCount + 1 : 0 ; 
               //   videoCount <= (videoCount < 12*8) ?videoCount + 1 : 0 ; 
-              XPOS = (XPOS > 79) ?0 :XPOS+1;  
-              code = string[XPOS] ; 
+              //XPOS = (XPOS > 95) ?0 :XPOS+1;  
+              //code = 8'h30 ; // string[XPOS] ; 
+             // SEG0 = "0" ; 
+              
+           
+              
               
                 
         
