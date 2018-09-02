@@ -300,7 +300,7 @@ always @(posedge clk100M)
  /* affichage 7 segment */  
         
   wire led ;  
-  reg [8*7:0] string ; //= "00abcde"; 
+  reg [25*7:0] string = "atexide fabrice"; 
   reg [7:0] SEG0;
   reg[7:0] SEG1;
   reg  [7:0] SEG2;
@@ -355,7 +355,7 @@ always @(posedge clk100M)
       assign VGA_G[3] = sq_a | sq_d;  // squares a and d are green
       assign VGA_B[3] = sq_c;         // square c is blue   
   
-  
+      
   
   
   /* PWM */
@@ -370,7 +370,7 @@ always @(posedge clk100M)
   //ps://github.com/MParygin/v.vga.font8x16/blob/master/pc_vga_8x16.v
  // VGA font
   wire pixel;
-  wire  [7:0] code ; //= 8'h41;
+  reg  [7:0] code ; //= 8'h41;
   
  //assign code = (x <7 && y< 12) ? 8'h31 : 8'h32 ; 
  
@@ -379,7 +379,10 @@ always @(posedge clk100M)
  reg [15:0] XPOS =30; 
  reg [15:0] YPOS =20; 
  
- assign code = (x>XPOS*8 &&  x<(XPOS +1)*8  && y>(YPOS)*12 && y<(YPOS+1)*12)  ? 8'h40 : 8'h0 ; 
+  
+//assign  {SEG1 ,SEG0  }  = 8'h30 + XPOS ; 
+ 
+ //assign code = (x>XPOS*8 &&  x<(XPOS +1)*8  && y>(YPOS)*12 && y<(YPOS+1)*12)  ? 8'h40 : 8'h0 ; 
   
   pc_vga_8x16 dysplayChar (
       .clk(clk100M),
@@ -389,7 +392,7 @@ always @(posedge clk100M)
        .pixel(pixel)
   );
      
-     
+ ;  
      
  
   //RAM
@@ -399,13 +402,14 @@ always @(posedge clk100M)
    */
   /* read pixel ram*/
   reg cs =0; 
-  reg we =0; 
+  reg we =1; 
   reg oe =1;
-  reg [31:0] ADDR ; 
+  wire [31:0] ADDR ; 
  // reg PIXEL ;
  // wire  PIXEL = pixel ; 
+  //assign ADDR = y*640*12*8 + x*12*8 ; 
  
-  RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, pixel,cs,we ,oe ); 
+ // RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, pixel,cs,we ,oe ); 
   
   
   //RamChip ram (y*64+x, code, 0,0 ,1 ); 
@@ -419,12 +423,16 @@ always @(posedge clk100M)
  reg CURRENTPIXEL ; //current pixel when updating vga ram, go from 0 to 15
  
  
- always @(posedge clk100M)
-                charCount <= (charCount < 64) ?charCount + 1 : 0 ; 
+ always @(posedge clkChar2)
+    begin
+                charCount <= (charCount < 80) ?charCount + 1 : 0 ; 
               //   videoCount <= (videoCount < 12*8) ?videoCount + 1 : 0 ; 
+              XPOS = (XPOS > 79) ?0 :XPOS+1;  
+              code = string[XPOS +30] ; 
+              
                 
         
-    
+    end 
     
     
     
@@ -471,9 +479,7 @@ always @(posedge clk100M)
        else
        SEG0<=YPOS[7:0] ; 
        */
-       SEG1=8'h30 + YPOS[7:0];
        
-       SEG2 =8'h30 + XPOS[7:0];
        
         /*
         ADDR <=  XPOS*8*12 + YPOS*8*12*640 ; 
@@ -490,11 +496,11 @@ always @(posedge clk100M)
              
           
      
- //always @(posedge buttonUpFrq) 
+ always @(posedge buttonUpFrq) 
         /* add pixel to memory pixel */
-   //     begin
-       
-       
+       begin
+      // XPOS <= XPOS+1 ; 
+      // SEG0 = 8'h30 + XPOS ;
        /*
         address <=currentPixelAdress ;
         data<=currentPixel; 
@@ -503,17 +509,20 @@ always @(posedge clk100M)
         */
         
         /*
-        code = 8'h45; 
+        ADDR = YPOS*640*12*8 + XPOS*12*8 ; 
+        
+        code <= 8'h45; 
         PIXEL = pixel ;
-        ADDR = CURSOR ;  
+        ADDR = CURSOR ; 
+        */ 
         cs <=0 ;
         we <=1;
-        oe <=1; */
-      //  end     
+        oe <=1; 
+        end     
         
-          reg clkChar; 
-          reg [31:0] local_count =0 ; 
-          reg [31:0] sec_count ; 
+        reg clkChar; 
+        reg [31:0] local_count =0 ; 
+        reg [31:0] sec_count ; 
          always @ (posedge clk100M)
              begin
              /*100000 et non 10 -------!*/
@@ -524,6 +533,22 @@ always @(posedge clk100M)
                  local_count <= 0 ; 
              end
              end 
+             
+             
+             
+          reg clkChar2; 
+          reg [31:0] local_count2 =0 ; 
+          reg [31:0] sec_count2 ; 
+                     always @ (posedge clk100M)
+                         begin
+                         /*100000 et non 10 -------!*/
+                         local_count2 <= local_count2 +1;
+                         clkChar2 <= (local_count2 < 8*12) ?1'b0:1'b1; 
+                         if (local_count2 == 8*12)
+                         begin
+                             local_count2 <= 0 ; 
+                         end
+                         end 
          
             
   
