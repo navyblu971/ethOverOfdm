@@ -14,7 +14,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11532 
+INFO: Helper process launched with PID 12852 
 WARNING: [Synth 8-2611] redeclaration of ansi port data0 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:58]
 WARNING: [Synth 8-2611] redeclaration of ansi port data1 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:59]
 WARNING: [Synth 8-2611] redeclaration of ansi port data2 is not allowed [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:60]
@@ -67,7 +67,7 @@ WARNING: [Synth 8-976] UPDATE_VGA has already been declared [/home/fabrice/Docum
 WARNING: [Synth 8-2654] second declaration of UPDATE_VGA ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:465]
 INFO: [Synth 8-994] UPDATE_VGA is declared here [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:142]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1277.652 ; gain = 89.301 ; free physical = 2627 ; free virtual = 6597
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1277.656 ; gain = 89.301 ; free physical = 2525 ; free virtual = 6513
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'main' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v:105]
 INFO: [Synth 8-6157] synthesizing module 'display' [/home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v:23]
@@ -281,7 +281,7 @@ WARNING: [Synth 8-3331] design main has unconnected port data
 WARNING: [Synth 8-3331] design main has unconnected port buttonUpFrq
 WARNING: [Synth 8-3331] design main has unconnected port buttonDownFrq
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1307.777 ; gain = 119.426 ; free physical = 2654 ; free virtual = 6624
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1307.781 ; gain = 119.426 ; free physical = 2540 ; free virtual = 6529
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -359,10 +359,10 @@ WARNING: [Synth 8-3295] tying undriven pin PWM_inst_1:PWM_CW[0] to constant 0 [/
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1307.777 ; gain = 119.426 ; free physical = 2654 ; free virtual = 6624
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1307.781 ; gain = 119.426 ; free physical = 2540 ; free virtual = 6529
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1307.777 ; gain = 119.426 ; free physical = 2654 ; free virtual = 6624
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1307.781 ; gain = 119.426 ; free physical = 2540 ; free virtual = 6529
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -383,22 +383,22 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   RAMB16_S1 => RAMB18E1: 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1624.578 ; gain = 0.000 ; free physical = 2387 ; free virtual = 6358
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1618.582 ; gain = 0.000 ; free physical = 2282 ; free virtual = 6271
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2459 ; free virtual = 6430
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:30 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2354 ; free virtual = 6343
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2459 ; free virtual = 6430
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:30 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2354 ; free virtual = 6343
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:53 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2461 ; free virtual = 6432
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:30 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2356 ; free virtual = 6345
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element seg_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v:38]
 INFO: [Synth 8-5545] ROM "sec_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -409,11 +409,13 @@ INFO: [Synth 8-5545] ROM "Mem_reg[-1]" won't be mapped to RAM because address si
 INFO: [Synth 8-5545] ROM "pwm_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "pwm_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "UPDATE_VGA" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "XPOS0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "YPOS" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "local_count2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-327] inferring latch for variable 'Mem_reg[-1]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/ram.v:50]
 WARNING: [Synth 8-327] inferring latch for variable 'Mem_reg[0]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/ram.v:50]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:55 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2451 ; free virtual = 6422
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2345 ; free virtual = 6335
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -428,12 +430,12 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     32 Bit       Adders := 5     
 	   2 Input     26 Bit       Adders := 1     
+	   2 Input     19 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
 	   2 Input     16 Bit       Adders := 2     
 	   2 Input     10 Bit       Adders := 3     
 	   2 Input      8 Bit       Adders := 2     
 	   2 Input      4 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 2     
 	   2 Input      1 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 5     
@@ -444,15 +446,16 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 10    
 +---Multipliers : 
 	                26x26  Multipliers := 1     
+	                19x19  Multipliers := 1     
 +---ROMs : 
 	                              ROMs := 8     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 6     
-	   2 Input     16 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 3     
 	   2 Input     10 Bit        Muxes := 5     
 	   2 Input      9 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 12    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -465,10 +468,10 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     32 Bit       Adders := 3     
 	   2 Input     26 Bit       Adders := 1     
+	   2 Input     19 Bit       Adders := 1     
 	   2 Input     17 Bit       Adders := 1     
 	   2 Input     16 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 2     
 	   2 Input      1 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 2     
@@ -476,10 +479,11 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 6     
 +---Multipliers : 
 	                26x26  Multipliers := 1     
+	                19x19  Multipliers := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 4     
-	   2 Input     16 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 6     
+	   2 Input     16 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 5     
 Module show 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -548,11 +552,12 @@ INFO: [Synth 8-5545] ROM "mydisplay/show_counter" won't be mapped to RAM because
 INFO: [Synth 8-5545] ROM "mydisplay/sec_count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Pixelram/Mem_reg[-1]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Pixelram/Mem_reg[0]" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "UPDATE_VGA" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "pwm_counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "pwm_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "UPDATE_VGA" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "local_count2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "XPOS0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "YPOS" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-6014] Unused sequential element mydisplay/s1/seg_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v:38]
 WARNING: [Synth 8-6014] Unused sequential element mydisplay/s2/seg_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v:38]
 WARNING: [Synth 8-6014] Unused sequential element mydisplay/s3/seg_reg was removed.  [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v:38]
@@ -563,8 +568,9 @@ WARNING: [Synth 8-6014] Unused sequential element mydisplay/s7/seg_reg was remov
 DSP Report: Generating DSP ADDR0, operation Mode is: C+A*(B:0x280).
 DSP Report: operator ADDR0 is absorbed into DSP ADDR0.
 DSP Report: operator ADDR1 is absorbed into DSP ADDR0.
-WARNING: [Synth 8-3917] design main has port VGA_R[3] driven by constant 0
-WARNING: [Synth 8-3917] design main has port VGA_B[3] driven by constant 0
+DSP Report: Generating DSP ADDR0, operation Mode is: C+(A:0x280)*B.
+DSP Report: operator ADDR0 is absorbed into DSP ADDR0.
+DSP Report: operator ADDR1 is absorbed into DSP ADDR0.
 WARNING: [Synth 8-3331] design main has unconnected port VGA_R[2]
 WARNING: [Synth 8-3331] design main has unconnected port VGA_R[1]
 WARNING: [Synth 8-3331] design main has unconnected port VGA_R[0]
@@ -608,55 +614,8 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mydispla
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (pwm_clk_reg)
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\mydisplay/seg_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\PWM_inst_1/PWM_out_reg )
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[9] with 1st driver pin 'displayVga/o_x_inferred/o_x[9]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[9] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_x[9] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[8] with 1st driver pin 'displayVga/o_x_inferred/o_x[8]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[8] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_x[8] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[7] with 1st driver pin 'displayVga/o_x_inferred/o_x[7]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[7] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_x[7] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[6] with 1st driver pin 'displayVga/o_x_inferred/o_x[6]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[6] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_x[6] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[5] with 1st driver pin 'displayVga/o_x_inferred/o_x[5]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[5] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_x[5] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[4] with 1st driver pin 'displayVga/o_x_inferred/o_x[4]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[4] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_x[4] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[3] with 1st driver pin 'displayVga/o_x_inferred/o_x[3]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[3] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_x[3] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[2] with 1st driver pin 'displayVga/o_x_inferred/o_x[2]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_x[2] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_x[2] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:55]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[8] with 1st driver pin 'displayVga/o_y_inferred/o_y[8]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[8] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_y[8] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[7] with 1st driver pin 'displayVga/o_y_inferred/o_y[7]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[7] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_y[7] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[6] with 1st driver pin 'displayVga/o_y_inferred/o_y[6]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[6] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_y[6] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[5] with 1st driver pin 'displayVga/o_y_inferred/o_y[5]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[5] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_y[5] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[4] with 1st driver pin 'displayVga/o_y_inferred/o_y[4]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[4] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_y[4] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[3] with 1st driver pin 'displayVga/o_y_inferred/o_y[3]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[3] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_y[3] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[2] with 1st driver pin 'displayVga/o_y_inferred/o_y[2]' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net o_y[2] with 2nd driver pin 'GND' [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net o_y[2] is connected to constant driver, other driver is ignored [/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v:56]
 WARNING: [Synth 8-3332] Sequential element (Pixelram/Mem_reg[-1][0]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (Pixelram/Mem_reg[0][0]) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (UPDATE_VGA_reg) is unused and will be removed from module main.
-WARNING: [Synth 8-3332] Sequential element (UPDATE_VGA_reg__0) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (code_reg[7]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (code_reg[6]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (code_reg[5]) is unused and will be removed from module main.
@@ -665,6 +624,7 @@ WARNING: [Synth 8-3332] Sequential element (code_reg[3]) is unused and will be r
 WARNING: [Synth 8-3332] Sequential element (code_reg[2]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (code_reg[1]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (code_reg[0]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (UPDATE_VGA_reg) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (ADDR_reg[31]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (ADDR_reg[30]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (ADDR_reg[29]) is unused and will be removed from module main.
@@ -745,6 +705,7 @@ WARNING: [Synth 8-3332] Sequential element (ADDR_reg[3]__0) is unused and will b
 WARNING: [Synth 8-3332] Sequential element (ADDR_reg[2]__0) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (ADDR_reg[1]__0) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (ADDR_reg[0]__0) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (UPDATE_VGA_reg__0) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (mydisplay/show_counter_reg[31]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (mydisplay/seg_reg[7]) is unused and will be removed from module main.
 WARNING: [Synth 8-3332] Sequential element (cnt_reg[12]) is unused and will be removed from module main.
@@ -755,7 +716,7 @@ WARNING: [Synth 8-3332] Sequential element (cnt_reg[8]) is unused and will be re
 WARNING: [Synth 8-3332] Sequential element (cnt_reg[7]) is unused and will be removed from module main.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:58 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2431 ; free virtual = 6404
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:33 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2332 ; free virtual = 6324
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -781,6 +742,7 @@ DSP: Preliminary Mapping  Report (see note below)
 |Module Name | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |main        | C+A*(B:0x280) | 16     | 10     | 16     | -      | 26     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|main        | C+(A:0x280)*B | 9      | 10     | 10     | -      | 19     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 +------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -804,13 +766,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:01:12 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2313 ; free virtual = 6287
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:44 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2208 ; free virtual = 6200
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:01:12 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2313 ; free virtual = 6287
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:44 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2208 ; free virtual = 6200
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -829,7 +791,7 @@ INFO: [Synth 8-4480] The timing for the instance mydisplay/s3/seg_reg (implement
 INFO: [Synth 8-4480] The timing for the instance mydisplay/s3/seg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance mydisplay/s1/seg_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:01:12 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2312 ; free virtual = 6285
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:44 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2206 ; free virtual = 6198
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -853,7 +815,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:01:13 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2312 ; free virtual = 6285
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2206 ; free virtual = 6198
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -866,7 +828,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:01:13 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2312 ; free virtual = 6285
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2206 ; free virtual = 6198
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -878,25 +840,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:01:13 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2312 ; free virtual = 6285
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2206 ; free virtual = 6198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:01:13 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2312 ; free virtual = 6285
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2206 ; free virtual = 6198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:01:13 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2312 ; free virtual = 6285
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2206 ; free virtual = 6198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:01:13 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2312 ; free virtual = 6285
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2206 ; free virtual = 6198
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -914,27 +876,27 @@ Report Cell Usage:
 +------+---------+------+
 |1     |BUFG     |     1|
 |2     |CARRY4   |    17|
-|3     |LUT1     |     4|
-|4     |LUT2     |     6|
-|5     |LUT3     |    16|
-|6     |LUT4     |    15|
-|7     |LUT5     |    20|
-|8     |LUT6     |    27|
+|3     |LUT1     |     5|
+|4     |LUT2     |    11|
+|5     |LUT3     |    19|
+|6     |LUT4     |    17|
+|7     |LUT5     |    29|
+|8     |LUT6     |    38|
 |9     |MUXF7    |     7|
 |10    |RAMB18E1 |     4|
 |11    |FDRE     |   102|
 |12    |FDSE     |     8|
 |13    |IBUF     |     2|
-|14    |OBUF     |    22|
-|15    |OBUFT    |    10|
+|14    |OBUF     |    23|
+|15    |OBUFT    |     9|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+-------------+-----------+------+
 |      |Instance     |Module     |Cells |
 +------+-------------+-----------+------+
-|1     |top          |           |   261|
-|2     |  displayVga |vga640x480 |    57|
+|1     |top          |           |   292|
+|2     |  displayVga |vga640x480 |    88|
 |3     |  mydisplay  |display    |   163|
 |4     |    s1       |show       |     1|
 |5     |    s3       |show_0     |    15|
@@ -942,11 +904,11 @@ Report Instance Areas:
 |7     |    s7       |show_2     |     8|
 +------+-------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:01:13 . Memory (MB): peak = 1624.578 ; gain = 436.227 ; free physical = 2312 ; free virtual = 6285
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1618.582 ; gain = 430.227 ; free physical = 2206 ; free virtual = 6198
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 45 critical warnings and 234 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:36 . Memory (MB): peak = 1624.578 ; gain = 119.426 ; free physical = 2365 ; free virtual = 6339
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:01:14 . Memory (MB): peak = 1624.586 ; gain = 436.227 ; free physical = 2377 ; free virtual = 6350
+Synthesis finished with 0 errors, 0 critical warnings and 232 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:23 . Memory (MB): peak = 1618.582 ; gain = 119.426 ; free physical = 2259 ; free virtual = 6251
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:45 . Memory (MB): peak = 1618.590 ; gain = 430.227 ; free physical = 2271 ; free virtual = 6263
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 30 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -956,11 +918,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-104 Infos, 283 Warnings, 45 Critical Warnings and 0 Errors encountered.
+107 Infos, 281 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:01:15 . Memory (MB): peak = 1624.586 ; gain = 436.309 ; free physical = 2363 ; free virtual = 6336
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:46 . Memory (MB): peak = 1618.590 ; gain = 430.309 ; free physical = 2256 ; free virtual = 6248
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.runs/synth_2/main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.21 . Memory (MB): peak = 1624.586 ; gain = 0.000 ; free physical = 2363 ; free virtual = 6337
-INFO: [Common 17-206] Exiting Vivado at Tue Sep  4 16:55:31 2018...
+report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.11 . Memory (MB): peak = 1618.590 ; gain = 0.000 ; free physical = 2258 ; free virtual = 6250
+INFO: [Common 17-206] Exiting Vivado at Tue Sep  4 21:51:45 2018...

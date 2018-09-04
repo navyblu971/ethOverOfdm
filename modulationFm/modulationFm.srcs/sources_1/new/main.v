@@ -414,8 +414,8 @@ always @(posedge clk100M)
  
   RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, PIXEL,cs,we ,oe ); 
   assign PIXEL =( PIXEL2DRAW && UPDATE_VGA)  + (pixel && ~UPDATE_VGA);  
-  assign x = (x && UPDATE_VGA) + (XPOS  && ~UPDATE_VGA) ; 
-  assign y = (y && UPDATE_VGA) + (YPOS  && ~UPDATE_VGA) ; 
+  //assign x = (x && UPDATE_VGA) + (XPOS  && ~UPDATE_VGA) ; 
+  //assign y = (y && UPDATE_VGA) + (YPOS  && ~UPDATE_VGA) ; 
   
   //RamChip ram (y*64+x, code, 0,0 ,1 ); 
   reg  [15:0] videoCount ; 
