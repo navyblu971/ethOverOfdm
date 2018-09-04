@@ -69,7 +69,7 @@ reg oe;
 
 
 //read
-RamChip ram (address, data2, cs,we,oe ); 
+RamChip ram (address, data, cs,we,oe ); 
 
  
 initial 
@@ -82,19 +82,22 @@ clk100M = 0 ;
 #1; 
  //ecrire h45 à l'addresse 23
 address <= 23;
-data=73; 
-seg <= 8'h45 ;
+data=8'h01; 
+//seg <= 8'h45 ;
 
 
 cs <=0 ;
 we <=1;
 oe <=1; 
 
+
+
+/*
 #10; 
 cs <=0; 
 we <=0; 
 oe <=1 ; 
-address <= 10;// lire address 10; 
+address <= 10; */// lire address 10; 
 //seg <= 73
 //#30; clk100M <=0 ; 
 end

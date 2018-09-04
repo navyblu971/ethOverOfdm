@@ -37,7 +37,7 @@ integer i ;
 
 initial begin
  for (i=0;i<(1<<AddressSize)-1; i=i+1)
-            Mem[i] <= 8'h30 + i ;
+            Mem[i] <= 8'h1 ;
 end
 
 input [AddressSize-1:0] Address;

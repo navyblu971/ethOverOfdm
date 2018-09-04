@@ -139,6 +139,8 @@ wire buttonDownFrq;
 integer freq = 16'h1234 ; 
 integer dev = 30 ; 
 
+reg UPDATE_VGA = 1 ; 
+
 
 wire data ; 
 reg [31:0] counter ; 
@@ -305,7 +307,7 @@ always @(posedge clk100M)
   reg[7:0] SEG1;
   reg  [7:0] SEG2;
   reg[7:0] SEG3 ;
- reg [7:0] SEG4;
+  reg [7:0] SEG4;
   reg [7:0] SEG5;
   reg [7:0] SEG6;
   reg  [7:0] SEG7;
@@ -342,7 +344,7 @@ always @(posedge clk100M)
      // Four overlapping squares
      wire sq_a, sq_b, sq_c, sq_d;
      //assign sq_a = ((x > 120) & (y >  40) & (x < 280) & (y < 200)) ? 1 : 0;
-     assign sq_a = /*show &&*/ pixel ; 
+     assign sq_a = /*show &&*/ PIXEL2DRAW ; 
      
     
      
@@ -369,8 +371,8 @@ always @(posedge clk100M)
   /*texte */
   //ps://github.com/MParygin/v.vga.font8x16/blob/master/pc_vga_8x16.v
  // VGA font
-  wire pixel;
-  reg  [7:0] code ; //= 8'h41;
+  wire pixel ;
+  reg  [7:0] code = 8'h41;
   
  //assign code = (x <7 && y< 12) ? 8'h31 : 8'h32 ; 
  
@@ -384,7 +386,7 @@ always @(posedge clk100M)
  wire show ; //show line or note
  assign show = (/*x>XPOS*8 &&  x<(XPOS +80)*8  && */y>(YPOS)*12 && y<(YPOS+1)*12)  ? 1'b1 : 1'b0 ; 
   
-  pc_vga_8x16 dysplayChar (
+  pc_vga_8x16 displayChar (
       .clk(clk100M),
        .col(x[2:0]),
        .row(y[3:0]),
@@ -404,13 +406,16 @@ always @(posedge clk100M)
   reg cs =0; 
   reg we =1; 
   reg oe =1;
-  wire [31:0] ADDR ; 
- // reg PIXEL ;
+  reg [31:0] ADDR ; 
+  wire PIXEL, PIXEL2DRAW ;
+ // assign pixel = PIXEL && UPDATE_VGA; 
  // wire  PIXEL = pixel ; 
   //assign ADDR = y*640*12*8 + x*12*8 ; 
  
- // RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, pixel,cs,we ,oe ); 
-  
+  RamChip #(.AddressSize(32), .WordSize(1)) Pixelram (ADDR, PIXEL,cs,we ,oe ); 
+  assign PIXEL =( PIXEL2DRAW && UPDATE_VGA)  + (pixel && ~UPDATE_VGA);  
+  assign x = (x && UPDATE_VGA) + (XPOS  && ~UPDATE_VGA) ; 
+  assign y = (y && UPDATE_VGA) + (YPOS  && ~UPDATE_VGA) ; 
   
   //RamChip ram (y*64+x, code, 0,0 ,1 ); 
   reg  [15:0] videoCount ; 
@@ -420,15 +425,15 @@ always @(posedge clk100M)
         
  
  reg  [15:0] charCount ; 
- reg CURRENTPIXEL ; //current pixel when updating vga ram, go from 0 to 15
+ reg [31:0]CURRENTPIXEL=0 ; //current pixel when updating vga ram, go from 0 to 8*12
  
- 
+  
  always @(posedge clkChar2)
     begin
               //  charCount <= (charCount < 80) ?charCount + 1 : 0 ; 
               //   videoCount <= (videoCount < 12*8) ?videoCount + 1 : 0 ; 
              // XPOS = (XPOS > 95) ?0 :XPOS+1;  
-              code = 8'h41; 
+              code = code +1;  
              // SEG0 = "0" ; 
               
            
@@ -440,16 +445,34 @@ always @(posedge clk100M)
     
     
     
+     reg clkKeyboard ; 
+     always @(posedge clkKeyboard)
+     begin
+     UPDATE_VGA =0 ;
+      ADDR <=ADDR +1 ; 
+      code <=code +1 ; 
+      
+     
+     
+     
+     
+     end
+     
+    
     
     /* update vga ram */    
   
     reg UPDATE_VGA =1 ; 
-    reg  [15:0] CURRENTPIXEL=0 ; 
+  
     
     //assign SEG3 = XPOS; 
     //assign SEG4 = YPOS; 
  always @(posedge clk100M)
-       // if (UPDATE_VGA)
+        begin
+        
+ 
+ 
+        if (UPDATE_VGA ==0 && CURRENTPIXEL <  8*12  )
         begin
         /* ecrit en memoire ..*/
         cs <=0 ;
@@ -457,16 +480,29 @@ always @(posedge clk100M)
         oe <=1; 
         
         //XPOS ET YPOS parcourt le caractere pixel par pixel
+        code = 8'h43; //on ecrit ce caractere 
         
-        /*
         XPOS = (XPOS == 7) ? 0 : XPOS+1 ; 
         YPOS = (XPOS ==7) ? YPOS+1 : YPOS ; 
         
        
         if (YPOS ==11)
-        begin
         YPOS=0 ; 
-        */
+        
+        /**ecrire aux coordonnées (x,y), la on ecrit en (0,0) */
+        ADDR <=  (YPOS)*640 + (XPOS) ;
+       
+        
+        
+         
+        
+        CURRENTPIXEL <= CURRENTPIXEL +1 ; 
+        
+        if (CURRENTPIXEL == 8*12)
+        UPDATE_VGA = 1 ; 
+        
+        
+        end
         //if (XPOS <7 && YPOS < 12)
           //  code = 8'h30 ; 
             
@@ -492,52 +528,28 @@ always @(posedge clk100M)
         if (CURRENTPIXEL ==8*12)
         code <= code +1 ; 
         */
-        end
-       
         
+        if (UPDATE_VGA)
+         begin
+            CURRENTPIXEL = 0 ; 
+         
+            ADDR <=  y*640 + x ; 
+            cs <=0; 
+            we <=0; 
+            oe <=1 ;
+         end
+        
+        
+       
+     end
                 
              
              
           
      
- always @(posedge buttonUpFrq) 
-        /* add pixel to memory pixel */
-       begin
-      // XPOS <= XPOS+1 ; 
-      // SEG0 = 8'h30 + XPOS ;
-       /*
-        address <=currentPixelAdress ;
-        data<=currentPixel; 
-        seg <= 8'h45 ;
+   
         
-        */
         
-        /*
-        ADDR = YPOS*640*12*8 + XPOS*12*8 ; 
-        
-        code <= 8'h45; 
-        PIXEL = pixel ;
-        ADDR = CURSOR ; 
-        */ 
-        cs <=0 ;
-        we <=1;
-        oe <=1; 
-        end     
-        
-        reg clkChar; 
-        reg [31:0] local_count =0 ; 
-        reg [31:0] sec_count ; 
-         always @ (posedge clk100M)
-             begin
-             /*100000 et non 10 -------!*/
-             local_count <= local_count +1;
-             clkChar <= (local_count < 100000000) ?1'b0:1'b1; 
-             if (local_count == 100000000)
-             begin
-                 local_count <= 0 ; 
-             end
-             end 
-             
              
              
           reg clkChar2; 
@@ -547,8 +559,8 @@ always @(posedge clk100M)
                          begin
                          /*100000 et non 10 -------!*/
                          local_count2 <= local_count2 +1;
-                         clkChar2 <= (local_count2 < 8*12) ?1'b0:1'b1; 
-                         if (local_count2 == 8*12-1)
+                         clkKeyboard <= (local_count2 < 100000) ?1'b0:1'b1; 
+                         if (local_count2 == 100000)
                          begin
                              local_count2 <= 0 ; 
                          end
