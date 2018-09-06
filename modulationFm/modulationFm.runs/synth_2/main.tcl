@@ -31,14 +31,16 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/fabrice/Documents/ethOverOfdm/fpga/afficheur2/afficheur2.srcs/sources_1/new/bcd.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/counter.v
-  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/fontGenerator.v
-  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pcVga2.v
-  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pc_vga_80.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pwm.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/ram.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/show.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/vga.v
   /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/main.v
+}
+read_vhdl -library xil_defaultlib {
+  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/common_pak.vhd
+  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/Font_Rom.vhd
+  /home/fabrice/Documents/ethOverOfdm/modulationFm/modulationFm.srcs/sources_1/new/pixel_on_text.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

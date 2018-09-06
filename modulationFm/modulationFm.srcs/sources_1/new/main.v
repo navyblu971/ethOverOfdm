@@ -344,7 +344,7 @@ always @(posedge clk100M)
      // Four overlapping squares
      wire sq_a, sq_b, sq_c, sq_d;
      //assign sq_a = ((x > 120) & (y >  40) & (x < 280) & (y < 200)) ? 1 : 0;
-     assign sq_a = /*show &&*/ PIXEL2DRAW ; 
+     assign sq_a = /*show &&*/ pixel ; 
      
     
      
@@ -386,6 +386,8 @@ always @(posedge clk100M)
  wire show ; //show line or note
  assign show = (/*x>XPOS*8 &&  x<(XPOS +80)*8  && */y>(YPOS)*12 && y<(YPOS+1)*12)  ? 1'b1 : 1'b0 ; 
   
+  
+  /*
   pc_vga_8x16 displayChar (
       .clk(clk100M),
        .col(x[2:0]),
@@ -394,7 +396,7 @@ always @(posedge clk100M)
        .pixel(pixel)
   );
      
-  
+  */
      
  
   //RAM
@@ -462,7 +464,7 @@ always @(posedge clk100M)
     
     /* update vga ram */    
   
-    reg UPDATE_VGA =1 ; 
+    reg UPDATE_VGA =0 ; 
   
     
     //assign SEG3 = XPOS; 
@@ -567,6 +569,17 @@ always @(posedge clk100M)
                          end 
          
             
+            
+            
+            
+ Pixel_On_Text2 #(.displayText("Pixel_On_Text2 -- test1 at (200,200)")) t1(
+                                        pix_stb,
+                                         200, // text position.x (top left)
+                                         200, // text position.y (top left)
+                                         x, // current position.x
+                                         y, // current position.y
+                                         pixel  // result, 1 if current pixel is on text, 0 otherwise
+                                     );           
   
 endmodule 
     
